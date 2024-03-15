@@ -8,17 +8,54 @@ body{
     margin: 0;
     
 }
+    a{
+        color: black;
+        border-bottom: none;
+    }
+    a:hover{
+        color: black;
+        border-bottom: none;
+    }
+
 @media (max-width: 375px) {
+
+    /* encabezado */
     header{
         height: 50px;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.315);
+        display: flex;  
     }
         header div{
-            padding: 12px;
+            height: 100%;
+            width: 100%;
+            display: flex;
         }
-        header div img{
-            height: 25px;
-            width: 80px;
+        /*encabezado primera parte logo*/
+        header .enca_logo{
+            width: 95px;
+            margin-right: 20%;
         }
+            header .enca_logo img{
+                padding: 12px;
+                height: 25px;
+                width: 80px;
+            }
+        /*encabezado segunda parte navegación, inicio de sección*/
+        header .enca_barra{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+        }
+        header .enca_barra p{
+            margin-top: 30%;
+            font-size: 6pt;
+        }
+            header .enca_barra .icon_user{
+                padding: 30%;
+            }
+            
 }
