@@ -50,10 +50,31 @@ body{
             justify-items: center;
             text-align: center;
         }
-        header .enca_barra p{
-            margin-top: 30%;
-            font-size: 6pt;
+        header .enca_barra div{
+            padding-left: 1px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
         }
+        header .enca_barra div:nth-child(1) a:hover{
+            cursor: pointer;
+            color: blue;
+            scale: 1.1;
+        }
+            header .enca_barra div:nth-child(1) a p{
+                margin-top: 35%;
+                font-size: 6pt;
+            }
+        header .enca_barra div:nth-child(2) a:hover{
+            cursor: pointer;
+            color: blue;
+            scale: 1.1;
+        }
+            header .enca_barra div:nth-child(2) a p{
+                margin-top: 30%;
+                font-size: 6pt;
+            }
             header .enca_barra .icon_user{
                 padding: 30%;
             }
