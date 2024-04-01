@@ -29,6 +29,7 @@ body{
             height: 20px;
             width: 20px;
             margin-left: 5%;
+            color: rgba(0, 0, 255, 0.781);
         }
         header > a:hover{
             color: rgba(0, 0, 0, 0.349);
