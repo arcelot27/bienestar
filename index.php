@@ -15,6 +15,7 @@ if(!isset($_REQUEST['b'])){
     $params = isset($_REQUEST['p']) ? $_REQUEST['p'] : '';
      
         if(file_exists($controller)){
+             
             $controller = strtolower($_REQUEST['b']);
             require_once "controller/$controller.controller.php";
             $controller = ucwords($_REQUEST['b']).'controller';
