@@ -20,7 +20,7 @@ body{
 
 @media (max-width: 375px) {
     .containers{
-        background-image: url(/assets/img/fondo.jpg); 
+        background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -37,7 +37,7 @@ body{
     /* cuerpo */
     .containers .container{
         width: 80%;
-        height: 80%;
+        height: 90%;
         margin-left: 35px;
         background-color: rgba(0, 132, 255, 0.418);
         border-radius: 20px ;
@@ -185,7 +185,7 @@ body{
 
 @media (min-width: 376px) and (max-width: 426px) {
     .containers{
-        background-image: url(/assets/img/fondo.jpg); 
+        background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -202,7 +202,7 @@ body{
     /* cuerpo */
     .containers .container{
         width: 80%;
-        height: 80%;
+        height: 90%;
         margin-left: 35px;
         background-color: rgba(0, 132, 255, 0.418);
         border-radius: 20px ;
@@ -302,7 +302,6 @@ body{
     footer{
         height: 36vh;
         width: 100vw;
-        font-size: 10pt;
         color: rgba(255, 255, 255, 0.877);
         background-color: rgb(69, 2, 255);
     }
@@ -312,7 +311,7 @@ body{
             height: 60%;
             width: 80%;
             margin-left: 10%;
-            font-size: 12pt;
+            font-size: 10pt;
             display: grid;
             justify-content: center;
             justify-items: center;
@@ -350,7 +349,7 @@ body{
 
 @media (min-width: 427px) and (max-width: 769px){
     .containers{
-        background-image: url(/assets/img/fondo.jpg); 
+        background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -509,7 +508,7 @@ body{
 
 @media (min-width: 770px) and (max-width: 1022px) {
     .containers{
-        background-image: url(/assets/img/fondo.jpg); 
+        background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -668,7 +667,7 @@ body{
 
 @media (min-width: 1023px) and (max-width: 1440px) {
     .containers{
-        background-image: url(/assets/img/fondo.jpg); 
+        background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
