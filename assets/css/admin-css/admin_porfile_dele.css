@@ -21,7 +21,7 @@ body {
     }
 
 @media (max-width: 375px) {
-
+    
     header {
         height: 5vh;
         width: 100vw;
@@ -42,7 +42,7 @@ body {
         }
 
     main {
-        height: 60vh;
+        height: 70vh;
         width: 100vw;
     }
         main .main_header {
@@ -54,133 +54,76 @@ body {
                 font-size: 25pt;
                 color: #234788;
             }
+
         main .main_body {
-            height: 70%;
+            height: 60%;
             width: 100%;
         }
-            main .main_body > div {
-                height: 35%;
-                width: 100%;
+            main .main_body > div:nth-child(1) {
+                display: flex;
+                width: 80%;
+                height: 90%;
                 margin-top: 20%;
-            }
-
-            main .main_body > div:nth-child(1) a {
-                display: flex;
-                margin-top: 10%;
-                height: 40%;
-                width: 50%;
                 margin-left: 10%;
+                border-radius: 5%;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
                 background-color: #9BC1DF;
-                cursor: pointer;
-                border-radius: 50px;
-                    -webkit-border-radius: 50px;
-                    -moz-border-radius: 50px;
-                    -ms-border-radius: 50px;
-                    -o-border-radius: 50px;
-            }
-            main .main_body > div a:hover {
-                background-color: rgba(0, 0, 255, 0.103);
-                scale: 1;
             }
 
-            main .main_body > div a div {
-                height: 100%;
-                width: 30%;
-                background-color: #234788;
-                cursor: pointer;
-                color: #ffff;
-                display: block;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                justify-items: center;
+            main .main_body > div > div:nth-child(1) {
+                width: 59px;
+                height: 60px;
                 border-radius: 100%;
-                -webkit-border-radius: 100%;
-                -moz-border-radius: 100%;
-                -ms-border-radius: 100%;
-                -o-border-radius: 100%;
+                margin-top: -10%;
+                background-color: #234788;
             }
 
-            main .main_body > div a div:hover {
-                background-color: rgba(0, 0, 255, 0.445);
+            main .main_body > div > div:nth-child(1) i:nth-child(1) {
+                color: #ffff;
+                margin-top: 16%;
+                margin-bottom: 15%;
+                font-size: 24pt;
             }
 
-                main .main_body> div a div i {
-                    margin-top: 26%;
-                    font-size: 18pt;
-                }
+            main .main_body > div > div:nth-child(1) > div:nth-child(2) {
+                margin-top: 101%;
+            }
             
-            main .main_body >div a p {
-                width: 70%;
-                height: 80%;
-                text-align: center;
-                font-size: 12pt;
-                margin-top: 15px;
-                margin-left: -10px;
+            main .main_body > div > div:nth-child(1) > div:nth-child(2) > i {
+                margin-top: 15%;
             }
 
-            /* main .main_body > div:nth-child(2) div {
-                height: 36%;
-                width: 15%;
-                display: flex;
-                margin-left: 20%;
-                margin-top: 35%;
-                background-color: #234788;
-                justify-content: center;
-                align-items: center;
-                border-radius: 100%;
-                    -webkit-border-radius: 100%;
-                    -moz-border-radius: 100%;
-                    -ms-border-radius: 100%;
-                    -o-border-radius: 100%;
+            main .main_body .content {
+                width: 90%;
+                height: 70%;
+                margin-top: 20%;
+                border-top: 1px solid;
+
             }
 
-            main .main_body > div:nth-child(2) div a {
-                color: #ffff;
-                margin-bottom: 20px;
+            main .main_body .content strong > p {
+                margin-top: 1%;
             }
 
-            main .main_body > div:nth-child(2) div:nth-child(2) {
-                display: flex;
-            } */
-            main .main_body .add {
-                display: flex;
-                height: 15%;
-                width: 100%;
-                margin-top: 35%;
+            main .main_body .content > div {
+                text-align: left;
             }
 
-            main .main_body .addd {
-                height: 85%;
-                width: 14%;
-                margin-left: 60px;
-                text-align: center;
-                border-radius: 100%;
-                background-color: #234788;
+            main .main_body .content > div > p {
+                margin-top: 10%;
             }
 
-            main .main_body .adddd {
-                height: 85%;
-                width: 14%;
-                margin-left: 20px;
-                text-align: center;
-                border-radius: 100%;
-                background-color: #234788;
+            main .main_body .content > div .ptn {
+                font-weight: bold;
             }
 
-            main .main_body .add > div a i {
-                color: #ffff;
-                margin-top: 15px;
-            }
-
-            main .main_body > div:nth-child(3) img {
+            main .main_body > div:nth-child(2) img {
                 height: 150px;
                 width: 275px;
                 margin-left: 9%;
-            }
-
-            main .main_body > div:nth-child(3) {
-                margin-top: 0;
+                margin-top: 5%;
             }
 
     footer {
@@ -301,4 +244,4 @@ body {
             padding-top: 2px;
         }
 
-}
+}       

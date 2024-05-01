@@ -23,7 +23,7 @@ body{
     header {
         height: 5vh;
         width: 100vw;
-        background-color: rgba(0, 174, 255, 0.445);
+        background-color: #9BC1DF;
     }
         header > a {
             height: 20px;
@@ -62,7 +62,6 @@ body{
                     height: 100%;
                     width: 30%;
                     background-color: #234788;
-                    color: #ffff;
                     display: block;
                     justify-content: center;
                     align-items: center;
@@ -77,6 +76,8 @@ body{
                         margin-top: 24%;
                         margin-left: 14px;
                         font-size: 18pt;
+                        color: #ffff;
+                        
                     }
             main .main_header > div p {
                 width: 70%;
