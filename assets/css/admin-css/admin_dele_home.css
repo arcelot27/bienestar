@@ -23,7 +23,7 @@ body {
 @media (max-width: 375px) {
 
     header {
-        height: 5vh;
+        height: 6vh;
         width: 100vw;
         background-color: #9BC1DF;
     }
@@ -42,7 +42,7 @@ body {
         }
 
     main {
-        height: 60vh;
+        height: 68vh;
         width: 100vw;
     }
         main .main_header {
