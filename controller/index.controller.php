@@ -2,7 +2,7 @@
 
 include_once "model/Index.php"; 
 
-class indexController{
+class IndexController{
     private $object; 
 
     public function __construct(){
@@ -10,9 +10,8 @@ class indexController{
     }
 
     public function Inicio(){
-
-    }
-
+        require_once "view/index-view/index.php"; 
+    }   
     
 }
 
