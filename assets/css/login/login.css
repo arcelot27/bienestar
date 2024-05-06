@@ -20,7 +20,7 @@ body{
 
 @media (max-width: 375px) {
     .containers{
-        background-image: url(../img/fondo.jpg); 
+        background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -185,7 +185,7 @@ body{
 
 @media (min-width: 376px) and (max-width: 426px) {
     .containers{
-        background-image: url(../img/fondo.jpg); 
+        background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -349,7 +349,7 @@ body{
 
 @media (min-width: 427px) and (max-width: 769px){
     .containers{
-        background-image: url(../img/fondo.jpg); 
+        background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -508,7 +508,7 @@ body{
 
 @media (min-width: 770px) and (max-width: 1022px) {
     .containers{
-        background-image: url(../img/fondo.jpg); 
+        background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;
@@ -667,7 +667,7 @@ body{
 
 @media (min-width: 1023px) and (max-width: 1440px) {
     .containers{
-        background-image: url(../img/fondo.jpg); 
+        background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
         background-size:cover;
         width: 100vw;

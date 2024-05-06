@@ -3,9 +3,9 @@
         <div class="container">
             <img src="assets/img/logo-02.png" alt="">
             <div class="forms">
-                <form action="admin.html" method="post">
-                    <input type="text" placeholder="User">
-                    <input type="password" placeholder="Password" id="input">
+                <form action="?b=login&s=validaruser" method="post">
+                    <input type="text" placeholder="User" name="user">
+                    <input type="password" placeholder="Password" id="input" name="pasword">
                     <a href=""><p>Recuperar contraseña</p></a>
                     <input type="submit" placeholder="Enviar">
                 </form>
