@@ -11,6 +11,9 @@ class Login{
     }
     public function validarUsuario($usuario)
     {
+        if (empty($usuario)) {
+            return false;
+        }
         $query = "(SELECT user_del FROM delegados WHERE user_del = '$usuario')";
 
         $resultado = mysqli_query($this->consulta, $query);
@@ -23,6 +26,9 @@ class Login{
     }
 
     public function validarPassword($password){
+        if (empty($password)) {
+            return false;
+        }
         $query = "(SELECT pasw_del FROM delegados WHERE pasw_del = '$password')";
 
         $resultado = mysqli_query($this->consulta, $query);
@@ -49,6 +55,7 @@ class Login{
             return false;
         }
     }
+
 
 }
 
