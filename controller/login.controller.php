@@ -44,10 +44,10 @@ class LoginController{
                                     header("Location: ?b=psico");
                                     break;
                                 case 4:
-                                    header("Location: ?b=enferme");
+                                    header("Location: ?b=Enfermeria");
                                     break;
                                 case 8:
-                                    header("Location: ?b=admin");
+                                    header("Location: ?b=Admin");
                                     break;
                                 case 16:
                                     header("Location: ?b=supadmin");
@@ -58,13 +58,17 @@ class LoginController{
                             }
                             exit();
                         } else {
-                            echo "Error: No se pudo obtener el rol del usuario";
+                            $mensaje = "Consultar con Soporte usuario sin roll";
+                            echo "<script>window.location.href = '?b=login&mensaje=" . urlencode($mensaje) . "';</script>";
                         }
                     } else {
-                        echo "Contraseña incorrecta";
+                        $mensaje = "Contraseña incorrecta";
+                        echo "<script>window.location.href = '?b=login&mensaje=" . urlencode($mensaje) . "';</script>";
                     }
                 } else {
-                    echo "Usuario y/o contraseña incorrectos, por favor verifique";
+                    $mensaje = "Usuario y/o contraseña incorrectos, por favor verifique";
+                    echo "<script>window.location.href = '?b=login&mensaje=" . urlencode($mensaje) . "';</script>";
+                    
                 }
             }
         } else {

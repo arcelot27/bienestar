@@ -11,6 +11,9 @@ class Index{
             echo "Error de Conexion ". $e -> getMessage(); 
         }
     }
+
+
+
 }
 
 

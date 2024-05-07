@@ -1,4 +1,10 @@
 <body>
+<?php
+    if(isset($_GET['mensaje'])) {
+        $mensaje = $_GET['mensaje'];
+        echo "<script>alert('" . htmlspecialchars($mensaje, ENT_QUOTES) . "');</script>";
+    }
+    ?>
     <div class="containers">
         <div class="container">
             <img src="assets/img/logo-02.png" alt="">

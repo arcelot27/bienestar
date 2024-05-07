@@ -1,6 +1,8 @@
 <?php
 include_once 'lib/database/database.php';
 
+session_start();
+
 $controller = "index";
 
 if(!isset($_REQUEST['b'])){

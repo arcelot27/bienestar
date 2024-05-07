@@ -1,13 +1,13 @@
 <?php
 
-include_once "model/admin.php"; 
+include_once "model/enfermeria.php"; 
 
-class AdminController{
+class EnfermeriaController{
     private $object;
     
     public function __construct()
     {
-        $this->object = new Admin();
+        $this->object = new Enfermeria();
     }
 
     public function Inicio(){
@@ -15,16 +15,11 @@ class AdminController{
         $user = $this->object->selectUser($usuario);
 
 
-        require_once "view/user/admin/admin.php";
+        require_once "view/user/enfermeria/enfermeria.php";
     }
 
-    public function sessionexit() {
-        
-        if (isset($_GET['s']) && $_GET['s'] === 'sessionexit') {
-            
-            echo '<script>alert("Sesión cerrada exitosamente");</script>';
-
-            $_SESSION = array();
+    public function sessionexit(){
+        $_SESSION = array();
                 if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -32,12 +27,12 @@ class AdminController{
                 $params["secure"], $params["httponly"]
             );
         }
-            session_destroy();
-            header("Location: ?b=index");
-            exit();
-        }
+
+        session_destroy();
+
+        header("Location: ?b=index"); 
+        exit();
     }
-    
 }
 
 
