@@ -11,7 +11,7 @@ class Login{
     }
     public function validarUsuario($usuario)
     {
-        $query = "(SELECT 'delegados' FROM userder WHERE user_del = '$usuario')";
+        $query = "(SELECT user_del FROM delegados WHERE user_del = '$usuario')";
 
         $resultado = mysqli_query($this->consulta, $query);
 
@@ -22,8 +22,8 @@ class Login{
         }
     }
 
-    public function validarPassword($pass){
-        $query = "(SELECT 'delegados' FROM userder WHERE pasw_del = '$pass')";
+    public function validarPassword($password){
+        $query = "(SELECT pasw_del FROM delegados WHERE pasw_del = '$password')";
 
         $resultado = mysqli_query($this->consulta, $query);
 
@@ -33,6 +33,25 @@ class Login{
             return false;
         }
     }
+
+    public function rollConseguir($roll)
+    {
+        $query = "(SELECT roll_del FROM delegados WHERE roll_del = ?)";
+        $stmt = $this->consulta->prepare($query);
+        $stmt->bind_param('s', $roll);
+        $stmt->execute();
+        $stmt->store_result();
+    
+        if ($stmt->num_rows > 0) {
+            // Obtener el rol del resultado de la consulta
+            $stmt->bind_result($rol);
+            $stmt->fetch();
+            return $rol;
+        } else {
+            return false;
+        }
+    }
+    
 
 
 }

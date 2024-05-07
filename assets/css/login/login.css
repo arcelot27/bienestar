@@ -665,7 +665,7 @@ body{
         }
 }
 
-@media (min-width: 1023px) and (max-width: 1440px) {
+@media (min-width: 1023px) and (max-width: 2000px) {
     .containers{
         background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
