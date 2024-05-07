@@ -1116,9 +1116,9 @@ body {
 
     header {
         display: grid;
-        grid-template-columns: 85% 5% 0%;
-        height: 9vh;
-        width: 100%;
+        grid-template-columns: 84% 4% 0%;
+        height: 10vh;
+        width: auto;
         background-color: #9BC1DF;
     }
 
@@ -1256,8 +1256,8 @@ body {
             }
     
     footer {
-        height: 80vh;
-        width: 100vw;
+        height: 88vh;
+        width: auto;
         font-size: 14pt;
         color: rgba(255, 255, 255, 0.877);
         background-color: #234788;
@@ -1272,7 +1272,7 @@ body {
             width: 80%;
             margin-left: 10%;
             display: grid;
-            grid-template-columns: 500px 500px;
+            grid-template-columns: 650px 650px;
             border-bottom: 1px solid rgb(122, 121, 121) ;
             justify-content: center;
             align-items: baseline;
@@ -1281,7 +1281,7 @@ body {
 
         footer .ff {
             display: grid;
-            grid-template-columns: 400px 200px 200px;
+            grid-template-columns: 620px 250px 270px;
             align-items: baseline;
             justify-content: center;
         }
@@ -1295,6 +1295,10 @@ body {
                 margin-left: 25px;
             }
 
+            footer .red_social div:nth-child(2) > a i {
+                font-size: 22pt;
+            }
+
         footer .info-footer {
             height: 35%;
             width: 80%;
@@ -1306,10 +1310,6 @@ body {
             text-align: center;
             margin-top: -10px;
         }
-
-            footer .info-footer h3 {
-                height: 33%;
-            }  
 
             footer .info-footer p {
                 height: 66%;
@@ -1362,7 +1362,274 @@ body {
         height: 10%;
         width: 90%;
         margin-left: 55px;
-        margin-top: 27%;
+        margin-top: 24%;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        display: block;
+        justify-content: center;
+        justify-content: center;
+        text-align: center;
+}
+
+        footer .copy_footer p {
+            color: black;
+            height: 30%;
+            padding-top: 15px;
+        }
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    header {
+        display: grid;
+        grid-template-columns: 85% 5% 0%;
+        height: 10vh;
+        width: 100%;
+        background-color: #9BC1DF;
+    }
+
+    header > a {
+        font-size: 27pt;
+        float: right;
+        margin: 12px;
+        color: #234788;
+    }
+
+        header img {
+            height: 75px;
+            float: left;
+            margin-left: 12px;
+        }
+
+    main {
+        height: 90vh;
+        width: 100vw;
+    }
+        main .main_header {
+            width: 25%;
+            margin-left: 15px;
+        }
+            main .main_header > a {
+                font-size: 40pt;
+                margin-left: 20%;
+                color: #234788;
+            }
+        
+        main .main_body {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+            main .main_body > div {
+                height: 36%;
+                width: 100%;
+                margin-top: 4%;
+            }
+
+            main .main_body > div:nth-child(1) .dele {
+                display: flex;
+                margin-top: 5%;
+                height: 40%;
+                width: 60%;
+                margin-left: 22%;
+                background-color: #9BC1DF;
+                cursor: pointer;
+                border-radius: 50px;
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                    -ms-border-radius: 50px;
+                    -o-border-radius: 50px;
+            }
+
+            main .main_body > div a:hover {
+                background-color: rgba(0, 0, 255, 0.103);
+                scale: 1;
+            }
+
+            main .main_body > div a div {
+                height: 107%;
+                width: 20%;
+                background-color: #234788;
+                cursor: pointer;
+                color: #ffff;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                justify-items: center;
+                border-radius: 100%;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                -ms-border-radius: 100%;
+                -o-border-radius: 100%;
+            }
+
+            main .main_body > div a div:hover {
+                background-color: rgba(0, 0, 255, 0.445);
+            }
+
+                main .main_body> div a div i {
+                    margin-top: 24%;
+                    font-size: 40pt;
+                }
+            
+            main .main_body >div a p {
+                width: 70%;
+                height: 80%;
+                text-align: center;
+                font-size: 22pt;
+                margin-top: 30px;
+                margin-left: -10px;
+            }
+
+            main .main_body .add {
+                display: flex;
+                height: 45%;
+                margin-left: 6%;
+                width: 60%;
+                margin-top: 4%;
+            }
+
+            main .main_body .addd {
+                height: 85%;
+                width: 30%;
+                margin-left: 58%;
+                text-align: center;
+                border-radius: 100%;
+                background-color: #234788;
+            }
+
+            main .main_body .adddd {
+                height: 85%;
+                width: 30%;
+                margin-left: 40px;
+                text-align: center;
+                border-radius: 100%;
+                background-color: #234788;
+            }
+
+            main .main_body .add > div a i {
+                color: #ffff;
+                margin-left: 2px;
+                margin-top: 25px;
+                font-size: 30pt;
+            }
+
+            main .main_body > div:nth-child(2) img {
+                height: 410px;
+                width: 800px;
+                margin-top: 5%;
+            }
+    
+    footer {
+        height: 80vh;
+        width: 100vw;
+        font-size: 14pt;
+        color: rgba(255, 255, 255, 0.877);
+        background-color: #234788;
+    }
+
+        footer p {
+            font-size: 18pt;
+        }
+
+        footer .red_social {
+            height: 18%;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 800px 800px;
+            border-bottom: 1px solid rgb(122, 121, 121) ;
+            justify-content: center;
+            align-items: baseline;
+            text-align: center;
+        }
+
+        footer .ff {
+            display: grid;
+            grid-template-columns: 800px 320px 350px;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        footer .red_social div:nth-child(2) {
+            height: 25%;
+            margin-top: 40px;
+        }
+
+            footer .red_social div:nth-child(2) a {
+                margin-left: 0;
+            }
+
+            footer .red_social div:nth-child(2) > a i {
+                font-size: 22pt;
+            }
+
+        footer .info-footer {
+            height: 35%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 8pt;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+            footer .info-footer p {
+                height: 66%;
+            }
+
+
+        footer .info2-footer {
+            height: 8%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 8pt;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+        }
+
+            footer .info2-footer h3 {
+                height: 100%;
+                margin-right: 20px;
+            }
+
+            footer .info2-footer p {
+                height: 100%;
+                margin-right: 10px;
+            }
+
+        footer .info3-footer {
+            height: 25%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 10pt;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+        }
+
+                footer .info3-footer div {
+                    height: 30%;
+                }
+
+                footer .info3-footer div p {
+                    height: 60%;
+                }
+
+    footer .copy_footer {
+        background-color: #9BC1DF;
+        font-size: 10pt;
+        height: 10%;
+        width: 90%;
+        margin-left: 55px;
+        margin-top: 20%;
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
