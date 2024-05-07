@@ -34,16 +34,14 @@ class Login{
         }
     }
 
-    public function rollConseguir($roll)
-    {
-        $query = "(SELECT roll_del FROM delegados WHERE roll_del = ?)";
+    public function rollConseguir($usuario){
+        $query = "(SELECT roll_del FROM delegados WHERE user_del = ?)";
         $stmt = $this->consulta->prepare($query);
-        $stmt->bind_param('s', $roll);
+        $stmt->bind_param('s', $usuario);
         $stmt->execute();
         $stmt->store_result();
-    
+
         if ($stmt->num_rows > 0) {
-            // Obtener el rol del resultado de la consulta
             $stmt->bind_result($rol);
             $stmt->fetch();
             return $rol;
@@ -51,8 +49,6 @@ class Login{
             return false;
         }
     }
-    
-
 
 }
 

@@ -26,34 +26,40 @@ class LoginController{
             } else {
                 $usuario_valido = $this->loginModel->validarUsuario($usuario);
                 $password_valido = $this->loginModel->validarPassword($passEncrypt);
-                $rol = $this->loginModel->rollConseguir($usuario);
-                
+
                 if ($usuario_valido) {
                     if ($password_valido) {
-                        session_start();
-                        $_SESSION['usuario'] = $usuario;
-                        $_SESSION['roll_del'] = $rol;
-                        switch ($rol) {
-                            case 1:
-                                header("Location: ?b=depor");
-                                break;
-                            case 2:
-                                header("Location: ?b=psico");
-                                break;
-                            case 4:
-                                header("Location: ?b=enferme");
-                                break;
-                            case 8:
-                                header("Location: ?b=admin");
-                                break;
-                            case 16:
-                                header("Location: ?b=supadmin");
-                                break;
-                            default:
-                                print("erorr");
-                                break;
+                        $rol = $this->loginModel->rollConseguir($usuario);
+
+                        if ($rol !== false) {
+                            session_start();
+                            $_SESSION['usuario'] = $usuario;
+                            $_SESSION['roll_del'] = $rol;
+
+                            switch ($rol) {
+                                case 1:
+                                    header("Location: ?b=dep");
+                                    break;
+                                case 2:
+                                    header("Location: ?b=psico");
+                                    break;
+                                case 4:
+                                    header("Location: ?b=enferme");
+                                    break;
+                                case 8:
+                                    header("Location: ?b=admin");
+                                    break;
+                                case 16:
+                                    header("Location: ?b=supadmin");
+                                    break;
+                                default:
+                                    echo "Error: Rol no válido";
+                                    break;
+                            }
+                            exit();
+                        } else {
+                            echo "Error: No se pudo obtener el rol del usuario";
                         }
-                        exit();
                     } else {
                         echo "Contraseña incorrecta";
                     }
