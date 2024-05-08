@@ -14,15 +14,15 @@ class LoginController{
         require_once "view/head.php";
     }
 
-    public function validarUser()
-    {
+    public function validarUser(){
+
         if (isset($_POST['user']) && isset($_POST['pasword'])) {
             $usuario = $_POST['user'];
             $passEncrypt = $_POST['pasword'];
 
             if (empty($usuario) || empty($passEncrypt)) {
-                header('Location: ?b=login');
-                exit();
+                $mensaje = "Por favor ingrese valores en los espacios correspondientes";
+                echo "<script>window.location.href = '?b=login&mensaje=" . urlencode($mensaje) . "';</script>";
             } else {
                 $usuario_valido = $this->loginModel->validarUsuario($usuario);
                 $password_valido = $this->loginModel->validarPassword($passEncrypt);
