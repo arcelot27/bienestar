@@ -121,30 +121,6 @@ body {
                 margin-left: -10px;
             }
 
-            /* main .main_body > div:nth-child(2) div {
-                height: 36%;
-                width: 15%;
-                display: flex;
-                margin-left: 20%;
-                margin-top: 35%;
-                background-color: #234788;
-                justify-content: center;
-                align-items: center;
-                border-radius: 100%;
-                    -webkit-border-radius: 100%;
-                    -moz-border-radius: 100%;
-                    -ms-border-radius: 100%;
-                    -o-border-radius: 100%;
-            }
-
-            main .main_body > div:nth-child(2) div a {
-                color: #ffff;
-                margin-bottom: 20px;
-            }
-
-            main .main_body > div:nth-child(2) div:nth-child(2) {
-                display: flex;
-            } */
             main .main_body .add {
                 display: flex;
                 height: 45%;
