@@ -5,6 +5,7 @@
     box-shadow: 0;
 }
 body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     
 }
@@ -24,41 +25,32 @@ body{
         background-image: url(../img/fondo.jpg);
         background-repeat: no-repeat;
         background-size: contain;
-        width: 100%;
-        height: 25vh;
+        width: auto;
+        height: 26vh;
     }
     /* encabezado */
-    header{
-        height: 50px;
-        width: 100%;
+    header {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        height: 4vh;
+        width: auto;
         background-color: rgba(0, 0, 0, 0.658);
-        display: flex;
     }
-        header div{
-            height: 100%;
-            width: 100%;
+        header div {
             display: flex;
+            width: 100%;
         }
+        
         /*encabezado primera parte logo*/
         header .enca_logo{
+            display: flex;
             width: 95px;
-            margin-right: 20%;
-            margin-top: 0;
         }
             header .enca_logo img{
-                height: 85px;
-                width: 125px;
+                height: 60px;
                 margin-top: -15%;
             }
-        /*encabezado segunda parte navegación, inicio de sección*/
-        header .enca_barra{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
+        
         header .enca_barra div:hover{
             cursor: pointer;
             background-color: rgba(0, 0, 0, 0.267);
@@ -67,12 +59,6 @@ body{
             cursor: pointer;
             background-color:none;
         }
-        header .enca_barra div:nth-child(1){
-            display: block;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
         header .enca_barra div a:hover{
             color: black;
             cursor: pointer;
@@ -80,13 +66,13 @@ body{
         }
             header .enca_barra p{
                 color: rgba(255, 255, 255, 0.877);
-                margin-top: 30%;
                 font-size: 6pt;
 
             }
             header .enca_barra .icon_user{
+                margin-top: 3px;
+                margin-left: 15px;
                 cursor: pointer;
-                padding: 30%;
                 color: rgb(255, 255, 255);
             }
     .container{
@@ -115,7 +101,7 @@ body{
                     margin-top: 8%;
                     height: 20px;
                     width: 70px;
-                    background-color: rgb(1, 88, 219);
+                    background-color: #234788;
                     border-radius: 5px;
                     -webkit-border-radius: 5px;
                     -moz-border-radius: 5px;
@@ -136,12 +122,11 @@ body{
                     -o-transform: scale(1);
                 }
                     .container div:nth-child(1) a p{
-                        margin-top: 3px;
+                        margin-top: 2px;
                         height: 100%;
                         width: 100%;
                         color: white;
                         font-size: 8pt;
-                        font-family: 'Times New Roman', Times, serif;
                     }
     /* cuerpo */
     main{
@@ -173,7 +158,6 @@ body{
                 height: 80px;
                 width: 90%;
                 font-size: 10pt;
-                font-family: 'Times New Roman', Times, serif;
                 margin-left: 10%;
             }
                 main .one_main div:nth-child(2) h3{
@@ -186,14 +170,13 @@ body{
         main .two_main{  
             height: 50%;
             width: 100vw;
-            background-color: rgb(10, 161, 248);
+            background: linear-gradient(45deg, #7596C8 0%, #6C89A4 25%, #6C89A4 50%, #376DA1 75%, #1A4065 100%);
             display: grid;
         }
             main .two_main div:nth-child(1) {
                 height: 100px;
                 width: 80%;
                 font-size: 10pt;
-                font-family: 'Times New Roman', Times, serif;
                 margin-left: 10%;
                 margin-top: 5%;
             }
@@ -219,34 +202,47 @@ body{
             }
     
     /* footer */
-    footer{
-        height: 80vh;
+    footer {
+        height: 60vh;
         width: 100vw;
-        font-size: 10pt;
+        font-size: 8pt;
         color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
+        background-color: #234788;
     }
-        footer .red_social{
-            height: 15%;
-            width: 100%;
+
+        footer .red_social {
+            height: 13%;
+            width: 70%;
             display: grid;
+            margin-left: 15%;
+            border-bottom: 1px solid rgb(122, 121, 121);
             justify-content: center;
-            align-items: center;
+            align-items: baseline;
             text-align: center;
-            font-family: 'Times New Roman', Times, serif;
+            align-content: space-between;
+            justify-items: center;
         }
-        footer .red_social div:nth-child(2){
+
+        footer .ff {
+            height: 15%;
+            display: grid;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        footer .red_social div:nth-child(2) {
             height: 25%;
             width: 120%;
             margin-top: 5px;
             margin-left: -15px;
-            border-bottom: 1px solid rgb(122, 121, 121) ;
             padding-bottom: 8px;
         }
-            footer .red_social div:nth-child(2) a{
+
+            footer .red_social div:nth-child(2) a {
                 margin-left: 10px;
             }
-        footer .info-footer{
+
+        footer .info-footer {
             height: 35%;
             width: 80%;
             margin-left: 10%;
@@ -255,19 +251,20 @@ body{
             justify-content: center;
             justify-items: center;
             text-align: center;
-            margin-top: -10px;
+            margin-top: -5px;
         }
-            footer .info-footer h3{
-                height: 33%;
-            }   
-            footer .info-footer p{
+
+            footer .info-footer p {
                 height: 66%;
             }
-            footer .info-footer p:nth-child(3){
+
+            footer .info-footer p:nth-child(3) {
+                margin-bottom: 10%;
                 border-bottom: 1px solid rgba(122, 121, 121, 0.733);
             }
-        footer .info2-footer{
-            height: 8%;
+
+        footer .info2-footer {
+            height: 75%;
             width: 80%;
             margin-left: 10%;
             font-size: 8pt;
@@ -276,36 +273,39 @@ body{
             justify-items: center;
             text-align: center;
             border-bottom: 1px solid rgba(122, 121, 121, 0.733);
+            align-items: center;
         }
-            footer .info2-footer h3{
-                height: 100%;
-                margin-right: 20px;
-            }
-            footer .info2-footer p{
+
+            footer .info2-footer p {
                 height: 100%;
                 margin-right: 10px;
             }
-        footer .info3-footer{
-            height: 25%;
+
+        footer .info3-footer {
+            height: 2%;
             width: 80%;
             margin-left: 10%;
-            font-size: 10pt;
+            font-size: 8pt;
             display: grid;
             justify-content: center;
             justify-items: center;
             text-align: center;
         }
-                footer .info3-footer div{
+
+                footer .info3-footer div {
                     height: 10%;
                 }
-                footer .info3-footer div p{
+
+                footer .info3-footer div p {
                     height: 60%;
                 }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 10pt;
+
+    footer .copy_footer {
+        background-color: #9BC1DF;
+        font-size: 8pt;
         height: 10%;
         width: 90%;
+        margin-top: 70%;
         margin-left: 15px;
         border-radius: 20px;
         -webkit-border-radius: 20px;
@@ -317,8 +317,121 @@ body{
         justify-content: center;
         text-align: center;
 }
-        footer .copy_footer p{
+
+        footer .copy_footer p {
+            color: black;
             height: 30%;
-            padding-top: 2px;
+            padding-top: 8px;
         }
-}   
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+    
+    #img_fondo{
+        background-image: url(../img/fondo.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: auto;
+        height: 26vh;
+    }
+    /* encabezado */
+    header {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        height: 5vh;
+        width: auto;
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+        header div {
+            display: flex;
+            width: 100%;
+        }
+        
+        /*encabezado primera parte logo*/
+        header .enca_logo{
+            width: 95px;
+        }
+            header .enca_logo img{
+                height: 70px;
+                margin-top: -15%;
+            }
+        
+        header .enca_barra div:hover{
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.267);
+        }
+        header .enca_barra div:hover:nth-last-child(1){
+            cursor: pointer;
+            background-color:none;
+        }
+        header .enca_barra div a:hover{
+            color: black;
+            cursor: pointer;
+            scale: 1.2;
+        }
+            header .enca_barra p{
+                color: rgba(255, 255, 255, 0.877);
+                font-size: 6pt;
+
+            }
+            header .enca_barra .icon_user{
+                margin-top: 3px;
+                margin-left: 15px;
+                cursor: pointer;
+                color: rgb(255, 255, 255);
+            }
+    
+    .container{
+        width: 100vw;
+        height: 17vh;
+        display: flex;
+    }
+            .container div:nth-child(1){
+                width: 100%;
+                height: 100%;
+            }
+            .container div:nth-child(1) div{
+                margin-top: 10px;
+                height: 80px;
+                width: 100vw;
+                background-color: rgba(0, 0, 0, 0.315); 
+                display: flex;
+            }
+                .container div:nth-child(1) div .img_logocom{
+                    margin-left: 20px;
+                    height: 80px;
+                    width: 150px;
+                }
+                .container div:nth-child(1) div a{
+                    margin-left: 40px;
+                    margin-top: 8%;
+                    height: 20px;
+                    width: 70px;
+                    background-color: #234788;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    display: block;
+                    justify-content: center;
+                    justify-items: center;
+                    align-items: center;
+                    text-align: center;
+                }
+                .container div:nth-child(1) div a:hover{
+                    cursor: pointer;
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                }
+                    .container div:nth-child(1) a p{
+                        margin-top: 2px;
+                        height: 100%;
+                        width: 100%;
+                        color: white;
+                        font-size: 8pt;
+                    }
+}
