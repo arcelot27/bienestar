@@ -87,6 +87,7 @@ body{
                         color: #ffff;
                         
                     }
+                    
             main .main_header > div p {
                 width: 70%;
                 height: 80%;
@@ -94,6 +95,7 @@ body{
                 font-size: 14pt;
                 margin-top: 0;
             }
+
         main .main_body {
             height: 70%;
             width: 100%;
@@ -117,6 +119,7 @@ body{
                     -ms-border-radius: 50px;
                     -o-border-radius: 50px;
                 }
+
                 main .main_body > div a:hover {
                     background-color: rgba(0, 0, 255, 0.103);
                     scale: 1;

@@ -336,20 +336,12 @@ body{
                 main .main_body > div a {
                     display: flex;
                     margin-top: 8%;
-                    height: 48%;
-                    width: 60%;
+                    height: 50%;
+                    width: 55%;
                     margin-left: 20%;
                     background-color: #9BC1DF;
                     cursor: pointer;
-                    border-radius: 50px;
                     -webkit-border-radius: 50px;
-                    -moz-border-radius: 50px;
-                    -ms-border-radius: 50px;
-                    -o-border-radius: 50px;
-                }
-                main .main_body > div a:hover {
-                    background-color: rgba(0, 0, 255, 0.103);
-                    scale: 1;
                 }
     
                 main .main_body > div a div {
@@ -360,10 +352,19 @@ body{
                     color: #ffff;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
                     text-align: center;
                     justify-items: center;
                     border-radius: 100%;
+                }
+
+                main .main_body > div a:hover {
+                    background-color: rgba(0, 0, 255, 0.103);
+                    scale: 1;
+                }
+                
+                main .main_body > div a div i {
+                    font-size: 20pt;
+                    margin-top: 26%;
                 }
 
     }
