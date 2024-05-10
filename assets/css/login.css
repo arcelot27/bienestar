@@ -5,6 +5,7 @@
     box-shadow: 0;
 }
 body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     
 }
@@ -669,8 +670,7 @@ body{
     .containers{
         background-image: url(../img/fondo.jpg); 
         background-repeat: no-repeat;
-        background-size:cover;
-        width: 100vw;
+        background-size:cover;  
         height: 90vh;
         padding-top: 35px;
     }
@@ -781,49 +781,128 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 45vh;
-        width: 100vw;
+    footer {
+        height: 88vh;
+        width: auto;
+        font-size: 14pt;
         color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
+        background-color: #234788;
     }
-        
-        footer .info3-footer{
-            height: 60%;
+
+        footer p {
+            font-size: 15pt;
+        }
+
+        footer .red_social {
+            height: 18%;
             width: 80%;
             margin-left: 10%;
-            font-size: 14pt;
+            display: grid;
+            grid-template-columns: 650px 650px;
+            border-bottom: 1px solid rgb(122, 121, 121) ;
+            justify-content: center;
+            align-items: baseline;
+            text-align: center;
+        }
+
+        footer .ff {
+            display: grid;
+            grid-template-columns: 620px 250px 270px;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        footer .red_social div:nth-child(2) {
+            height: 25%;
+            margin-top: 40px;
+        }
+
+            footer .red_social div:nth-child(2) a {
+                margin-left: 25px;
+            }
+
+            footer .red_social div:nth-child(2) > a i {
+                font-size: 22pt;
+            }
+
+        footer .info-footer {
+            height: 35%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 8pt;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+            footer .info-footer p {
+                height: 66%;
+            }
+
+
+        footer .info2-footer {
+            height: 8%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 8pt;
             display: grid;
             justify-content: center;
             justify-items: center;
             text-align: center;
         }
-                footer .info3-footer div{
-                    height: 10%;
+
+            footer .info2-footer h3 {
+                height: 100%;
+                margin-right: 20px;
+            }
+
+            footer .info2-footer p {
+                height: 100%;
+                margin-right: 10px;
+            }
+
+        footer .info3-footer {
+            height: 25%;
+            width: 80%;
+            margin-left: 10%;
+            font-size: 10pt;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+        }
+
+                footer .info3-footer div {
+                    height: 30%;
                 }
-                footer .info3-footer div p{
+
+                footer .info3-footer div p {
                     height: 60%;
                 }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 14pt;
-        height: 20%;
+
+    footer .copy_footer {
+        background-color: #9BC1DF;
+        font-size: 10pt;
+        height: 10%;
         width: 90%;
-        margin-top: 35px;
-        margin-left: 5%;
+        margin-left: 55px;
+        margin-top: 24%;
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
-        display: flex;
+        display: block;
         justify-content: center;
         justify-content: center;
         text-align: center;
-    }
-        footer .copy_footer p{
+}
+
+        footer .copy_footer p {
+            color: black;
             height: 30%;
-            margin-top: 10px;
-            margin-left: 5px;
+            padding-top: 15px;
         }
 }
