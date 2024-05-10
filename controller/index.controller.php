@@ -10,7 +10,11 @@ class IndexController{
     }
 
     public function Inicio(){
-        require_once "view/index-view/index.php"; 
+        $style = "<link rel='stylesheet' href='assets/css/index/index.css'>"; 
+        require_once "view/head.php"; 
+        require_once "view/heder_prin.php"; 
+        require_once "view/index-view/index.php";
+        require_once "view/footer.php";  
     }   
     
 }
