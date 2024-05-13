@@ -14,9 +14,14 @@ class AdminController{
         $usuario = $_SESSION['usuario'];
         $user = $this->object->selectUser($usuario);
         
-        $_SESSION['name'] = $user['name_del']; 
+        $_SESSION['name'] = $user['name_del'];
 
+        
+        $style = "<link rel='stylesheet' href='assets/css/admin/admin.css'>";
+        require_once "view/head.php";
+        require_once "view/heder_user.php";
         require_once "view/user/admin/admin.php";
+        
     }
 
     public function sessionexit() {
