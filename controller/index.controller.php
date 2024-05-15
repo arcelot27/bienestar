@@ -10,7 +10,8 @@ class IndexController{
     }
 
     public function Inicio(){
-        $style = "<link rel='stylesheet' href='assets/css/index/index.css'>"; 
+        $style = "<link rel='stylesheet' href='assets/css/index/index.css'>
+                <link rel='stylesheet' href='assets/css/static/header_prin.css'>"; 
         require_once "view/head.php"; 
         require_once "view/heder_prin.php"; 
         require_once "view/index-view/index.php";

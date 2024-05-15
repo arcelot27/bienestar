@@ -17,10 +17,12 @@ class AdminController{
         $_SESSION['name'] = $user['name_del'];
 
         
-        $style = "<link rel='stylesheet' href='assets/css/admin/admin.css'>";
+        $style = "<link rel='stylesheet' href='assets/css/static/header_user.css'>
+                <link rel='stylesheet' href='assets/css/admin/admin.css'>";
         require_once "view/head.php";
         require_once "view/heder_user.php";
         require_once "view/user/admin/admin.php";
+        require_once "view/footer.php";
         
     }
 

@@ -20,44 +20,6 @@ body{
 
 @media (max-width: 375px) {
 
-    #img_fondo{
-        background-image: url(../../img/fondo.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: auto;
-        height: 26vh;
-    }
-    /* encabezado */
-    header {
-        display: grid;
-        grid-template-columns: 40% 20% 25% 5%;
-        height: 4vh;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
-        
-        /*encabezado primera parte logo*/
-            header > img{
-                height: 60px;
-                margin-top: -10%;
-            }
-        
-        header > a:hover{
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.267);
-        }
-            header > a{
-                color: rgba(255, 255, 255, 0.877);
-                font-size: 6pt;
-
-            }
-            header a > i {
-                font-size: 9pt;
-                margin-top: 8px;
-                margin-left: 15px;
-                cursor: pointer;
-                color: rgb(255, 255, 255);
-            }
     .container{
         width: 100vw;
         height: 17vh;
@@ -308,47 +270,7 @@ body{
 }
 
 @media (min-width: 376px) and (max-width: 426px) {
-    
-    #img_fondo{
-        background-image: url(../../img/fondo.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: auto;
-        height: 29vh;
-    }
-    /* encabezado */
-    header {
-        display: grid;
-        grid-template-columns: 40% 20% 25% 5%;
-        height: 5vh;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
         
-        /*encabezado primera parte logo*/
-            header > img{
-                height: 70px;
-                margin-top: -10%;
-            }
-        
-        header > a:hover{
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.267);
-        }
-            header > a{
-                margin-top: 2px;
-                color: rgba(255, 255, 255, 0.877);
-                font-size: 7pt;
-
-            }
-            header a > i {
-                font-size: 10pt;
-                margin-top: 9px;
-                margin-left: 15px;
-                cursor: pointer;
-                color: rgb(255, 255, 255);
-            }
-    
     .container{
         width: 100vw;
         height: 17vh;
@@ -589,45 +511,6 @@ body{
 
 @media (min-width: 427px) and (max-width: 769px) {
 
-    #img_fondo{
-        background-image: url(../../img/fondo.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: auto;
-        height: 52vh;
-    }
-    /* encabezado */
-    header {
-        display: grid;
-        grid-template-columns: 40% 20% 25% 5%;
-        height: 6vh;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
-        
-        /*encabezado primera parte logo*/
-            header > img{
-                height: 80px;
-                margin-top: -6%;
-            }
-        
-        header > a:hover{
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.267);
-        }
-            header > a{
-                color: rgba(255, 255, 255, 0.877);
-                font-size: 9pt;
-
-            }
-            header a > i {
-                font-size: 14pt;
-                margin-top: 14px;
-                margin-left: 15px;
-                cursor: pointer;
-                color: rgb(255, 255, 255);
-            }
-
     .container{
         width: 100vw;
         height: 30vh;
@@ -865,45 +748,6 @@ body{
 }
 
 @media (min-width: 770px) and (max-width: 1022px) {
-
-    #img_fondo{
-        background-image: url(../../img/fondo.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: auto;
-        height: 70vh;
-    }
-    /* encabezado */
-    header {
-        display: grid;
-        grid-template-columns: 40% 20% 25% 5%;
-        height: 7vh;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
-        
-        /*encabezado primera parte logo*/
-            header > img{
-                height: 100px;
-                margin-top: -6%;
-            }
-        
-        header > a:hover{
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.267);
-        }
-            header > a{
-                color: rgba(255, 255, 255, 0.877);
-                font-size: 11pt;
-
-            }
-            header a > i {
-                font-size: 18pt;
-                margin-top: 14px;
-                margin-left: 15px;
-                cursor: pointer;
-                color: rgb(255, 255, 255);
-            }
 
     .container{
         width: 100vw;
@@ -1149,46 +993,6 @@ body{
 }
 
 @media (min-width: 1023px) and (max-width: 1440px) {
-
-    #img_fondo{
-        background-image: url(../../img/fondo.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: auto;
-        height: 106vh;
-    }
-    /* encabezado */
-    header {
-        display: grid;
-        grid-template-columns: 40% 20% 25% 5%;
-        height: 8vh;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.658);
-    }
-        
-        /*encabezado primera parte logo*/
-            header > img{
-                height: 130px;
-                margin-top: -7%;
-            }
-        
-        header > a:hover{
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.267);
-        }
-            header > a{
-                margin-top: -5px;
-                color: rgba(255, 255, 255, 0.877);
-                font-size: 13pt;
-
-            }
-            header a > i {
-                font-size: 22pt;
-                margin-top: 14px;
-                margin-left: 15px;
-                cursor: pointer;
-                color: rgb(255, 255, 255);
-            }
 
     .container{
         width: 98vw;
