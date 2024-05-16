@@ -19,21 +19,4 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="info3-footer">
-            <h3>Contacto:</h3>
-            <div>
-                <p>La Plata, Huila</p>
-                <p>biaprendiz@mail.com</p>
-                <p>Cra 7 No. 5 - 67</p>
-                <p>+57 555 55 55</p>
-            </div>
-            
-        </div>
-        <div class="copy_footer">
-            <p>Copyright 2024 - SIFT - Sistema Identificación y seguimiento de aprendices©</p><p>by ********* and **********</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+    

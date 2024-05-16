@@ -14,7 +14,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
             </div>
             <div>
-                <img src="assets/img/img_queEs.jpeg" alt="">
+                <img id="img_queEs" src="assets/img/img_queEs.jpeg" alt="">
             </div>
         </div>  
     </main>

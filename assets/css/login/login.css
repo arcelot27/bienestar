@@ -5,6 +5,7 @@
     box-shadow: 0;
 }
 body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     
 }
@@ -134,54 +135,7 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 36vh;
-        width: 100vw;
-        font-size: 10pt;
-        color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
-    }
-        
-        footer .info3-footer{
-
-            height: 60%;
-            width: 80%;
-            margin-left: 10%;
-            font-size: 12pt;
-            display: grid;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
-                footer .info3-footer div{
-                    height: 10%;
-                }
-                footer .info3-footer div p{
-                    height: 60%;
-                }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 10pt;
-        height: 20%;
-        width: 90%;
-        margin-top: 55px;
-        margin-left: 15px;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        justify-content: center;
-        justify-content: center;
-        text-align: center;
-    }
-        footer .copy_footer p{
-            height: 30%;
-            padding-top: 2px;
-        }
 }
-
 
 @media (min-width: 376px) and (max-width: 426px) {
     .containers{
@@ -299,53 +253,7 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 36vh;
-        width: 100vw;
-        color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
-    }
-        
-        footer .info3-footer{
-
-            height: 60%;
-            width: 80%;
-            margin-left: 10%;
-            font-size: 10pt;
-            display: grid;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
-                footer .info3-footer div{
-                    height: 10%;
-                }
-                footer .info3-footer div p{
-                    height: 60%;
-                }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 10pt;
-        height: 20%;
-        width: 90%;
-        margin-top: 25px;
-        margin-left: 15px;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        justify-content: center;
-        justify-content: center;
-        text-align: center;
-    }
-        footer .copy_footer p{
-            height: 30%;
-            padding-top: 2px;
-        }
 }
-
 
 @media (min-width: 427px) and (max-width: 769px){
     .containers{
@@ -461,49 +369,6 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 45vh;
-        width: 100vw;
-        color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
-    }
-        
-        footer .info3-footer{
-            height: 60%;
-            width: 80%;
-            margin-left: 10%;
-            font-size: 14pt;
-            display: grid;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
-                footer .info3-footer div{
-                    height: 10%;
-                }
-                footer .info3-footer div p{
-                    height: 60%;
-                }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 14pt;
-        height: 20%;
-        width: 90%;
-        margin-top: 5%;
-        margin-left: 5%;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        justify-content: center;
-        justify-content: center;
-        text-align: center;
-    }
-        footer .copy_footer p{
-            padding-top: 2px;
-        }
 }
 
 @media (min-width: 770px) and (max-width: 1022px) {
@@ -620,52 +485,9 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 45vh;
-        width: 100vw;
-        color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
-    }
-        
-        footer .info3-footer{
-            height: 60%;
-            width: 80%;
-            margin-left: 10%;
-            font-size: 16pt;
-            display: grid;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
-                footer .info3-footer div{
-                    height: 5%;
-                }
-                footer .info3-footer div p{
-                    height: 60%;
-                }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 16pt;
-        height: 20%;
-        width: 90%;
-        margin-top: 4%;
-        margin-left: 5%;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: block;
-        justify-content: center;
-        justify-content: center;
-        text-align: center;
-    }
-        footer .copy_footer p{
-            padding-top: 2px;
-        }
 }
 
-@media (min-width: 1023px) and (max-width: 2000px) {
+@media (min-width: 1023px) and (max-width: 1440px) {
     .containers{
         background-image: url('../../img/fondo.jpg'); 
         background-repeat: no-repeat;
@@ -781,49 +603,5 @@ body{
                     margin: 0;
                 }      
     /* footer */
-    footer{
-        height: 45vh;
-        width: 100vw;
-        color: rgba(255, 255, 255, 0.877);
-        background-color: rgb(69, 2, 255);
-    }
-        
-        footer .info3-footer{
-            height: 60%;
-            width: 80%;
-            margin-left: 10%;
-            font-size: 14pt;
-            display: grid;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-        }
-                footer .info3-footer div{
-                    height: 10%;
-                }
-                footer .info3-footer div p{
-                    height: 60%;
-                }
-    footer .copy_footer{
-        background-color: rgba(2, 158, 248, 0.767);
-        font-size: 14pt;
-        height: 20%;
-        width: 90%;
-        margin-top: 35px;
-        margin-left: 5%;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        justify-content: center;
-        text-align: center;
-    }
-        footer .copy_footer p{
-            height: 30%;
-            margin-top: 10px;
-            margin-left: 5px;
-        }
+    
 }

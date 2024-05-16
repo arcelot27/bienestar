@@ -9,9 +9,11 @@ class LoginController{
     }
 
     public function Inicio(){
-        $style = "<link rel='stylesheet' href='assets/css/login/login.css'>"; 
+        $style = "<link rel='stylesheet' href='assets/css/login/login.css'>
+                <link rel='stylesheet' href='assets/css/static/footer.css'>"; 
         require_once "view/login/login.php";
         require_once "view/head.php";
+        require_once "view/footer.php";
     }
 
     public function validarUser(){
