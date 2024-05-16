@@ -18,7 +18,7 @@ class AdminController{
 
         
         $style = "<link rel='stylesheet' href='assets/css/static/header_user.css'>
-                <link rel='stylesheet' href='assets/css/admin/admin.css'>";
+                <link rel='stylesheet' href='assets/css/user/admin/admin.css'>";
         require_once "view/head.php";
         require_once "view/heder_user.php";
         require_once "view/user/admin/admin.php";
