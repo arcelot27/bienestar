@@ -89,13 +89,9 @@ body{
                 margin-top: 10%;
             }
             main .one_main div:nth-child(1) img{
-                height: 180px;
+                height: 150px;
                 width: 250px;
                 border-radius: 10px;
-                -webkit-border-radius: 10px;
-                -moz-border-radius: 10px;
-                -ms-border-radius: 10px;
-                -o-border-radius: 10px;
                 margin-left: 15%;
             }
             main .one_main div:nth-child(2) {
@@ -136,6 +132,7 @@ body{
                 margin-left: 15%; 
             }
             main .two_main div:nth-child(2) #img_queEs {
+                margin-left: -9%;
                 height: 180px;
                 border-radius: 10px;
                 -webkit-border-radius: 10px; 
