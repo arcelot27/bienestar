@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
     const profileForm = document.getElementById("profileForm");
-    profileForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+    const profileCard = document.querySelector('.profile-card');
+    const profileLink = document.getElementById('profileLink');
+    const profileToggleIcon = document.querySelector('.fa-pen-to-square');
 
-        const nombres = document.getElementById("nombres").value;
-        const apellidos = document.getElementById("apellidos").value;
-        const telefono = document.getElementById("telefono").value;
-        const email = document.getElementById("email").value;
+    if (profileForm) {
+        // Evento para mostrar la ventana emergente al hacer clic en el enlace de perfil
+        profileLink.addEventListener("click", function(event) {
+            event.preventDefault();  // Prevenir la redirección
+            profileCard.classList.remove('hidden');
+        });
 
-        if (nombres && apellidos && telefono && email) {
-            alert("Datos guardados:\n" + 
-                  "Nombres: " + nombres + "\n" + 
-                  "Apellidos: " + apellidos + "\n" + 
-                  "Teléfono: " + telefono + "\n" + 
-                  "Email: " + email);
-        } else {
-            alert("Por favor, completa todos los campos.");
+        // Evento para alternar la visibilidad del formulario en la ventana emergente
+        profileToggleIcon.addEventListener("click", function() {
+            profileCard.classList.toggle('hidden');
+            toggleForm(); // Llamar a la función toggleForm para alternar la visibilidad del formulario
+        });
+
+        // Función para alternar la visibilidad del formulario en la ventana emergente
+        function toggleForm() {
+            const profileContent = document.querySelector('.profile-content');
+            profileContent.classList.toggle('hidden');
         }
-    });
-
-    function toggleForm() {
-        const profileContent = document.querySelector('.profile-content');
-        profileContent.classList.toggle('hidden');
     }
 });
