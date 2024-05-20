@@ -14,7 +14,7 @@
                 <p><b>SIFT - Sistema Identificación y Seguimiento de Aprendices</b></p>
                 <p><b>Misión:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 <p><b>Visión:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-            </div>
+            </div>s
             <div class="info2-footer">
                 <p><b>Menú: </b></p>
                 <p>¿Qué es SIFT?</p>
