@@ -1,6 +1,6 @@
     <main>
         <div class="main_header">
-            <a href="/view/user-views/enfermeria/user_porfile_salud.html"><i class="fa-solid fa-user-nurse"></i></a>
+            <a href="?b=enfermeria&?s=Inicio?p=porfile"><i class="fa-solid fa-user-nurse"></i></a>
             <p> <?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>  </p>
         </div>
         <div class="main_body">

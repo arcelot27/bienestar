@@ -40,6 +40,10 @@ class EnfermeriaController{
         header("Location: ?b=index"); 
         exit();
     }
+    public function porfile(){
+
+
+    }
 }
 
 
