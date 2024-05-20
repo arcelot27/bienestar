@@ -34,8 +34,7 @@
         <div class="copy_footer">
             <p>Copyright 2024 - <strong>SIFT - Sistema Identificación y Seguimiento de Aprendices</strong> © by ********* and **********</p><p></p>
         </div>
-    </footer>
-    
+    </footer>  
 </body>
 
 </html>

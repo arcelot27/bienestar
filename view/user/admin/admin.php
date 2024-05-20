@@ -7,7 +7,7 @@
         </div>
         <div class="main_body">
             <div>
-                <a href="admin-view/admin_delegados.html">
+                <a href="admin-view/admin_delegados.php">
                     <div>
                         <i class="fa-solid fa-user-plus"></i>
                     </div>
@@ -26,5 +26,3 @@
         </div>
     </main>
     
-</body>
-</html>

@@ -521,10 +521,6 @@ body{
                     background-color: #9BC1DF;
                     cursor: pointer;
                     border-radius: 50px;
-                    -webkit-border-radius: 50px;
-                    -moz-border-radius: 50px;
-                    -ms-border-radius: 50px;
-                    -o-border-radius: 50px;
 }
     
                 main .main_body > div a div {
@@ -673,10 +669,6 @@ body{
         margin-top: 49%;
         margin-left: 15px;
         border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
         display: block;
         justify-content: center;
         justify-content: center;
@@ -743,10 +735,6 @@ body{
                     background-color: #9BC1DF;
                     cursor: pointer;
                     border-radius: 50px;
-                    -webkit-border-radius: 50px;
-                    -moz-border-radius: 50px;
-                    -ms-border-radius: 50px;
-                    -o-border-radius: 50px;
 }
     
                 main .main_body > div a div {
@@ -898,10 +886,6 @@ body{
         margin-left: 55px;
         margin-top: 30%;
         border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
         display: block;
         justify-content: center;
         justify-content: center;
@@ -968,10 +952,6 @@ body{
                     background-color: #9BC1DF;
                     cursor: pointer;
                     border-radius: 50px;
-                    -webkit-border-radius: 50px;
-                    -moz-border-radius: 50px;
-                    -ms-border-radius: 50px;
-                    -o-border-radius: 50px;
 }
     
                 main .main_body > div a div {
