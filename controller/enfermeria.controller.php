@@ -20,9 +20,9 @@ class EnfermeriaController{
         $style = "<link rel='stylesheet' href='assets/css/static/header_user.css'>
         <link rel='stylesheet' href='assets/css/user/enfermeria/enfermeria.css'>";
         require_once "view/head.php";
-        require_once "view/heder_user.php";
+        /*require_once "view/heder_user.php";*/
         require_once "view/user/enfermeria/enfermeria.php";
-        require_once "view/footer.php";
+        /*require_once "view/footer.php";*/
     }
 
     public function sessionexit(){

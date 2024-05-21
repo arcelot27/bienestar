@@ -36,7 +36,6 @@
         </div>
     </footer>
     
-    <script src="assets/js/profile.js"></script>
 </body>
 
 </html>

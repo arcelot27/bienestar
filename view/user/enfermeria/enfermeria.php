@@ -1,8 +1,8 @@
 <main>
-    <div class="main_header" id="profileLink">
-        <a ><i class="fa-solid fa-user-nurse"></i></a>
-        <p><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?></p>
-    </div>
+        <div class="main_header">
+            <a href="#" id="profileLink"><i class="fa-solid fa-user-nurse"></i></a>
+            <p><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?></p>
+        </div>
         <div class="main_body">
             <div>
                 <a href="#">
@@ -25,10 +25,11 @@
     </main>
 
     <div class="profile-card hidden">
+  
         <div class="profile-header">
             <i class="fa-solid fa-user-nurse"></i>
             <p>Salud</p>
-            <i class="fa-solid fa-pen-to-square" onclick="toggleForm()"></i>
+            <i class="fa-solid fa-pen-to-square" id="toggleProfileForm"></i>
         </div>
         <div class="profile-content">
             <p><strong>Información</strong></p>
@@ -42,11 +43,8 @@
                 <label>Email</label>
                 <input type="email" id="email" name="email">
                 <button type="submit">Guardar</button>
-                <button type="submit">Guardar</button>
             </form>
         </div>
     </div>
 
-
-
-    </div>
+    <script src="../../../assets/js/profile.js>

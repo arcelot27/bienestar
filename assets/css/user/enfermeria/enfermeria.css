@@ -983,8 +983,6 @@ body{
 }
 
 @media (min-width: 1023px) and (max-width: 1440px) {
-
-/* Estilos para el contenido principal */
 main {
     height: 80vh;
     width: 89%;
@@ -1076,22 +1074,25 @@ main .main_body > div:nth-child(2) img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
+    width: 600px;
+    height: 600px;
+    background: rgb(255, 0, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
-    display: none; /* Inicialmente oculto */
+    display: none;
 }
 .profile-card .profile-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
+    height: 6%;
     border-bottom: 1px solid #ddd;
 }
 .profile-card .profile-header i {
     font-size: 24pt;
+    height: 10%;
 }
 .profile-card .profile-content {
     padding-top: 10px;
@@ -1099,25 +1100,28 @@ main .main_body > div:nth-child(2) img {
 .profile-card .profile-content form {
     display: flex;
     flex-direction: column;
+    height: 10%;
 }
 .profile-card .profile-content form label {
     margin-top: 10px;
+    padding-bottom: 3%;
+    padding-top: 3%;
 }
 .profile-card .profile-content form input {
-    padding: 5px;
+    padding: 3%;
     font-size: 14pt;
+    border: 1px solid;
 }
 .profile-card .profile-content form button {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 4%;
     background-color: #234788;
     color: white;
     border: none;
     cursor: pointer;
 }
-.hidden {
+.hidden{
     display: none;
 }
-
     
 }
