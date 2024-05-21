@@ -1,0 +1,23 @@
+header {
+    background-color: #9BC1DF;
+}
+
+header > div > div:nth-child(2) {
+    margin-left: 40%;
+    font-size: 18pt;
+}
+
+header > div > div:nth-child(2) a {
+    color: #234788;
+    margin-left: 20%;
+}
+
+header > div > div:nth-child(2) a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+main > div > a {
+    color: #234788;
+    font-size: 25pt;
+}
