@@ -1,6 +1,6 @@
 <main>
     <div class="main_header">
-        <button id="profileLink"><i class="fa-solid fa-user-nurse"></i></button>
+        <a id="profileLink"><i class="fa-solid fa-user-nurse"></i></a>
         <p><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?></p>
     </div>
     <div class="main_body">
@@ -28,19 +28,20 @@
     <div>
         <div class="profile-header">
             <i class="fa-solid fa-user-nurse"></i>
-            <p>Salud</p>
+            <p><p><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?></p></p>
             <i class="fa-solid fa-pen-to-square" id="toggleProfileForm"></i>
         </div>
         <div class="profile-content">
-            <p><strong>Información</strong></p>
             <form id="profileForm">
+                <label>Nombre de usuario</label>
+                <input type="text" id="nomuser" name="nomuser">
+                <label>Contraseña</label>
+                <input type="text" id="contra" name="contra" disabled>
                 <label>Nombres</label>
                 <input type="text" id="nombres" name="nombres">
-                <label>Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos">
                 <label>Teléfono</label>
                 <input type="number" id="telefono" name="telefono">
-                <label>Email</label>
+                <label>Email Institucional</label>
                 <input type="email" id="email" name="email">
                 <button type="submit">Guardar</button>
             </form>
