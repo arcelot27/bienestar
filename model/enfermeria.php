@@ -21,4 +21,18 @@ class Enfermeria{
         return $user;
     }
 
+
+    public function updateUser($user, $name, $nameApe, $tel, $email) {
+        $sql = "UPDATE delegados SET name_del = :name_del, apelli_del = :apelli_del, tel_del = :tel_del, email_del = :email_del WHERE user_del = :user_del";
+        $stmt = $this->consulta->prepare($sql);
+        $stmt->execute([
+            ':user_del' => $user,
+            ':name_del' => $name,
+            ':apelli_del' => $nameApe,
+            ':tel_del' => $tel,
+            ':email_del' => $email,
+        ]);
+    }
+
+
 }

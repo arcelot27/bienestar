@@ -2,27 +2,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const profileForm = document.getElementById("profileForm");
     const profileCard = document.querySelector('.profile-card');
     const profileLink = document.getElementById('profileLink');
-    const profileToggleIcon = document.getElementById('toggleProfileForm');
+    const toggleProfileForm = document.getElementById('toggleProfileForm');
 
-    console.log("DOMContentLoaded event fired");
-
-    if (profileForm && profileCard && profileLink && profileToggleIcon) {
+    if (profileLink) {
         profileLink.addEventListener("click", function(event) {
-            console.log("profileLink click event fired");
-            event.preventDefault();  // Prevenir la redirección
+            event.preventDefault();
             profileCard.classList.remove('hidden');
-        });
-
-        profileToggleIcon.addEventListener("click", function() {
-            console.log("profileToggleIcon click event fired");
-            profileCard.classList.toggle('hidden');
-        });
-
-        window.addEventListener("click", function(event) {
-            console.log("window click event fired");
-            if (event.target === profileCard) {
-                profileCard.classList.add('hidden');
-            }
+            profileCard.style.display = 'block'; // Asegurarse de que esté visible
         });
     }
+
+    if (toggleProfileForm) {
+        toggleProfileForm.addEventListener("click", function() {
+            profileCard.classList.add('hidden');
+            profileCard.style.display = 'none'; // Asegurarse de que esté oculto
+        });
+    }
+
+    if (profileForm) {
+        profileForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita el envío del formulario estándar
+            
+            fetch('?b=enfermeria&s=updateUser', {
+                method: 'POST',
+                body: new FormData(profileForm)
+            })
+            .then(response => response.json()) // Aquí se espera la respuesta JSON
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+            });
+        });
+    }
+    
 });

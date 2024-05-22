@@ -41,9 +41,30 @@ class EnfermeriaController{
         exit();
     }
 
-    public function infoPer(){
-        
+    public function updateUser() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $response = ['success' => false, 'message' => ''];
+    
+            try {
+                $user = $_POST['user_del'];
+                $name = $_POST['name_del'];
+                $nameApe = $_POST['apelli_del'];
+                $tel = $_POST['tel_del'];
+                $email = $_POST['email_del'];
+    
+                $this->object->updateUser($user, $name, $nameApe, $tel, $email);
+                $response['success'] = true;
+                $response['message'] = 'Datos actualizados correctamente';
+            } catch (PDOException $e) {
+                $response['message'] = 'Error al actualizar los datos: ' . $e->getMessage();
+            }
+    
+            header('Content-Type: application/json');
+            echo json_encode($response);
+            exit;
+        }
     }
+    
 }
 
 

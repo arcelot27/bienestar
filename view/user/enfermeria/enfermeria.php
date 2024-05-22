@@ -32,17 +32,19 @@
             <i class="fa-solid fa-pen-to-square" id="toggleProfileForm"></i>
         </div>
         <div class="profile-content">
-            <form id="profileForm">
+            <form id="profileForm" action="?b=enfermeria&s=updateUser" method="post">
                 <label>Nombre de usuario</label>
-                <input type="text" id="nomuser" name="nomuser">
+                <input type="text" class="user-del" name="user_del" value="<?php echo isset($user['user_del']) ? $user['user_del'] : ''; ?>" readonly>
                 <label>Contraseña</label>
-                <input type="text" id="contra" name="contra" disabled>
+                <input type="text" class="pasw-del" name="pasw_del" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>" disabled>
                 <label>Nombres</label>
-                <input type="text" id="nombres" name="nombres">
+                <input type="text" class="name-del" name="name_del" value="<?php echo isset($user['name_del']) ? $user['name_del'] : ''; ?>">
+                <label>Apellidos</label>
+                <input type="text" class="apelli-del" name="apelli_del" value="<?php echo isset($user['apelli_del']) ? $user['apelli_del'] : ''; ?>">
                 <label>Teléfono</label>
-                <input type="number" id="telefono" name="telefono">
+                <input type="number" class="tel-del" name="tel_del" value="<?php echo isset($user['tel_del']) ? $user['tel_del'] : ''; ?>">
                 <label>Email Institucional</label>
-                <input type="email" id="email" name="email">
+                <input type="email" class="email-del" name="email_del" value="<?php echo isset($user['email_del']) ? $user['email_del'] : ''; ?>">
                 <button type="submit">Guardar</button>
             </form>
         </div>
