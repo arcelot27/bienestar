@@ -12,13 +12,24 @@ class Enfermeria{
     }
 
     public function selectUser($username) {
-        $sql = "SELECT * FROM delegados WHERE user_del = '$username'";
-        $result = $this->consulta->query($sql); 
-        if (!$result) {
-            die('Error executing query: ' . $this->consulta->error);
-        }
-        $user = $result->fetch_assoc(); 
+        $sql = "SELECT * FROM delegados WHERE user_del = ?";
+        $stmt = $this->consulta->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
         return $user;
     }
+
+
+    public function updateUser($user, $name, $nameApe, $tel, $email) {
+        $sql = "UPDATE delegados SET name_del = ?, apelli_del = ?, tel_del = ?, email_inst_del = ? WHERE user_del = ?";
+        $stmt = $this->consulta->prepare($sql);
+        $stmt->bind_param("sssss", $name, $nameApe, $tel, $email, $user);
+        if (!$stmt->execute()) {
+            throw new Exception('Error ejecutando la consulta: ' . $stmt->error);
+        }
+    }
+
 
 }
