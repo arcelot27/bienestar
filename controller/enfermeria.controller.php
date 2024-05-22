@@ -45,12 +45,36 @@ class EnfermeriaController{
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $response = ['success' => false, 'message' => ''];
     
+            $requiredFields = ['user', 'name', 'nameApe', 'tel', 'email'];
+            foreach ($requiredFields as $field) {
+                if (empty($_POST[$field])) {
+                    $response['message'] = 'Todos los campos son obligatorios.';
+                    header('Content-Type: application/json');
+                    echo json_encode($response);
+                    exit;
+                }
+            }
+
+            $tel = $_POST['tel'];
+            if (!preg_match('/^[0-9]{10}$/', $tel)) {
+                $response['message'] = 'Por favor, ingrese un número de teléfono válido.';
+                header('Content-Type: application/json');
+                echo json_encode($response);
+                exit;
+            }
+           
+            $email = $_POST['email'];
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $response['message'] = 'Por favor, ingrese un correo electrónico válido.';
+                header('Content-Type: application/json');
+                echo json_encode($response);
+                exit;
+            }
+    
             try {
-                $user = $_POST['user_del'];
-                $name = $_POST['name_del'];
-                $nameApe = $_POST['apelli_del'];
-                $tel = $_POST['tel_del'];
-                $email = $_POST['email_del'];
+                $user = $_POST['user'];
+                $name = $_POST['name'];
+                $nameApe = $_POST['nameApe'];
     
                 $this->object->updateUser($user, $name, $nameApe, $tel, $email);
                 $response['success'] = true;
@@ -64,6 +88,7 @@ class EnfermeriaController{
             exit;
         }
     }
+    
     
 }
 

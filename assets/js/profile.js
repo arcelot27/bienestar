@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Agregar controlador de eventos para clic fuera de la ventana emergente
+    window.addEventListener("click", function(event) {
+        if (!profileCard.contains(event.target) && !profileLink.contains(event.target)) {
+            // Si el clic ocurrió fuera de la ventana emergente y del botón de perfil, ocultar la ventana emergente
+            profileCard.classList.add('hidden');
+            profileCard.style.display = 'none';
+        }
+    });
+
     if (profileForm) {
         profileForm.addEventListener("submit", function(event) {
             event.preventDefault(); // Evita el envío del formulario estándar

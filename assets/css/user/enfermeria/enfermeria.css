@@ -114,7 +114,7 @@ main .main_body > div:nth-child(2) img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 450px;
-    height: 500px;
+    height: 550px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
