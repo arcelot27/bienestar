@@ -21,3 +21,18 @@ main > div > a {
     color: #234788;
     font-size: 25pt;
 }
+
+.main_body > .row > .col > div {
+    height: 50%;
+    width: 56%;
+    margin-top: 15%;
+    margin-left: 22%;
+    border-radius: 100%;
+    background-color: #234788;
+}
+
+.main_body > .row > .col > div > i {
+    margin-top: 15%;
+    color: white;
+    font-size: 40pt;
+}
