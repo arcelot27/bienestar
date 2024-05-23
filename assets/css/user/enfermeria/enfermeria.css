@@ -780,10 +780,10 @@ body{
 
 @media (min-width: 1023px) and (max-width: 1440px) {
 
-    main {
-        height: 80vh;
-        width: 89%;
-    }
+main {
+    height: 80vh;
+    width: 89%;
+}
     main .main_header {
         display: flex;
         height: 17%;
@@ -791,83 +791,83 @@ body{
         margin-top: 4%;
         margin-left: 5%;
     }
-    main .main_header > a {
-        margin-top: 2%;
-        background-color: #234788;
-        height: 90%;
-        width: 11%;
-        margin-left: 10%;
-        border-radius: 100%;
-    }
-    main .main_header > a i {
-        margin-top: 22%;
-        margin-left: 24px;
-        font-size: 30pt;
-        color: #ffff;
-    }
-    main .main_header > p {
-        font-size: 19pt;
-        margin-top: 35px;
-        margin-left: 20px;
-    }
+        main .main_header > a {
+            margin-top: 2%;
+            background-color: #234788;
+            height: 90%;
+            width: 11%;
+            margin-left: 10%;
+            border-radius: 100%;
+        }
+            main .main_header > a i {
+                margin-top: 22%;
+                margin-left: 24px;
+                font-size: 30pt;
+                color: #ffff;
+            }
+        main .main_header > p {
+            font-size: 19pt;
+            margin-top: 35px;
+            margin-left: 20px;
+        }
     main .main_body {
         display: flex;
         height: 65%;
         width: 100%;
         margin-top: 1%;
     }
-    main .main_body > div {
-        height: 36%;
-        width: 100%;
-    }
-    main .main_body > div a {
-        display: flex;
-        margin-top: 8%;
-        height: 65%;
-        width: 60%;
-        margin-left: 35%;
-        background-color: #9BC1DF;
-        cursor: pointer;
-        border-radius: 50px;
-    }
-    main .main_body > div a div {
-        height: 100%;
-        width: 23%;
-        background-color: #234788;
-        color: #ffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100%;
-    }
-    main .main_body > div a:hover {
-        background-color: rgba(0, 0, 255, 0.103);
-        transform: scale(1);
-    }
-    main .main_body > div a div i {
-        font-size: 24pt;
-    }
-    main .main_body > div a p {
-        width: 60%;
-        font-size: 19pt;                    
-        text-align: center;
-    }
-    main .main_body > div:nth-child(2) {
-        height: 50%;
-        width: 100%;
-    }
-    main .main_body > div:nth-child(2) img {
-        height: 300px;
-        margin-left: 7%;
-        margin-top: 3%;
-    }
+        main .main_body > div {
+            height: 36%;
+            width: 100%;
+        }
+            main .main_body > div a {
+                display: flex;
+                margin-top: 8%;
+                height: 65%;
+                width: 60%;
+                margin-left: 35%;
+                background-color: #9BC1DF;
+                cursor: pointer;
+                border-radius: 50px;
+            }
+            main .main_body > div a:hover {
+                background-color: rgba(0, 0, 255, 0.103);
+                transform: scale(1);
+            }
+                main .main_body > div a div {
+                    height: 100%;
+                    width: 23%;
+                    background-color: #234788;
+                    color: #ffff;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 100%;
+                }
+                    main .main_body > div a div i {
+                        font-size: 24pt;
+                        padding-top: 30%;
+                    }
+                main .main_body > div a p {
+                    width: 60%;
+                    font-size: 19pt;                    
+                    text-align: center;
+                }
+        main .main_body > div:nth-child(2) {
+            height: 50%;
+            width: 100%;
+        }
+            main .main_body > div:nth-child(2) img {
+                height: 300px;
+                margin-left: 7%;
+                margin-top: 3%;
+            }
     
     /* Estilos para la tarjeta de perfil (modal) */
     .profile-card {
         position: absolute;
         top: .01%;
         width: 100vw;
-        height: 100vw;
+        height: 100vh;
         background: rgba(0, 0, 0, 0.148);
     }
     .profile-card > div {
@@ -890,26 +890,29 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 20px;
+        padding-bottom: 10%;
         border-bottom: 1px solid #ddd;
+        font-size: 20pt;
     }
     .profile-card .profile-header i {
         font-size: 24pt;
         color: #234788;  
     }
     .profile-card .profile-content {
-        padding-top: 10px;
+        padding-top: 5%;
     }
     .profile-card .profile-content form {
         display: flex;
         flex-direction: column;
     }
     .profile-card .profile-content form label {
-        margin-top: 10px;
+        font-size: 16pt;
+margin-bottom: 5%;
     }
     .profile-card .profile-content form input {
-        padding: 8px;
-        font-size: 12pt;
+        font-size: 16pt;
+        height: 16pt;
+        margin-top: 1%;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
