@@ -9,20 +9,14 @@
     <script src="https://kit.fontawesome.com/2619cec24c.js" crossorigin="anonymous"></script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
     <style>
-        .main_header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
         .content p {
             margin: 0;
         }
     </style>
 </head>
 <body>
-    <header class="container">
-        <div class="row align-items-center">
+    <header>
+        <div class="container row align-items-center">
             <div class="col-6 col-md-4">
                 <img src="/assets/img/logo-5remov.png" alt="" class="img-fluid">
             </div>
@@ -33,60 +27,62 @@
         </div>
     </header>
     <main class="container">
-        <div class="main_header">
+        <div class="main_header mt-3 ms-3">
             <a href="/view/admin-view/admin_dele_psico.html"><i class="fas fa-circle-chevron-left"></i></a>
         </div>
         <div class="main_body">
             <div class="row">
                 <div class="col text-center">
-                    <div class="text-center">
+                    <div class="log_porf">
                         <i class="fa-solid fa-person-dots-from-line"></i>
                     </div>
                     <p><b>Psicosocial</b></p>
                 </div>
-                <div class="col-10">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <th scope="col">Nombres</th>
-                                <th scope="col">Apellidos</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Edit</th>
-                                <th scope="col">Delete</th>
-                            </tr>
-                            <tr>
-                                <td>Maira Alejandra</td>
-                                <td>Salgado Ninco</td>
-                                <td>+57 555 55 55</td>
-                                <td>example3@mail.com</td>
-                                <td><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                <td><a href="#"><i class="fa-solid fa-trash"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Laura Tatiana</td>
-                                <td>Chavarro Vásquez</td>
-                                <td>+57 555 55 55</td>
-                                <td>example4@mail.com</td>
-                                <td><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                <td><a href="#"><i class="fa-solid fa-trash"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Luisa Fernanda</td>
-                                <td>Galindo</td>
-                                <td>+57 555 55 55</td>
-                                <td>example5@mail.com</td>
-                                <td><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                <td><a href="#"><i class="fa-solid fa-trash"></i></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="container">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="col">Nombres</th>
+                                    <th scope="col">Apellidos</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Editar</th>
+                                    <th scope="col">Eliminar</th>
+                                </tr>
+                                <tr>
+                                    <td>Maira Alejandra</td>
+                                    <td>Salgado Ninco</td>
+                                    <td>+57 555 55 55</td>
+                                    <td>example3@mail.com</td>
+                                    <td><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <td><a href="#" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Laura Tatiana</td>
+                                    <td>Chavarro Vásquez</td>
+                                    <td>+57 555 55 55</td>
+                                    <td>example4@mail.com</td>
+                                    <td><a href="#" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <td><a href="#" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Luisa Fernanda</td>
+                                    <td>Galindo</td>
+                                    <td>+57 555 55 55</td>
+                                    <td>example5@mail.com</td>
+                                    <td><a href="#" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <td><a href="#" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 
             </div>
         </div>
     </main>
-    <footer class="bg-dark text-white">
+    <footer class="text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
