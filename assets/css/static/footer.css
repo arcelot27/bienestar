@@ -1,3 +1,8 @@
+
+
+    footer .red_social div:nth-child(2) {
+        width: 50%;
+    }
 @media (max-width: 375px) {
     footer {
         height: 60vh;

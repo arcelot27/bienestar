@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
+
 }
 a {
     color: black;
@@ -301,7 +303,7 @@ main .main_body {
 
 @media screen and (min-width: 560px) {
 
-    main .main_header > a {
+  main .main_header > a {
         margin-top: 7%;
         width: 10%;
     }
@@ -317,42 +319,120 @@ main .main_body {
     }
 
     .profile-card > div {
-        width: 500px;
-        height: 600px;
+        width: 600px;
+        height: 540px;
     }   
     .profile-card .profile-header i {
-        font-size: 20pt;
+        font-size: 18pt;
     }
     .profile-card .profile-header p{
-        font-size: 20pt;
+        font-size: 18pt;
     }
     .profile-card .profile-content form label {
-        font-size: 16pt;
+        font-size: 14pt;
     }
     .profile-card .profile-content form input {
-        font-size: 16pt;
+        font-size: 12pt;
     }
     .profile-card .profile-content form button {
         margin-top: 5%;
-        font-size: 16pt;
+        font-size: 14pt;
     }
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
+
+    main .main_header{
+        margin-top: 5%;
+    }
+    main .main_header > a {
+        margin-top: 0%;
+        width: 8%;
+    }
+    main .main_header > a i {
+        font-size: 22pt;
+    }
+    main .main_header > p {
+        margin-top: 0%;
+    }
+    main .main_body {
+        display: flex;
+    }
+    main .main_body > div:nth-child(1) {
+        width: 50%;
+    }
+    main .main_body > div:nth-child(1) a {
+        margin-left: 10%;
+        margin-top: 10%;
+        width: 300px;
+    }
+    main .main_body > div a div {
+        padding-left: 6%;
+    }
+    main .main_body > div:nth-child(2) img {
+        height: 203px;
+        width: 380px;
+        margin-left: 8%;
+        margin-top: 0%;
+    }
+
+    .profile-card > div {
+        top: 35%;
+    }  
+}
+
+@media screen and (min-width: 765px){
+    main .main_body > div:nth-child(2) img {
+        height: 230px;
+        width: 420px;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main .main_header > a {
+        width: 9%;
+        height: 80px;
+    }
+    main .main_header > a i {
+        margin-top: 20%;
+        font-size: 28pt;
+    }
+    main .main_header > p {
+        margin-top: 1%;
+        font-size: 28pt;
+    }
+    main .main_body > div:nth-child(1) {
+        width: 45%;
+    }
+    main .main_body > div:nth-child(1) a {
+        margin-left: 10%;
+        margin-bottom: 10%;
+        width: 400px;
+        height: 80px;
+    }
+    main .main_body> div a div i {
+        font-size: 26pt;
+    }
+    main .main_body > div a p {
+        font-size: 22pt;
+    }
+    main .main_body > div:nth-child(2) {
+        width: 50%;
+    }
+    main .main_body > div:nth-child(2) img {
+        height: 280px;
+        width: 580px;
+        margin-left: 0%;
+    }
+    .profile-card > div {
+        top: 50%;        
+    }  
+}
+@media screen and (min-width: 1440px) {
 
     main {
-        width: 100vw;
-        border: 1px solid red;
+        border: 1px solid blue;
     }
-
-    main .main_header > a {
-        margin-top: 7%;
-        width: 10%;
-    }
-
-}
-
-@media screen and (min-width: 1023px) {
-
 }
