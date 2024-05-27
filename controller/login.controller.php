@@ -43,7 +43,7 @@ class LoginController{
                                     header("Location: ?b=dep");
                                     break;
                                 case 2:
-                                    header("Location: ?b=psico");
+                                    header("Location: ?b=psicol");
                                     break;
                                 case 4:
                                     header("Location: ?b=Enfermeria");
