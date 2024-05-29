@@ -1,0 +1,63 @@
+header {
+    background-color: #9BC1DF;
+}
+
+    header > div > div:nth-child(2) a {
+        color: #234788;
+    }
+
+    header > div > div:nth-child(2) a:hover {
+        color: black;
+    }
+
+.main_header a {
+    color: #234788
+}
+
+.main_body {
+    background-color: #9BC1DF;
+}
+
+.main_body > form > div:last-child > button:first-child {
+    background-color: #54BC1D;
+    border: none;
+}
+
+.main_body > form > div:last-child > button:last-child {
+    background-color: #234788;
+    border: none;
+}
+
+footer {
+    background-color: #234788
+}
+
+footer .copy_footer {
+    color: black;
+    background-color: #9BC1DF;
+}
+
+
+@media screen and (min-width: 375px) {
+    .main_header a {
+        font-size: 20pt;
+    }
+
+    .main_body > form > div:last-child {
+        margin-left: 10%;
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 10pt;
+
+    }
+
+        footer .red_social {
+            height: 95%;
+        }
+
+            footer .red_social > a {
+                margin-bottom: 5px;
+            }
+}
