@@ -5,11 +5,11 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="#">
+            <a href="?b=Delegates">
                 <div>
-                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-user-plus"></i>
                 </div>
-                <p>Realizar Tamizaje</p>
+                <p>Delegados</p>
             </a>
             <a href="#">
                 <div>

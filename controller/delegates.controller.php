@@ -1,13 +1,13 @@
 <?php
 
-include_once "model/admin.php"; 
+include_once "model/delegates.php"; 
 
-class AdminController{
+class DelegatesController{
     private $object;
     
     public function __construct()
     {
-        $this->object = new Admin();
+        $this->object = new Del();
     }
 
     public function Inicio(){
@@ -18,10 +18,10 @@ class AdminController{
 
         
         $style = "<link rel='stylesheet' href='assets/css/static/header_user.css'>
-                <link rel='stylesheet' href='assets/css/user/admin/admin.css'>";
+                <link rel='stylesheet' href='assets/css/del/delegates.css'>";
         require_once "view/head.php";
         require_once "view/heder_user.php";
-        require_once "view/user/admin/admin.php";
+        require_once "view/delegates/delegates.php";
         require_once "view/footer.php";
         
     }
