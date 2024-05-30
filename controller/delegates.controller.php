@@ -45,5 +45,8 @@ class DelegatesController{
             exit();
         }
     }   
+    public function salud(){
+        require_once "view/delegates/delegates-salud.php";
+    }
 }
 ?>

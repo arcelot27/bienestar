@@ -4,7 +4,7 @@
         </div>
         <div class="main_body">
             <div>
-                <a class="dele" href="/view/admin-view/admin_porfile_salud.html">
+                <a class="dele" href="?b=Delegates&s=salud">
                     <div>
                         <i class="fa-solid fa-user-nurse"></i>
                     </div>

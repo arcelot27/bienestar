@@ -1,0 +1,250 @@
+header {
+    background-color: #9BC1DF;
+}
+
+    header > div > div:nth-child(2) a {
+        color: #234788;
+    }
+
+    header > div > div:nth-child(2) a:hover {
+        color: black;
+    }
+
+.main_header > a {
+    color: #234788
+}
+
+.main_body .log_porf {
+    background-color: #234788;
+    border-radius: 100%;
+}
+
+.main_body > div > div > div > i {
+    color: white;
+}
+
+footer {
+    background-color: #234788
+}
+
+footer .copy_footer {
+    color: black;
+    background-color: #9BC1DF;
+}
+
+@media screen and (min-width: 375px) {
+    
+    .main_header > a {
+        font-size: 20pt;
+    }
+
+    .main_body .log_porf{
+        width: 20%;
+        height: 75%;
+        margin-left: 40%;
+    }
+
+    .main_body > div > div:nth-child(1) {
+        margin-bottom: 5%;
+    }
+
+    .main_body > div > div > div > i {
+        font-size: 30pt;
+        margin-top: 15%;
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 10pt;
+
+    }
+
+        footer .red_social {
+            height: 95%;
+        }
+
+            footer .red_social > a {
+                margin-bottom: 5px;
+            }
+        
+}
+
+@media screen and (min-width: 426px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 15pt;
+    }
+
+    .main_header > a {
+        font-size: 23pt;
+    }
+
+    .main_body .log_porf{
+        width: 20%;
+        height: 80%;  
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 11pt;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 17pt;
+    }
+
+    .main_header > a {
+        font-size: 25pt;
+    }
+
+    .main_body .log_porf{
+        width: 17%;
+        height: 112%;  
+        margin-top: -5%;
+        margin-left: 42%;
+    }
+
+    .main_body > div > div > div > i {
+        font-size: 31pt;
+        margin-top: 20%;
+    }
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main_header > a {
+        font-size: 30pt;
+    }
+
+    .main_body .log_porf{
+        width: 16%;
+        height: 130%;  
+        margin-top: -5%;
+        margin-left: 42%;
+    }
+
+    .main_body > div > div > div > i {
+        font-size: 45pt;
+        margin-top: 20%;
+    }
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 20pt;
+    }
+
+    main {
+        font-size: 13pt;
+    }
+
+        .main_header > a {
+            font-size: 30pt;
+        }
+    
+        .main_body .log_porf{
+            width: 16%;
+            height: 145%;  
+            margin-top: -5%;
+            margin-left: 42%;
+        }
+
+        .main_body > div > div > div > i {
+            font-size: 55pt;
+            margin-top: 20%;
+        }
+    
+    footer {
+        height: 50vh;
+        font-size: 13pt;
+    }
+
+        footer .red_social {
+            display: flex;
+        }
+
+            footer .red_social > p {
+                margin-left: 5%;
+            }
+
+            footer .red_social > div {
+                margin-top: 1%;
+                margin-left: 45%;
+            }
+
+        footer .contend_footer {
+            display: grid;
+            grid-template-columns: 55% 20% 20%;
+        } 
+
+        footer .contend_footer > div:nth-child(1) {
+            border-bottom: none !important;
+        }
+
+        footer .contend_footer > div:nth-child(2) {
+            border-bottom: none !important;
+        }
+
+}
+
+@media screen and (min-width: 1200px) {
+    header > div > div:nth-child(2) > a:nth-child(2) {
+        margin-left: 30% !important;
+    }
+
+    main {
+        font-size: 14pt;
+    }
+
+        .main_header > a {
+            font-size: 30pt;
+        }
+
+        .main_body .log_porf{
+            width: 15%;
+            height: 165%;  
+            margin-top: -5%;
+            margin-left: 43%;
+        }
+
+    footer {
+        font-size: 13pt;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        font-size: 15pt;
+    }
+
+        .main_body .log_porf {
+            width: 13%;
+            height: 140%;  
+            margin-top: -3%;
+            margin-left: 44%;
+        }
+
+        .main_body > div > div > div > i {
+            font-size: 60pt;
+            margin-top: 20%;
+        } 
+        
+    footer {
+        height: max-content;
+        font-size: 14pt;
+    }
+
+    footer p {
+        margin-bottom: none !important;
+    }
+}
