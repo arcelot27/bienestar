@@ -14,6 +14,7 @@ if(!isset($_REQUEST['b'])){
 
     $action = isset($_REQUEST['s']) ? $_REQUEST['s'] : 'Inicio'; 
     $params = isset($_REQUEST['p']) ? $_REQUEST['p'] : '';
+    $params = isset($_REQUEST['q']) ? $_REQUEST['q'] : '';
      
         if(!file_exists($controller)){
              

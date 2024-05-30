@@ -4,7 +4,7 @@
         </div>
         <div class="main_body">
             <div>
-                <a class="dele" href="?b=Delegates&s=salud">
+                <a class="dele" href="?b=Admin&s=salud">
                     <div>
                         <i class="fa-solid fa-user-nurse"></i>
                     </div>

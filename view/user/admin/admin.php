@@ -5,7 +5,7 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="?b=Delegates">
+            <a href="?b=Admin&s=delegates">
                 <div>
                     <i class="fa-solid fa-user-plus"></i>
                 </div>
