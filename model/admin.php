@@ -20,5 +20,14 @@ class Admin{
         $user = $result->fetch_assoc(); 
         return $user;
     }
+
+    public function getUsersByRole($roll_del) {
+        $query = "SELECT user_del, name_del, apelli_del, tel_del, email_del, email_inst_del FROM delegados WHERE roll_del = ?";
+        $stmt = $this->consulta->prepare($query);
+        $stmt->bind_param('i', $roll_del);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

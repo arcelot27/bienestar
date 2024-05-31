@@ -240,7 +240,7 @@ footer .copy_footer {
         } 
         
     footer {
-        height: max-content;
+        height: 50vh;
         font-size: 14pt;
     }
 

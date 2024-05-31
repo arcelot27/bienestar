@@ -10,13 +10,13 @@
                     </div>
                     <p>Salud</p>
                 </a>
-                <a class="dele" href="/view/admin-view/admin_porfile_deporte.html">
+                <a class="dele" href="?b=Admin&s=depo">
                     <div>
                         <i class="fa-solid fa-volleyball"></i>
                     </div>
                     <p>Deporte</p>
                 </a>
-                <a class="dele" href="/view/admin-view/admin_porfile_psico1.html">
+                <a class="dele" href="?b=Admin&s=psicol">
                     <div>
                         <i class="fa-solid fa-person-dots-from-line"></i>
                     </div>

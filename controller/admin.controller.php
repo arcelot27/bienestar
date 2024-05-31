@@ -54,7 +54,19 @@ class AdminController{
         require_once "view/footer.php";
     }
     public function salud(){
+        $roll_del = 4;
+        $users = $this->object->getUsersByRole($roll_del);
         require_once "view/delegates/delegates-salud.php";
+    }
+    public function depo(){
+        $roll_del = 1;
+        $users = $this->object->getUsersByRole($roll_del);
+        require_once "view/delegates/delegates-depo.php";
+    }
+    public function psicol(){
+        $roll_del = 2;
+        $users = $this->object->getUsersByRole($roll_del);
+        require_once "view/delegates/delegates-psico.php";
     }
 }
 ?>

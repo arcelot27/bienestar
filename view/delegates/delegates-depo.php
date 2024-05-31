@@ -27,9 +27,9 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="log_porf">
-                        <i class="fa-solid fa-user-nurse"></i>
+                        <i class="fa-solid fa-volleyball"></i>
                     </div>
-                    <p><b>Enfermeria</b></p>
+                    <p><b>Deporte</b></p>
                 </div>
                 <div>
                     <div class="table-responsive">
