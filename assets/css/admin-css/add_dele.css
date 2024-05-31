@@ -55,6 +55,10 @@ footer .copy_footer {
         margin-left: 28%;
     }
 
+    .main_body > form > .rol{
+        margin: 0;
+    }
+
     .main_body > form > div:last-child {
         width: 56%;
         margin-left: 22%;
@@ -214,6 +218,7 @@ footer .copy_footer {
     }
 
         .main_body > form > div:last-child {
+            margin-top: 4%;
             margin-left: 43%;
         }
         

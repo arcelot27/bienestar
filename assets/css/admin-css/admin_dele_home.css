@@ -1146,7 +1146,6 @@ body {
                 background-color: #9BC1DF;
                 cursor: pointer;
                 border-radius: 50px;
-                    -webkit-border-radius: 50px;
             }
 
             main .main_body > div a:hover {
