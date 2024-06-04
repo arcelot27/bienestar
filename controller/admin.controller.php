@@ -68,5 +68,66 @@ class AdminController{
         $users = $this->object->getUsersByRole($roll_del);
         require_once "view/delegates/delegates-psico.php";
     }
+
+    public function updateUser() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $response = ['success' => false, 'message' => ''];
+
+            try {
+                $user = $_POST['user_del'];
+                $name = $_POST['name_del'];
+                $nameApe = $_POST['apelli_del'];
+                $tel = $_POST['tel_del'];
+                $email = $_POST['email_del'];
+                $emailInst = $_POST['email_inst_del'];
+
+                $this->object->updateUser($user, $name, $nameApe, $tel, $email, $emailInst);
+                $response['success'] = true;
+                $response['message'] = 'Datos actualizados correctamente';
+            } catch (PDOException $e) {
+                $response['message'] = 'Error al actualizar los datos: ' . $e->getMessage();
+            }
+
+            echo json_encode($response);
+            exit;
+        }
+    }
+
+    public function edit() {
+        if (isset($_GET['id'])) {
+            $user_del = $_GET['id'];
+            $user = $this->object->getUserById($user_del);
+
+            if (!$user) {
+                echo "Usuario no encontrado.";
+                exit;
+            }
+
+            $style = "<link rel='stylesheet' href='assets/css/static/header_user.css'>
+                      ";
+            require_once "view/head.php";
+            require_once "view/heder_user.php";
+            require_once "view/delegates/edit-delegates.php";
+            require_once "view/footer.php";
+        } else {
+            echo "ID de usuario no proporcionado.";
+            exit;
+        }
+    }
+
+    // Controlador (AdminController.php)
+public function deleteUser() {
+    if (isset($_GET['id'])) {
+        $userId = $_GET['id'];
+
+        try {
+            $this->object->deleteUserById($userId);
+            echo '<script>alert("Usuario eliminado correctamente."); window.location.href = "?b=admin&s=delegates";</script>';
+        } catch (Exception $e) {
+            echo '<script>alert("Error al eliminar el usuario: ' . $e->getMessage() . '"); window.location.href = "?b=admin&s=delegates";</script>';
+        }
+    }
+}
+
 }
 ?>

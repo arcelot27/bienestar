@@ -1,0 +1,228 @@
+header {
+    background-color: #9BC1DF;
+}
+
+    header > div > div:nth-child(2) a {
+        color: #234788;
+    }
+
+    header > div > div:nth-child(2) a:hover {
+        color: black;
+    }
+
+.main_header a {
+    color: #234788
+}
+
+.main_body {
+    background-color: #9BC1DF;
+}
+
+.main_body > form > div:last-child > button:first-child {
+    background-color: #54BC1D;
+    border: none;
+}
+
+.main_body > form > div:last-child > button:last-child {
+    background-color: #234788;
+    border: none;
+}
+
+.main_body > form > div:last-child > button:first-child:hover {
+    background-color: #6fbe44;
+}
+
+.main_body > form > div:last-child > button:last-child:hover {
+    background-color: #234688bd;
+}
+
+footer {
+    background-color: #234788
+}
+
+footer .copy_footer {
+    color: black;
+    background-color: #9BC1DF;
+}
+
+
+@media screen and (min-width: 375px) {
+    .main_header a {
+        font-size: 20pt;
+    }
+
+    .main_header > div > div:last-child {
+        margin-left: 28%;
+    }
+
+    .main_body > form > div:last-child {
+        width: 56%;
+        margin-left: 22%;
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 10pt;
+
+    }
+
+        footer .red_social {
+            height: 95%;
+        }
+
+            footer .red_social > a {
+                margin-bottom: 5px;
+            }
+}
+
+@media screen and (min-width: 426px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 15pt;
+    }
+
+    .main_header a {
+        font-size: 23pt;
+    }
+
+    .main_body > form > div:last-child {
+        margin-left: 25%;
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 11pt;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 17pt;
+    }
+
+    .main_header a {
+        font-size: 25pt;
+    }
+
+    .main_body > form > div:last-child {
+        margin-left: 33%;
+    }
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main_header a {
+        font-size: 30pt;
+    }
+
+        .main_header > div > div:last-child {
+            margin-left: 40%;
+        }
+
+    .main_body > form > div:last-child {
+        margin-left: 37%;
+    }
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header > div > div:nth-child(2) > a > i {
+        font-size: 20pt;
+    }
+
+    main {
+        font-size: 13pt;
+    }
+
+        .main_header > a {
+            font-size: 30pt;
+        }
+
+        .main_header > div > div:last-child {
+            margin-left: 42%;
+        }
+
+        .main_body > form > div:last-child {
+            width: 20%;
+            margin-left: 40%;
+        }
+
+    footer {
+        height: 50vh;
+        font-size: 13pt;
+    }
+
+        footer .red_social {
+            display: flex;
+        }
+
+            footer .red_social > p {
+                margin-left: 5%;
+            }
+
+            footer .red_social > div {
+                margin-top: 1%;
+                margin-left: 45%;
+            }
+
+        footer .contend_footer {
+            display: grid;
+            grid-template-columns: 55% 20% 20%;
+        } 
+
+        footer .contend_footer > div:nth-child(1) {
+            border-bottom: none !important;
+        }
+
+        footer .contend_footer > div:nth-child(2) {
+            border-bottom: none !important;
+        }
+}
+
+@media screen and (min-width: 1200px) {
+    header > div > div:nth-child(2) > a:nth-child(2) {
+        margin-left: 30% !important;
+    }
+
+    main {
+        font-size: 14pt;
+    }
+
+        .main_header > a {
+            font-size: 30pt;
+        }
+
+        .main_body > form > div:last-child {
+            margin-left: 42%;
+        }
+
+    footer {
+        font-size: 13pt;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        font-size: 15pt;
+    }
+
+        .main_body > form > div:last-child {
+            margin-left: 43%;
+        }
+        
+    footer {
+        height: max-content;
+        font-size: 14pt;
+    }
+
+    footer p {
+        margin-bottom: none !important;
+    }
+}

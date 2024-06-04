@@ -19,7 +19,7 @@ class Admin{
         }
         $user = $result->fetch_assoc(); 
         return $user;
-    }
+    } 
 
     public function getUsersByRole($roll_del) {
         $query = "SELECT user_del, name_del, apelli_del, tel_del, email_del, email_inst_del FROM delegados WHERE roll_del = ?";
@@ -29,5 +29,31 @@ class Admin{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getUserById($user_del) {
+        $stmt = $this->consulta->prepare("SELECT * FROM delegados WHERE user_del = ?");
+        $stmt->bind_param("s", $user_del);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+        $stmt->close();
+        return $user;
+    }
+
+
+    public function updateUser($user, $name, $nameApe, $tel, $email, $emailInst) {
+        $stmt = $this->consulta->prepare("UPDATE delegados SET name_del = ?, apelli_del = ?, tel_del = ?, email_del = ?, email_inst_del = ? WHERE user_del = ?");
+        $stmt->bind_param("ssssss", $name, $nameApe, $tel, $email, $emailInst, $user);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    // Modelo (Admin.php)
+public function deleteUserById($userId) {
+    $stmt = $this->consulta->prepare("DELETE FROM delegados WHERE user_del = ?");
+    $stmt->bind_param("s", $userId);
+    $stmt->execute();
+}
+
 }
 ?>

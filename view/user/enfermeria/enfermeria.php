@@ -5,7 +5,7 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="#">
+            <a href="?b=enfermeria&s=tamiz">
                 <div>
                     <i class="fa-solid fa-plus"></i>
                 </div>

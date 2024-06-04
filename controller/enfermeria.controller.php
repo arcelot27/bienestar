@@ -88,6 +88,10 @@ class EnfermeriaController{
             exit;
         }
     }
+
+    public function tamiz(){
+        require_once "view/tamiz/tami-bus.php";
+    }
     
     
 }

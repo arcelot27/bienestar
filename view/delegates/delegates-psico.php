@@ -53,11 +53,11 @@
                                             <td><?php echo htmlspecialchars($user['user_del']); ?></td>
                                             <td><?php echo htmlspecialchars($user['name_del']); ?></td>
                                             <td><?php echo htmlspecialchars($user['apelli_del']); ?></td>
-                                            <td><?php echo htmlspecialchars($user['tel_del']); ?></td>
+                                            <td><?php echo htmlspecialchars($user['tel_del']); ?></td> 
                                             <td><?php echo htmlspecialchars($user['email_del']); ?></td>
                                             <td><?php echo htmlspecialchars($user['email_inst_del']); ?></td>
-                                            <td><a href="edit.php?id=<?php echo $user['user_del']; ?>" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                            <td><a href="delete.php?id=<?php echo $user['user_del']; ?>" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                            <td><a href="?b=admin&s=edit&id=<?php echo $user['user_del']; ?>" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                            <td><a href="?b=admin&s=delete&id=<?php echo $user['user_del']; ?>" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else : ?>
