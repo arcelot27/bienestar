@@ -5,13 +5,13 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="?b=enfermeria&s=tamiz">
+            <a href="#">
                 <div>
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <p>Realizar Tamizaje</p>
             </a>
-            <a href="#">
+            <a href="?b=enfermeria&s=tamiz">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>

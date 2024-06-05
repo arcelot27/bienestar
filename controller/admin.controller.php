@@ -116,18 +116,23 @@ class AdminController{
     }
 
     // Controlador (AdminController.php)
-public function deleteUser() {
-    if (isset($_GET['id'])) {
-        $userId = $_GET['id'];
+    public function deleteUser() {
+        if (isset($_GET['id'])) {
+            $userId = $_GET['id'];
 
-        try {
-            $this->object->deleteUserById($userId);
-            echo '<script>alert("Usuario eliminado correctamente."); window.location.href = "?b=admin&s=delegates";</script>';
-        } catch (Exception $e) {
-            echo '<script>alert("Error al eliminar el usuario: ' . $e->getMessage() . '"); window.location.href = "?b=admin&s=delegates";</script>';
+            try {
+                $this->object->deleteUserById($userId);
+                echo '<script>alert("Usuario eliminado correctamente."); window.location.href = "?b=admin&s=delegates";</script>';
+            } catch (Exception $e) {
+                echo '<script>alert("Error al eliminar el usuario: ' . $e->getMessage() . '"); window.location.href = "?b=admin&s=delegates";</script>';
+            }
         }
     }
-}
+
+
+    public function tamiz(){
+        require_once "view/tamiz/tami-bus.php";
+    }
 
 }
 ?>

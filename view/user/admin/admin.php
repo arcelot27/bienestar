@@ -11,7 +11,7 @@
                 </div>
                 <p>Delegados</p>
             </a>
-            <a href="#">
+            <a href="?b=enfermeria&s=tamiz">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
