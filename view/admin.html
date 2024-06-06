@@ -7,11 +7,38 @@
     <link rel="stylesheet" href="/assets/css/admin.css">
     <script src="https://kit.fontawesome.com/2619cec24c.js" crossorigin="anonymous"></script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
+    <style>
+        /* Estilos básicos para la ventana emergente */
+        .modal {
+            display: none; /* Ocultar por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .modal button {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <img src="/assets/img/logo-5remov.png" alt="">
-        <a href="/view/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        <a id="logoutButton"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
     </header>
     <main> 
         <div class="main_header">
@@ -76,6 +103,47 @@
             <p>Copyright 2024 - <strong>SIFT - Sistema Identificación y Seguimiento de Aprendices</strong> © by ********* and **********</p><p></p>
         </div>
     </footer>
+
+     <!-- La ventana emergente -->
+     <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que quieres cerrar sesión?</p>
+            <form method="post">
+                <button type="button" id="confirmButton">Aceptar</button>
+                <button type="button" id="cancelButton">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para manejar la ventana emergente
+        var modal = document.getElementById("logoutModal");
+        var btn = document.getElementById("logoutButton");
+        var confirmBtn = document.getElementById("confirmButton");
+        var cancelBtn = document.getElementById("cancelButton");
+
+        // Mostrar la ventana emergente al hacer clic en el botón "Cerrar Sesión"
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+         // Redirigir a la página index.php al hacer clic en "Aceptar"
+         confirmBtn.onclick = function() {
+            window.location.href = "/view/index.html";
+        }
+
+        // Ocultar la ventana emergente al hacer clic en el botón "Cancelar"
+        cancelBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Ocultar la ventana emergente si el usuario hace clic fuera de la ventana
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 </html>
