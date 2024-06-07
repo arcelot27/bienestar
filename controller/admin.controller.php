@@ -162,7 +162,7 @@ class AdminController
                     // El usuario no existe, proceder con la inserción en la base de datos
                     if ($this->object->insertarDelegado($user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del)) {
                         // Redirigir a alguna página de éxito o mostrar un mensaje de éxito aquí
-                        header("Location: ?b=Admin&s=delegates");
+                        header("Location: ?b=Admin&s=delegatesÑ");
                         exit();
                     }
                 }
