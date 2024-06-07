@@ -24,7 +24,7 @@
                 </a>
                 <div class="add">
                     <div class="addd">
-                        <a href="#"><i class="fa-solid fa-user-plus"></i></a>
+                        <a href="?b=Admin&s=add"><i class="fa-solid fa-user-plus"></i></a>
                     </div>
                     <div class="adddd">
                         <a href="#"><i class="fa-solid fa-user-minus"></i></a>

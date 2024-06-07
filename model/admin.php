@@ -19,8 +19,34 @@ class Admin{
         }
         $user = $result->fetch_assoc(); 
         return $user;
-    } 
+    }
+    
+    public function insertarDelegado($user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del) {
+        $sql = "INSERT INTO delegados (user_del, roll_del, name_del, apelli_del, tipo_documen_del, dni_del, tel_del, email_del, email_inst_del) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->consulta->prepare($sql);
+        if (!$stmt) {
+            die("Error en la preparación de la consulta: " . $this->consulta->error);
+        }
+        // 'sissssssss' indica que estás pasando 1 string, 1 entero y 7 strings
+        $stmt->bind_param('sisssssss', $user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del);
+        if (!$stmt->execute()) {
+            die("Error en la ejecución de la consulta: " . $stmt->error);
+        }
+        $stmt->close();
+    }
 
+    public function userExists($username) {
+        $sql = "SELECT COUNT(*) AS count FROM delegados WHERE user_del = ?";
+        $stmt = $this->consulta->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $count = $row['count'];
+        $stmt->close();
+        return $count > 0;
+    }
+    
     public function getUsersByRole($roll_del) {
         $query = "SELECT user_del, name_del, apelli_del, tel_del, email_del, email_inst_del FROM delegados WHERE roll_del = ?";
         $stmt = $this->consulta->prepare($query);
@@ -49,11 +75,11 @@ class Admin{
     }
 
     // Modelo (Admin.php)
-public function deleteUserById($userId) {
-    $stmt = $this->consulta->prepare("DELETE FROM delegados WHERE user_del = ?");
-    $stmt->bind_param("s", $userId);
-    $stmt->execute();
-}
+    public function deleteUserById($userId) {
+        $stmt = $this->consulta->prepare("DELETE FROM delegados WHERE user_del = ?");
+        $stmt->bind_param("s", $userId);
+        $stmt->execute();
+    }
 
 }
 ?>
