@@ -21,7 +21,7 @@
             </div>
             <div class="col-3 col-md-2 text-right position-absolute top-50 end-0 translate-middle-y">
                 <a href="/view/admin-view/admin_porfile.html"><i class="fas fa-user-tie"></i></a>
-                <a href="/view/index.html" class="ms-4"><i class="fas fa-arrow-right-from-bracket"></i></a>
+                <a id="logoutButton" class="ms-4"><i class="fas fa-arrow-right-from-bracket"></i></a>
             </div>
         </div>
     </header>
@@ -55,7 +55,7 @@
                                     <td>+57 555 55 55</td>
                                     <td>example3@mail.com</td>
                                     <td><a href="#" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                    <td><a href="#" class="link-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                    <td><i id="deleteButton" class="fa-solid fa-trash link-danger"></i></td>
                                 </tr>
                                 <tr>
                                     <td>Laura Tatiana</td>
@@ -124,6 +124,85 @@
             </div>
         </div>
     </footer>
+
+     <!-- La ventana emergente Logout -->
+     <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p><b>¿Estás seguro de que quieres cerrar sesión?</b></p>
+            <form method="post">
+                <button class="btn btn-primary" type="button" id="confirmButton">Aceptar</button>
+                <button class="btn btn-primary btn-danger" type="button" id="cancelButton">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- La ventana emergente Delete -->
+     <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que quieres eliminar a <b>Maira Alejandra Salgado Ninco</b>?</p>
+            <form action="post">
+                <button class="btn btn-primary" type="button" id="confirmButtonDel">Confirmar</button>
+                <button class="btn btn-primary btn-danger" type="button" id="cancelButtonDel">Cancelar</button>
+            </form>
+        </div>
+     </div>
+
+    <script>
+        // JavaScript para manejar la ventana emergente
+        var modal = document.getElementById("logoutModal");
+        var btn = document.getElementById("logoutButton");
+        var confirmBtn = document.getElementById("confirmButton");
+        var cancelBtn = document.getElementById("cancelButton");
+
+        // Mostrar la ventana emergente al hacer clic en el botón "Cerrar Sesión"
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+         // Redirigir a la página index.php al hacer clic en "Aceptar"
+         confirmBtn.onclick = function() {
+            window.location.href = "/view/index.html";
+        }
+
+        // Ocultar la ventana emergente al hacer clic en el botón "Cancelar"
+        cancelBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Ocultar la ventana emergente si el usuario hace clic fuera de la ventana
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // JavaScript para manejar la ventana emergente Delete
+        var modal = document.getElementById("deleteModal");
+        var btn = document.getElementById("deleteButton");
+        var confirmBtn = document.getElementById("confirmButtonDel");
+        var cancelBtn = document.getElementById("cancelButtonDel");
+
+         // Mostrar la ventana emergente al hacer clic en el botón "Cerrar Sesión"
+         btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+         // Redirigir a la página index.php al hacer clic en "Aceptar"
+         confirmBtn.onclick = function() {
+            window.location.href = "/view/admin-view/admin_dele_home.html";
+        }
+
+        // Ocultar la ventana emergente al hacer clic en el botón "Cancelar"
+        cancelBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Ocultar la ventana emergente si el usuario hace clic fuera de la ventana
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
