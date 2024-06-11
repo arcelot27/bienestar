@@ -17,6 +17,12 @@
                 </div>
                 <p>Consultar Tamizaje</p>
             </a>
+            <a href="#">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <p>Agregar aprendices</p>
+            </a>
         </div>
         <div>
             <img src="assets/img/logo-4remove.png" alt="">

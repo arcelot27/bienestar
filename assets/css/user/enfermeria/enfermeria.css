@@ -361,6 +361,7 @@ main .main_body {
     }
     main .main_body > div:nth-child(1) {
         width: 50%;
+        height: 40vh;
     }
     main .main_body > div:nth-child(1) a {
         margin-left: 10%;
@@ -404,6 +405,9 @@ main .main_body {
         font-size: 28pt;
     }
     main .main_body > div:nth-child(1) {
+        height: 40%;
+    }
+    main .main_body > div:nth-child(1) {
         width: 45%;
     }
     main .main_body > div:nth-child(1) a {
@@ -423,7 +427,7 @@ main .main_body {
     }
     main .main_body > div:nth-child(2) img {
         height: 280px;
-        width: 580px;
+        width: 560px;
         margin-left: 0%;
     }
     .profile-card > div {
