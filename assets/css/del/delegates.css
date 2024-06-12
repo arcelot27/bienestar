@@ -262,7 +262,7 @@ main .main_body > div:nth-child(2) img {
 
 @media screen and (min-width: 900px) {
     main .main_body > div .dele {
-        width: 50%;
+        width: 100%;
     }
 
     main .main_body > div a div {
@@ -275,7 +275,7 @@ main .main_body > div:nth-child(2) img {
     }
 
     main .main_body > div a p {
-        font-size: 22pt;
+        font-size: 28pt;
     }
 
     main .main_body .addd,
@@ -289,8 +289,9 @@ main .main_body > div:nth-child(2) img {
     }
 
     main .main_body > div:nth-child(2) img {
-        height: 200px;
-        max-width: 325px;
+        height: 240px;
+        max-width: 404px;
+        margin-top: 4rem;
     }
 }
 

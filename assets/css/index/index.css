@@ -185,7 +185,6 @@ main .two_main div:nth-child(2) #img_queEs {
         height: 260px;
         width: 360px;
     }
-
     main .one_main div:nth-child(2),
     main .two_main div:nth-child(1) {
         font-size: 18pt;

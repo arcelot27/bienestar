@@ -31,7 +31,7 @@ header > a {
 
 header > a:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.267);
+    height: 10%;
 }
 
 header a > i {
@@ -146,6 +146,9 @@ header a > i {
 }
 
 @media screen and (min-width: 500px) {
+    header > img {
+       padding-top: .1rem;
+    }
     header > a {
         font-size: 9pt;
     }
@@ -207,6 +210,11 @@ header a > i {
         font-size: 12pt;
     }
 }
+@media screen and (min-width: 700px){
+    header > img {
+        height: 105px;
+     }
+}
 
 @media screen and (min-width: 900px) {
     header{
@@ -239,8 +247,28 @@ header a > i {
         font-size: 14pt;
     }
 }
+@media screen and (min-width: 1000px) {
+    header{
+        height: 12vh;
+    }
+    header > img {
+        height: 170px;
+    }
+    header > a {
+        margin-top: 1rem;
+    }
+    header > a > i {
+        margin-top: 1rem;
+    }
+    .container div:nth-child(1) div {
+        height: 30vh;
+    }
+    .container div:nth-child(1) div .img_logocom {
+        height: 180px;
+    }
+}
 
-@media screen and (min-width: 1439px) {
+@media screen and (min-width: 1400px) {
     header{
         height: 12vh;
     }
@@ -260,48 +288,29 @@ header a > i {
 
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1800px) {
+    header {
+        height: 18vh;
+    }
+    header > img {
+        height: 300px;
+    }
     header > a {
-        font-size: 11pt;
+        margin-top: 3rem;
     }
-
-    header a > i {
-        font-size: 13pt;
+    header > a > i {
+        margin-top: 3rem;
     }
-
     .container div:nth-child(1) div .img_logocom {
-        height: 110px;
+        height: 235px;
+        padding-left: 6rem;
     }
-
     .container div:nth-child(1) div a {
-        width: 130px;
-        font-size: 12pt;
+        width: 229px;
+        margin-right: 11rem;
     }
-
     .container div:nth-child(1) a p {
-        font-size: 12pt;
+        font-size: 22pt;
     }
 }
 
-@media screen and (min-width: 3840px) {
-    header > a {
-        font-size: 12pt;
-    }
-
-    header a > i {
-        font-size: 14pt;
-    }
-
-    .container div:nth-child(1) div .img_logocom {
-        height: 120px;
-    }
-
-    .container div:nth-child(1) div a {
-        width: 140px;
-        font-size: 13pt;
-    }
-
-    .container div:nth-child(1) a p {
-        font-size: 13pt;
-    }
-}
