@@ -5,7 +5,7 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="#">
+            <a href="?b=tamiz">
                 <div>
                     <i class="fa-solid fa-plus"></i>
                 </div>
@@ -17,7 +17,7 @@
                 </div>
                 <p>Consultar Tamizaje</p>
             </a>
-            <a href="#">
+            <a href="view/aprendiz/add.php">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
