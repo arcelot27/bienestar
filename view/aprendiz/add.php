@@ -49,6 +49,43 @@
             border-radius: 20px;
             padding: 10px 20px;
         }
+
+        @media (min-width: 400px) {
+            header h1 {
+                font-size: 40px;
+            }
+            .form-control {
+                font-size: 14pt;
+            }
+            .btn {
+                font-size: 14pt;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .main_body {
+                padding: 40px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .main_body {
+                padding: 50px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .main_body {
+                padding: 60px;
+            }
+        }
+
+        @media (min-width: 3840px) {
+            .main_body {
+                padding: 70px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -57,35 +94,59 @@
     </header>
     <main class="main_body">
         <div class="container">
-            <form action="/path/to/your/controller" method="POST">
+            <form id="alumnoForm" action="/path/to/your/controller" method="POST" onsubmit="return confirmarInscripcion()">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    <label for="name_apre">Nombre</label>
+                    <input type="text" class="form-control" id="name_apre" name="name_apre" required>
                 </div>
                 <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    <label for="apelli_apre">Apellido</label>
+                    <input type="text" class="form-control" id="apelli_apre" name="apelli_apre" required>
                 </div>
                 <div class="form-group">
-                    <label for="edad">Edad</label>
-                    <input type="number" class="form-control" id="edad" name="edad" required>
+                    <label for="tipo_documen_apre">Tipo de Documento</label>
+                    <select class="form-control" id="tipo_documen_apre" name="tipo_documen_apre" required>
+                        <option value="">Selecciona tipo de documento</option>
+                        <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                        <option value="Registro Civil">Registro Civil</option>
+                        <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="Permiso Especial de Permanencia">Permiso Especial de Permanencia</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <label for="dni_apre">DNI</label>
+                    <input type="number" class="form-control" id="dni_apre" name="dni_apre" required>
                 </div>
                 <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" class="form-control" id="telefono" name="telefono">
+                    <label for="tel_apre">Teléfono</label>
+                    <input type="number" class="form-control" id="tel_apre" name="tel_apre">
                 </div>
                 <div class="form-group">
-                    <label for="jornada">Jornada</label>
-                    <select class="form-control" id="jornada" name="jornada" required>
+                    <label for="email_apre">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email_apre" name="email_apre" required>
+                </div>
+                <div class="form-group">
+                    <label for="ficha_apre">Ficha</label>
+                    <input type="number" class="form-control" id="ficha_apre" name="ficha_apre" required>
+                </div>
+                <div class="form-group">
+                    <label for="jornada_apre">Jornada</label>
+                    <select class="form-control" id="jornada_apre" name="jornada_apre" required>
                         <option value="">Selecciona jornada</option>
                         <option value="Mañana">Mañana</option>
                         <option value="Tarde">Tarde</option>
                         <option value="Noche">Noche</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="name_fami_apre">Nombre del Familiar</label>
+                    <input type="text" class="form-control" id="name_fami_apre" name="name_fami_apre" required>
+                </div>
+                <div class="form-group">
+                    <label for="num_fami_apre">Teléfono del Familiar</label>
+                    <input type="number" class="form-control" id="num_fami_apre" name="num_fami_apre" required>
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-success">Guardar</button>
@@ -98,5 +159,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function confirmarInscripcion() {
+            return confirm("¿Estás seguro de que deseas inscribir a este alumno?");
+        }
+    </script>
 </body>
 </html>
