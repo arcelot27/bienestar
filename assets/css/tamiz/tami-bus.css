@@ -187,6 +187,9 @@ footer .copy_footer {
 }
 
 @media screen and (min-width: 1200px) {
+    header {
+        height: 4rem;
+    }
     header > div > div:nth-child(2) > a:nth-child(2) {
         margin-left: 30% !important;
     }

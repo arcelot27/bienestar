@@ -199,6 +199,10 @@ footer .copy_footer {
         font-size: 14pt;
     }
 
+    .main_header > div > div:last-child {
+        margin-left: 0;
+    }
+
         .main_header > a {
             font-size: 30pt;
         }
