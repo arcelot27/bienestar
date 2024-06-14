@@ -57,7 +57,7 @@ header a > i {
 .container div:nth-child(1) div {
     margin-top: 10%;
     height: 80px;
-    width: 100vw;
+    width: 99vw;
     background-color: rgba(0, 0, 0, 0.315);
     display: flex;
 }
