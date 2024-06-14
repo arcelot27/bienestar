@@ -31,10 +31,8 @@ a:hover {
 }
 
 .containers img {
-    height: 80px;
+    margin-top: 3rem;
     width: 160px;
-    margin-top: 5%;
-    margin-left: 20%;
 }
 
 /* Cuerpo */
@@ -89,7 +87,6 @@ a:hover {
 .containers .forms form input:last-child {
     margin-top: 5%;
     width: 60%;
-    margin-left: 20%;
 }
 
 .containers .forms form a {
@@ -97,7 +94,6 @@ a:hover {
     height: 20%;
     width: 60%;
     font-size: 8pt;
-    margin-left: 10%;
     margin-top: 5px;
     color: rgba(255, 255, 255, 0.952);
     text-align: center;
@@ -142,6 +138,7 @@ a:hover {
 }
 
 @media screen and (min-width: 600px) {
+
     .containers .container {
         width: 60%;
     }
@@ -152,11 +149,11 @@ a:hover {
 
     .containers .forms form input:last-child {
         width: 50%;
-        margin-left: 25%;
     }
 }
 
 @media screen and (min-width: 900px) {
+
     .containers .container {
         width: 50%;
     }
@@ -167,7 +164,6 @@ a:hover {
 
     .containers .forms form input:last-child {
         width: 40%;
-        margin-left: 30%;
     }
 }
 
@@ -182,7 +178,6 @@ a:hover {
 
     .containers .forms form input:last-child {
         width: 30%;
-        margin-left: 35%;
     }
 }
 
@@ -197,6 +192,5 @@ a:hover {
 
     .containers .forms form input:last-child {
         width: 20%;
-        margin-left: 40%;
     }
 }
