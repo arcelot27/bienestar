@@ -1,141 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Tamizaje</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #9BC1DF;
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            color: #234788;
-            font-size: 36px;
-            margin-bottom: 0;
-        }
-
-        .main_body {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .form-group label {
-            color: #234788;
-            font-weight: bold;
-        }
-
-        .form-control {
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-
-        .btn-success {
-            background-color: #54BC1D;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            margin-right: 10px;
-        }
-
-        .btn-primary {
-            background-color: #234788;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-        }
-
-        .section-header {
-            background-color: #234788;
-            color: white;
-            padding: 10px;
-            margin: 20px 0 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .form-group {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .form-group:last-of-type {
-            border-bottom: none;
-        }
-
-        @media (min-width: 400px) {
-            header h1 {
-                font-size: 40px;
-            }
-
-            .form-control {
-                font-size: 14pt;
-            }
-
-            .btn {
-                font-size: 14pt;
-                padding: 15px 30px;
-            }
-        }
-
-        @media (min-width: 600px) {
-            .main_body {
-                padding: 40px;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .main_body {
-                padding: 50px;
-            }
-        }
-
-        @media (min-width: 1920px) {
-            .main_body {
-                padding: 60px;
-            }
-        }
-
-        @media (min-width: 3840px) {
-            .main_body {
-                padding: 70px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1>Formulario de Tamizaje</h1>
-    </header>
+<div class="main_header mt-3 ms-3">
+        <a href="?b=apren"><i class="fas fa-circle-chevron-left"></i></a>
+    </div>
     <main class="main_body">
         <div class="container">
-            <form id="tamizajeForm" onsubmit="return confirmarInscripcion()">
+            <form name="tamizajeForm" action="?b=apren&s=guardarAprendiz" method="post" onsubmit="return confirmarInscripcion()">
                 <div class="form-group">
                     <label for="nombre">1. Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
+                    <input type="text" class="form-control" name="nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="apellidos">2. Apellidos</label>
-                    <input type="text" class="form-control" id="apellidos" required>
+                    <input type="text" class="form-control" name="apellidos" required>
                 </div>
                 <div class="form-group">
                     <label for="tipoDocumento">3. Tipo de Documento</label>
-                    <select class="form-control" id="tipoDocumento" required>
+                    <select class="form-control" name="tipoDocumento" required>
                         <option value="">Seleccione</option>
                         <option value="CC">Cédula de Ciudadanía</option>
                         <option value="TI">Tarjeta de Identidad</option>
@@ -145,15 +24,15 @@
                 </div>
                 <div class="form-group">
                     <label for="numeroDocumento">4. Número de Documento</label>
-                    <input type="text" class="form-control" id="numeroDocumento" required>
+                    <input type="text" class="form-control" name="numeroDocumento" required>
                 </div>
                 <div class="form-group">
                     <label for="edad">5. Edad</label>
-                    <input type="number" class="form-control" id="edad" required>
+                    <input type="number" class="form-control" name="edad" required>
                 </div>
                 <div class="form-group">
                     <label for="estadoCivil">6. Estado Civil</label>
-                    <select class="form-control" id="estadoCivil" required>
+                    <select class="form-control" name="estadoCivil" required>
                         <option value="">Seleccione</option>
                         <option value="CASADO(A)">Casado(a)</option>
                         <option value="SOLTERO(A)">Soltero(a)</option>
@@ -162,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="sexo">7. Sexo</label>
-                    <select class="form-control" id="sexo" required>
+                    <select class="form-control" name="sexo" required>
                         <option value="">Seleccione</option>
                         <option value="FEMENINO">Femenino</option>
                         <option value="MASCULINO">Masculino</option>
@@ -171,11 +50,11 @@
                 </div>
                 <div class="form-group">
                     <label for="identidadGenero">8. Si su respuesta es "Identidad de Género", escriba cuál</label>
-                    <input type="text" class="form-control" id="identidadGenero">
+                    <input type="text" class="form-control" name="identidadGenero">
                 </div>
                 <div class="form-group">
                     <label for="grupoEtnico">9. ¿Pertenece a algún grupo étnico?</label>
-                    <select class="form-control" id="grupoEtnico" required>
+                    <select class="form-control" name="grupoEtnico" required>
                         <option value="">Seleccione</option>
                         <option value="SI">Sí</option>
                         <option value="NO">No</option>
@@ -183,11 +62,11 @@
                 </div>
                 <div class="form-group">
                     <label for="grupoEtnicoCual">10. Si su anterior respuesta fue "sí", escriba a qué grupo étnico pertenece</label>
-                    <input type="text" class="form-control" id="grupoEtnicoCual">
+                    <input type="text" class="form-control" name="grupoEtnicoCual">
                 </div>
                 <div class="form-group">
                     <label for="estrato">11. Estrato</label>
-                    <select class="form-control" id="estrato" required>
+                    <select class="form-control" name="estrato" required>
                         <option value="">Seleccione</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -199,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     <label for="zonaResidencia">12. Reside en una zona</label>
-                    <select class="form-control" id="zonaResidencia" required>
+                    <select class="form-control" name="zonaResidencia" required>
                         <option value="">Seleccione</option>
                         <option value="RURAL">Rural</option>
                         <option value="URBANA">Urbana</option>
@@ -207,11 +86,11 @@
                 </div>
                 <div class="form-group">
                     <label for="lugarResidencia">13. Lugar de Residencia</label>
-                    <input type="text" class="form-control" id="lugarResidencia" required>
+                    <input type="text" class="form-control" name="lugarResidencia" required>
                 </div>
                 <div class="form-group">
                     <label for="vivienda">14. Cuenta con vivienda</label>
-                    <select class="form-control" id="vivienda" required>
+                    <select class="form-control" name="vivienda" required>
                         <option value="">Seleccione</option>
                         <option value="PROPIA">Propia</option>
                         <option value="ARRENDADA">Arrendada</option>
@@ -221,37 +100,37 @@
                 <div class="form-group">
                     <label>15. ¿Con qué servicios públicos cuenta?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="energia" value="ENERGIA">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="energia" value="ENERGIA">
                         <label class="form-check-label" for="energia">
                             Energía
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gas" value="GAS">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="gas" value="GAS">
                         <label class="form-check-label" for="gas">
                             Gas
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="agua" value="AGUA">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="agua" value="AGUA">
                         <label class="form-check-label" for="agua">
                             Agua
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="alcantarillado" value="ALCANTARILLADO">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="alcantarillado" value="ALCANTARILLADO">
                         <label class="form-check-label" for="alcantarillado">
                             Alcantarillado
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="internet" value="INTERNET">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="internet" value="INTERNET">
                         <label class="form-check-label" for="internet">
                             Internet
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="ninguno" value="NINGUNO">
+                        <input class="form-check-input" type="checkbox" name="ser_publico[]"  id="ninguno" value="NINGUNO">
                         <label class="form-check-label" for="ninguno">
                             Ninguno
                         </label>
@@ -261,43 +140,43 @@
                 <div class="form-group">
                     <label>16. ¿En qué ocupa su tiempo libre?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre1" value="PASAR TIEMPO EN FAMILIA">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre1" value="PASAR TIEMPO EN FAMILIA">
                         <label class="form-check-label" for="tiempoLibre1">
                             Pasar tiempo en familia
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre2" value="ESTUDIAR">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre2" value="ESTUDIAR">
                         <label class="form-check-label" for="tiempoLibre2">
                             Estudiar
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre3" value="JUGAR">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre3" value="JUGAR">
                         <label class="form-check-label" for="tiempoLibre3">
                             Jugar
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre4" value="TRABAJAR">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre4" value="TRABAJAR">
                         <label class="form-check-label" for="tiempoLibre4">
                             Trabajar
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre5" value="LABORES DOMESTICAS">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre5" value="LABORES DOMESTICAS">
                         <label class="form-check-label" for="tiempoLibre5">
                             Labores domésticas
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre6" value="RECREACION">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre6" value="RECREACION">
                         <label class="form-check-label" for="tiempoLibre6">
                             Recreación
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tiempoLibre7" value="NINGUNA">
+                        <input class="form-check-input" type="checkbox" name="tiempoLibre[]" id="tiempoLibre7" value="NINGUNA">
                         <label class="form-check-label" for="tiempoLibre7">
                             Ninguna
                         </label>
@@ -305,11 +184,11 @@
                 </div>
                 <div class="form-group">
                     <label for="hijos">17. ¿Tiene hijos?</label>
-                    <input type="number" class="form-control" id="hijos" required>
+                    <input type="number" class="form-control" name="hijos" required>
                 </div>
                 <div class="form-group">
                     <label for="embarazo">18. ¿Se encuentra en embarazo?</label>
-                    <select class="form-control" id="embarazo" required>
+                    <select class="form-control" name="embarazo" required>
                         <option value="">Seleccione</option>
                         <option value="SI">Sí</option>
                         <option value="NO">No</option>
@@ -317,7 +196,7 @@
                 </div>
                 <div class="form-group">
                     <label for="controlesPrenatales">19. Si su anterior respuesta fue "sí", ¿ya inició controles prenatales?</label>
-                    <select class="form-control" id="controlesPrenatales" required>
+                    <select class="form-control" name="controlesPrenatales" >
                         <option value="">Seleccione</option>
                         <option value="SI">Sí</option>
                         <option value="NO">No</option>
@@ -325,7 +204,7 @@
                 </div>
                 <div class="form-group">
                     <label for="diagnosticoMedico">20. ¿Tiene algún diagnóstico médico?</label>
-                    <select class="form-control" id="diagnosticoMedico" required>
+                    <select class="form-control" name="diagnosticoMedico" required>
                         <option value="">Seleccione</option>
                         <option value="SI">Sí</option>
                         <option value="NO">No</option>
@@ -333,135 +212,135 @@
                 </div>
                 <div class="form-group">
                     <label for="diagnosticoMedicoCual">21. Si su anterior respuesta fue "sí", escriba cuál</label>
-                    <input type="text" class="form-control" id="diagnosticoMedicoCual">
+                    <input type="text" class="form-control" name="diagnosticoMedicoCual">
                 </div>
                 <div class="form-group">
-                    <label for="medicamento">¿Toma algún medicamento?</label>
-                    <select class="form-control" id="medicamento" required>
+                    <label for="medicamento">22. ¿Toma algún medicamento?</label>
+                    <select class="form-control" name="medicamento" required>
                         <option value="">Seleccione</option>
                         <option value="SI">Sí</option>
                         <option value="NO">No</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="medicamentoCual">22. Si su anterior respuesta fue "sí", escriba cuál</label>
-                    <input type="text" class="form-control" id="medicamentoCual">
+                    <label for="medicamentoCual">23. Si su anterior respuesta fue "sí", escriba cuál</label>
+                    <input type="text" class="form-control" name="medicamentoCual">
                 </div>
                 <div class="form-group">
-                    <label>23. ¿Tiene alguna de las siguientes limitaciones o discapacidad?</label>
+                    <label>24. ¿Tiene alguna de las siguientes limitaciones o discapacidad?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones1" value="MOTORA">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones1" value="MOTORA">
                         <label class="form-check-label" for="limitaciones1">
                             Motora
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones2" value="AUDITIVA">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones2" value="AUDITIVA">
                         <label class="form-check-label" for="limitaciones2">
                             Auditiva
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones3" value="VISUAL">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones3" value="VISUAL">
                         <label class="form-check-label" for="limitaciones3">
                             Visual
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones4" value="COGNITIVA">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones4" value="COGNITIVA">
                         <label class="form-check-label" for="limitaciones4">
                             Cognitiva
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones5" value="MENTAL">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones5" value="MENTAL">
                         <label class="form-check-label" for="limitaciones5">
                             Mental
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones6" value="MULTIPLE">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones6" value="MULTIPLE">
                         <label class="form-check-label" for="limitaciones6">
                             Múltiple
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones7" value="SORDOCEGUERA">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones7" value="SORDOCEGUERA">
                         <label class="form-check-label" for="limitaciones7">
                             Sordoceguera
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="limitaciones8" value="NINGUNO">
+                        <input class="form-check-input" type="checkbox" name="limitaciones[]" id="limitaciones8" value="NINGUNO">
                         <label class="form-check-label" for="limitaciones8">
                             Ninguno
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>24. ¿Conoce alguno de estos antecedentes en su familia?</label>
+                    <label>25. ¿Conoce alguno de estos antecedentes en su familia?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes1" value="DIABETES">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes2" value="DIABETES">
                         <label class="form-check-label" for="antecedentes1">
                             Diabetes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes2" value="HIPERTENSION ARTERIAL">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes2" value="HIPERTENSION ARTERIAL">
                         <label class="form-check-label" for="antecedentes2">
                             Hipertensión arterial
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes3" value="CANCER">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes3" value="CANCER">
                         <label class="form-check-label" for="antecedentes3">
                             Cáncer
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes4" value="ENFERMEDAD PULMONAR">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes4" value="ENFERMEDAD PULMONAR">
                         <label class="form-check-label" for="antecedentes4">
                             Enfermedad pulmonar (trombosis)
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes5" value="ENFERMEDADES MENTALES">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes5" value="ENFERMEDADES MENTALES">
                         <label class="form-check-label" for="antecedentes5">
                             Enfermedades mentales
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes6" value="NINGUNA">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes6" value="NINGUNA">
                         <label class="form-check-label" for="antecedentes6">
                             Ninguna
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="antecedentes7" value="OTRA">
+                        <input class="form-check-input" type="checkbox" name="antecedentes-familia[]" id="antecedentes7" value="OTRA">
                         <label class="form-check-label" for="antecedentes7">
                             Otra
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="antecedentesFamiliaOtra">25. Si su anterior respuesta fue "otra", indique cuál</label>
-                    <input type="text" class="form-control" id="antecedentesFamiliaOtra">
+                    <label for="antecedentesFamiliaOtra">26. Si su anterior respuesta fue "otra", indique cuál</label>
+                    <input type="text" class="form-control" name="antecedentesFamiliaOtra">
                 </div>
                 <div class="form-group">
-                    <label for="numeroCelular">26. Número de Celular</label>
-                    <input type="number" class="form-control" id="numeroCelular" required>
+                    <label for="numeroCelular">27. Número de Celular</label>
+                    <input type="number" class="form-control" name="numeroCelular" required>
                 </div>
                 <div class="form-group">
-                    <label for="correo">27. Correo Electrónico</label>
-                    <input type="email" class="form-control" id="correo" required>
+                    <label for="correo">28. Correo Electrónico</label>
+                    <input type="email" class="form-control" name="correo" required>
                 </div>
                 <div class="form-group">
-                    <label for="numeroFicha">28. Número de Ficha</label>
-                    <input type="number" class="form-control" id="numeroFicha" required>
+                    <label for="numeroFicha">29. Número de Ficha</label>
+                    <input type="number" class="form-control" name="numeroFicha" required>
                 </div>
                 <div class="form-group">
-                    <label for="jornada">29. Jornada</label>
-                    <select class="form-control" id="jornada" required>
+                    <label for="jornada">30. Jornada</label>
+                    <select class="form-control" name="jornada" required>
                         <option value="">Seleccione</option>
                         <option value="Mañana">Mañana</option>
                         <option value="Tarde">Tarde</option>
@@ -469,12 +348,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="contactoEmergencia">30. Contacto de Emergencia</label>
-                    <input type="text" class="form-control" id="contactoEmergencia" required>
+                    <label for="contactoEmergencia">31. Contacto de Emergencia</label>
+                    <input type="text" class="form-control" name="contactoEmergencia" required>
                 </div>
                 <div class="form-group">
-                    <label for="numeroContactoEmergencia">31. Número de Contacto de Emergencia</label>
-                    <input type="number" class="form-control" id="numeroContactoEmergencia" required>
+                    <label for="numeroContactoEmergencia">32. Número de Contacto de Emergencia</label>
+                    <input type="number" class="form-control" name="numeroContactoEmergencia" required>
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success">Enviar</button>

@@ -1,85 +1,113 @@
 <?php
 
-class Apren{
-
+class Apren
+{
     private $consulta;
 
-    public function __construct(){
-        try{
-            $this -> consulta = databaseConexion::conexion();
-        }catch(PDOException $e){
-            echo "Error de Conexion ". $e -> getMessage(); 
+    public function __construct()
+    {
+        try {
+            $this->consulta = databaseConexion::conexion();
+        } catch (PDOException $e) {
+            echo "Error de Conexion " . $e->getMessage();
         }
     }
-
-    public function reviewTa($servername, $username, $password, $dbname){
-        // Crear la conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['name'];
-            $applicationDate = $_POST['applicationDate'];
-
-            // Validar el nombre y la fecha en la base de datos
-            $sql = "SELECT * FROM tu_tabla WHERE nombre = ? OR fecha_aplicacion = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ss", $name, $applicationDate);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                echo '<div class="alert alert-danger">El nombre o la fecha de aplicación ya existen en la base de datos.</div>';
-            } else {
-                echo '<div class="alert alert-success">El nombre y la fecha de aplicación son válidos.</div>';
+    public function obtenerAprendices()
+    {
+        $sql = "SELECT 
+                    jornada_apre, 
+                    numero_ficha_apre, 
+                    name_apre, 
+                    ape_apre, 
+                    tipo_docu_apre, 
+                    dni_apre, 
+                    edad_apre, 
+                    sexo_apre, 
+                    zona_resi_apre, 
+                    lugar_resi_apre, 
+                    numero_celular_apre, 
+                    correo_apre, 
+                    contac_emergen_apre, 
+                    numero_contac_emergen_apre 
+                FROM 
+                    aprendiz";
+        
+        $result = $this->consulta->query($sql);
+        
+        $aprendices = array();
+        
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $aprendices[] = $row;
             }
-
-            $stmt->close();
         }
-
-        $conn->close();
+        
+        return $aprendices;
     }
-    public function new($servername, $username, $password, $dbname){
-        $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newTamizajeName = $_POST['newTamizajeName'];
-
-    // Validar si el nombre del tamizaje ya existe en la base de datos
-    $sql = "SELECT * FROM tamizajes WHERE nombre = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $newTamizajeName);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        echo '<div class="alert alert-danger">El nombre del tamizaje ya existe en la base de datos.</div>';
-    } else {
-        // Insertar el nuevo tamizaje en la base de datos
-        $sql = "INSERT INTO tamizajes (nombre) VALUES (?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $newTamizajeName);
-
-        if ($stmt->execute()) {
-            echo '<div class="alert alert-success">El tamizaje ha sido creado exitosamente.</div>';
-        } else {
-            echo '<div class="alert alert-danger">Hubo un error al crear el tamizaje. Inténtalo de nuevo.</div>';
+    public function insertarAprendiz($datos_aprendiz)
+    {
+        // Preparar consulta SQL
+        $sql = "INSERT INTO aprendiz (
+                    name_apre, ape_apre, tipo_docu_apre, dni_apre, edad_apre, esta_civil_apre, sexo_apre, 
+                    iden_gene_apre, grup_etn_apre, grup_etn_cual_apre, estr_apre, zona_resi_apre, lugar_resi_apre, 
+                    servicios_publicos_apre, tiempo_libre_apre, vivie_apre, hijos_apre, embarazo_apre, 
+                    control_prenatal_apre, diag_medico_apre, diag_medico_cual_apre, medica_apre, medica_cual_apre, 
+                    limitaciones_apre, antecedentes_familiares_apre, antecedentes_familiares_otro_apre,numero_celular_apre, correo_apre, 
+                    numero_ficha_apre, jornada_apre, contac_emergen_apre, numero_contac_emergen_apre
+                ) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
+        // Preparar declaración
+        $stmt = $this->consulta->prepare($sql);
+    
+        if ($stmt === false) {
+            throw new Exception("Error al preparar la consulta: " . $this->consulta->error);
         }
+    
+        // Bind parameters
+        $stmt->bind_param("ssssisssssisssssssssssssssssssss", 
+            $datos_aprendiz['nombre'],
+            $datos_aprendiz['apellidos'],
+            $datos_aprendiz['tipo_documento'],
+            $datos_aprendiz['dni'],
+            $datos_aprendiz['edad'],
+            $datos_aprendiz['estado_civil'],
+            $datos_aprendiz['sexo'],
+            $datos_aprendiz['identificacion_genero'],
+            $datos_aprendiz['grupo_etnico'],
+            $datos_aprendiz['grupo_etnico_cual'],
+            $datos_aprendiz['estrato'],
+            $datos_aprendiz['zona_residencia'],
+            $datos_aprendiz['lugar_residencia'],
+            $datos_aprendiz['servicios_publicos'],
+            $datos_aprendiz['tiempo_libre'],
+            $datos_aprendiz['vivienda'],
+            $datos_aprendiz['hijos'],
+            $datos_aprendiz['embarazo'],
+            $datos_aprendiz['control_prenatal'],
+            $datos_aprendiz['diagnostico_medico'],
+            $datos_aprendiz['diagnostico_medico_cual'],
+            $datos_aprendiz['medicacion'],
+            $datos_aprendiz['medicacion_cual'],
+            $datos_aprendiz['limitaciones'],
+            $datos_aprendiz['antecedentes_familiares'],
+            $datos_aprendiz['antecedentes_familiares_otro'],
+            $datos_aprendiz['numero_celular'],
+            $datos_aprendiz['correo'],
+            $datos_aprendiz['numero_ficha'],
+            $datos_aprendiz['jornada'],
+            $datos_aprendiz['contacto_emergencia'],
+            $datos_aprendiz['numero_contacto_emergencia']
+        );
+    
+        // Ejecutar consulta
+        $resultado = $stmt->execute();
+    
+        // Cerrar declaración
+        $stmt->close();
+    
+        return $resultado;
     }
-
-    $stmt->close();
 }
-
-$conn->close();
-    }
-
-}
+?>
