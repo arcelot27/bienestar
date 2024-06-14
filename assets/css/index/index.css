@@ -31,7 +31,7 @@ main {
 
 main .one_main {
     height: 50%;
-    width: 100%;
+    width: 99vw;
     background-color: rgba(255, 255, 255, 0);
     display: grid;
 }
@@ -64,6 +64,7 @@ main .two_main {
     width: 100vw;
     background: linear-gradient(45deg, #7596C8 0%, #6C89A4 25%, #6C89A4 50%, #376DA1 75%, #1A4065 100%);
     display: grid;
+    margin-bottom: 1rem;
 }
 
 main .two_main div:nth-child(1) {
@@ -192,12 +193,22 @@ main .two_main div:nth-child(2) #img_queEs {
 }
 
 @media screen and (min-width: 1000px) {
+    main .one_main div:nth-child(1) img,
+    main .two_main div:nth-child(2) #img_queEs {
+        width: 400px;
+    }
+
     main .one_main div:nth-child(1) img {
         margin-left: 70px;
     }
 }
 
 @media screen and (min-width: 1200px) {
+    main .one_main div:nth-child(1) img,
+    main .two_main div:nth-child(2) #img_queEs {
+        width: 500px;
+    }
+
     main .one_main div:nth-child(1) img {
         margin-left: 120px;
     }

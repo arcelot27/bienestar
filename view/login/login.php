@@ -5,6 +5,7 @@
         echo "<script>alert('" . htmlspecialchars($mensaje, ENT_QUOTES) . "');</script>";
     }
     ?>
+<div>
     <div class="containers">
         <div class="container">
             <img src="assets/img/logo-02.png" alt="">
@@ -19,4 +20,5 @@
             </div>
         </div>
     </div>
+</div>
     
