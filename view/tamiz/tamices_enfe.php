@@ -9,7 +9,7 @@
                 </div>
                 <h1>Formulario de Tamizaje</h1>
                 <div class="mt-4">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" da-ta-target="#newTamizajeModal">Nuevo Tamizaje</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#newTamizajeModal">Nuevo Tamizaje</button>
                 </div>
                 <div class="mt-4">
                     <button type="button" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#validationModal">Tamizaje Existente</button>

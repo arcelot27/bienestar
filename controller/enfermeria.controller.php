@@ -87,12 +87,7 @@ class EnfermeriaController{
             echo json_encode($response);
             exit;
         }
-    }
-
-    public function tamiz(){
-        require_once "view/tamiz/tami-bus.php";
-    }
-    
+    }    
     
 }
 
