@@ -1,0 +1,147 @@
+
+
+header {
+    background-color: #9BC1DF;
+}
+
+    header > div > div:nth-child(2) a {
+        color: #234788;
+    }
+
+    header > div > div:nth-child(2) a:hover {
+        color: black;
+    }
+
+
+footer {
+    background-color: #234788
+}
+
+footer .copy_footer {
+    color: black;
+    background-color: #9BC1DF;
+}
+
+@media screen and (min-width: 375px) {
+    footer {
+        height: 85vh;
+        font-size: 10pt;
+
+    }
+
+        footer .red_social {
+            height: 95%;
+        }
+
+            footer .red_social > a {
+                margin-bottom: 5px;
+            }
+        
+}
+
+@media screen and (min-width: 426px) {
+
+    .main_header > a {
+        font-size: 23pt;
+    }
+
+    .main_body .log_porf{
+        width: 20%;
+        height: 80%;  
+    }
+
+    footer {
+        height: 85vh;
+        font-size: 11pt;
+    }
+}
+
+@media screen and (min-width: 560px) {
+
+    .main_header > a {
+        font-size: 25pt;
+    }
+
+    .main_body .log_porf{
+        width: 17%;
+        height: 112%;  
+        margin-top: -5%;
+        margin-left: 42%;
+    }
+
+    .main_body > div > div > div > i {
+        font-size: 31pt;
+        margin-top: 20%;
+    }
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    footer {
+        height: 88vh;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    
+    footer {
+        height: 50vh;
+        font-size: 13pt;
+    }
+
+        footer .red_social {
+            display: flex;
+        }
+
+            footer .red_social > p {
+                margin-left: 5%;
+            }
+
+            footer .red_social > div {
+                margin-top: 1%;
+                margin-left: 45%;
+            }
+
+        footer .contend_footer {
+            display: grid;
+            grid-template-columns: 55% 20% 20%;
+        } 
+
+        footer .contend_footer > div:nth-child(1) {
+            border-bottom: none !important;
+        }
+
+        footer .contend_footer > div:nth-child(2) {
+            border-bottom: none !important;
+        }
+
+}
+
+@media screen and (min-width: 1200px) {
+    header > div > div:nth-child(2) > a:nth-child(2) {
+        margin-left: 30% !important;
+    }
+
+    
+
+    footer {
+        font-size: 13pt;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    footer {
+        height: 50vh;
+        font-size: 14pt;
+    }
+
+    footer p {
+        margin-bottom: none !important;
+    }
+}

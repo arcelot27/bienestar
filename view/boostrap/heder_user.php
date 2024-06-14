@@ -5,7 +5,7 @@
                 <img src="assets/img/logo-5remov.png" alt="Logo" class="img-fluid">
             </div>
             <div class="col-3 col-md-2 text-end position-absolute top-50 end-0 translate-middle-y">
-                <a href="?b=Admin" class="ms-4"><i class="fas fa-arrow-right-from-bracket"></i></a>
+            <a href="?b=admin&s=sessionexit" onclick="return confirm('¿Estás seguro de que deseas cerrar la sesión?')" style="margin-right: 10px;"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </div>
     </header>

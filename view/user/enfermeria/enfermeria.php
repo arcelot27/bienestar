@@ -17,11 +17,11 @@
                 </div>
                 <p>Consultar Tamizaje</p>
             </a>
-            <a href="view/aprendiz/add.php">
+            <a href="?b=apren">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <p>Agregar aprendices</p>
+                <p>Aprendices</p>
             </a>
         </div>
         <div>
