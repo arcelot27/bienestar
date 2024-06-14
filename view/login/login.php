@@ -1,21 +1,25 @@
 <body>
-    <?php
-    if (isset($_GET['mensaje'])) {
+<?php
+    if(isset($_GET['mensaje'])) {
         $mensaje = $_GET['mensaje'];
         echo "<script>alert('" . htmlspecialchars($mensaje, ENT_QUOTES) . "');</script>";
     }
     ?>
     <main>
+    <div class="containers">
         <div class="container">
             <div class="forms">
-                <img src="assets/img/logo-02.png" alt="Logo">
+                <img src="assets/img/logo-02.png" alt="">
                 <form action="?b=login&s=validaruser" method="post">
-                    <input type="text" placeholder="Usuario" name="user">
-                    <input type="password" placeholder="Contraseña" id="input" name="password">
-                    <a href="#">Recuperar contraseña</a>
-                    <input type="submit" value="Enviar">
+                    <input type="text" placeholder="User" name="user">
+                    <input type="password" placeholder="Password" id="input" name="pasword">
+                    <a href=""><p>Recuperar contraseña</p></a>
+                    <input type="submit" placeholder="Enviar">
                 </form>
-                <a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i> <span>HOME</span></a>
+                <a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i><p>HOME</p></a>
             </div>
         </div>
+    </div>
     </main>
+
+    
