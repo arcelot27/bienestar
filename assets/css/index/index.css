@@ -40,7 +40,8 @@ main .one_main div:nth-child(1) img {
     height: 150px;
     width: 250px;
     border-radius: 10px;
-    margin-left: 15%;
+    margin-left: 16%;
+    margin-top: 5%;
 }
 
 main .one_main div:nth-child(2) {
@@ -85,8 +86,8 @@ main .two_main div:nth-child(2) {
 }
 
 main .two_main div:nth-child(2) #img_queEs {
-    margin-left: -9%;
-    height: 180px;
+    height: 150px;
+    width: 250px;
     border-radius: 10px;
 }
 
@@ -105,11 +106,6 @@ main .two_main div:nth-child(2) #img_queEs {
         font-size: 10pt;
     }
 
-    main .one_main div:nth-child(1) img {
-        height: 133px;
-        width: 220px;
-    }
-
     main .one_main div:nth-child(2) {
         font-size: 12pt;
     }
@@ -118,10 +114,6 @@ main .two_main div:nth-child(2) #img_queEs {
         font-size: 12pt;
     }
 
-    main .two_main div:nth-child(2) #img_queEs {
-        height: 133px;
-        width: 220px;
-    }
 }
 
 @media screen and (min-width: 400px) {
@@ -145,15 +137,10 @@ main .two_main div:nth-child(2) #img_queEs {
 }
 
 @media screen and (min-width: 500px) {
-    main .one_main div:nth-child(1) img,
-    main .two_main div:nth-child(2) #img_queEs {
-        height: 220px;
-        width: 320px;
-    }
 
     main .one_main div:nth-child(2),
     main .two_main div:nth-child(1) {
-        font-size: 14pt;
+        font-size: 13pt;
     }
 }
 
@@ -161,6 +148,11 @@ main .two_main div:nth-child(2) #img_queEs {
     main .one_main,
     main .two_main {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    main .one_main div,
+    main .two_main div {
+        margin-top: 2rem;
     }
 
     main .two_main{
@@ -171,6 +163,11 @@ main .two_main div:nth-child(2) #img_queEs {
     main .two_main div:nth-child(2) #img_queEs {
         height: 240px;
         width: 340px;
+    }
+
+    
+    main .one_main div:nth-child(1) img {
+        margin-left: 20px;
     }
 
     main .one_main div:nth-child(2),
@@ -185,9 +182,24 @@ main .two_main div:nth-child(2) #img_queEs {
         height: 260px;
         width: 360px;
     }
+    main .one_main div:nth-child(1) img {
+        margin-left: 70px;
+    }
     main .one_main div:nth-child(2),
     main .two_main div:nth-child(1) {
         font-size: 18pt;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    main .one_main div:nth-child(1) img {
+        margin-left: 70px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main .one_main div:nth-child(1) img {
+        margin-left: 120px;
     }
 }
 
