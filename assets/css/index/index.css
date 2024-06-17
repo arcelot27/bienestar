@@ -61,7 +61,7 @@ main .one_main div:nth-child(2) p {
 
 main .two_main {
     height: 50%;
-    width: 100vw;
+    width: 98vw;
     background: linear-gradient(45deg, #7596C8 0%, #6C89A4 25%, #6C89A4 50%, #376DA1 75%, #1A4065 100%);
     display: grid;
     margin-bottom: 1rem;
@@ -153,7 +153,7 @@ main .two_main div:nth-child(2) #img_queEs {
     
     main .one_main div,
     main .two_main div {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     main .two_main{
