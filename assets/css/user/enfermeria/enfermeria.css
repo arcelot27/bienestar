@@ -392,11 +392,16 @@ main .main_body {
 }
 
 @media screen and (min-width: 1024px) {
+    main .main_header{
+        width: 68%;
+    }
     main .main_header > a {
+        margin-left: 13%;
         width: 9%;
         height: 80px;
     }
     main .main_header > a i {
+        margin-left: 30%;
         margin-top: 20%;
         font-size: 28pt;
     }
@@ -415,6 +420,9 @@ main .main_body {
         margin-bottom: 10%;
         width: 400px;
         height: 80px;
+    }
+    main .main_body > div a div {
+        padding-left: 6.5%;
     }
     main .main_body> div a div i {
         font-size: 26pt;

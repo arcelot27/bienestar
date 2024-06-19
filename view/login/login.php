@@ -16,7 +16,7 @@
                     <a href=""><p>Recuperar contraseña</p></a>
                     <input type="submit" placeholder="Enviar">
                 </form>
-                <a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i><p>HOME</p></a>
+                <a href="index.php"><i class="fa-solid fa-circle-arrow-left"></i><p>HOME</p></a>
             </div>
         </div>
     </div>

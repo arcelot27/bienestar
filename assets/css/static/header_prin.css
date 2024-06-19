@@ -45,7 +45,7 @@ header a > i {
 
 /* Container */
 .container {
-    width: 100vw;
+    width: 98vw;
     height: 17vh;
     display: flex;
 }
@@ -259,6 +259,7 @@ header a > i {
         margin-top: 1.5rem;
     }
     .container div:nth-child(1) div {
+        margin-left: -3px;
         height: 30vh;
     }
 
