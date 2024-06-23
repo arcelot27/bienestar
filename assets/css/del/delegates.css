@@ -122,7 +122,7 @@ main .main_body .add > div a i {
 main .main_body > div:nth-child(2) img {
     height: 150px;
     width: 100%;
-    max-width: 275px;
+    width: 275px;
 }
 
 /* Responsive design */
@@ -173,7 +173,7 @@ main .main_body > div:nth-child(2) img {
 
     main .main_body > div:nth-child(2) img {
         height: 200px;
-        max-width: 350px;
+        width: 350px;
     }
 }
 
@@ -211,7 +211,7 @@ main .main_body > div:nth-child(2) img {
 
     main .main_body > div:nth-child(2) img {
         height: 170px;
-        max-width: 295px;
+        width: 295px;
     }
 }
 
@@ -223,7 +223,7 @@ main .main_body > div:nth-child(2) img {
     }
 
     main .main_body > div {
-        width: 45%;
+        width: 35%;
         margin-top: 1rem;
     }
 
@@ -256,7 +256,7 @@ main .main_body > div:nth-child(2) img {
 
     main .main_body > div:nth-child(2) img {
         height: 180px;
-        max-width: 305px;
+        width: 305px;
     }
 }
 
@@ -280,7 +280,7 @@ main .main_body > div:nth-child(2) img {
     }
 
     main .main_body > div a p {
-        font-size: 28pt;
+        font-size: 24pt;
     }
 
     main .main_body .addd,
@@ -294,9 +294,9 @@ main .main_body > div:nth-child(2) img {
     }
 
     main .main_body > div:nth-child(2) img {
-        height: 240px;
-        max-width: 404px;
-        margin-top: 4rem;
+        height: 280px;
+        width: 580px;
+        margin-left: 0%;
     }
 }
 
