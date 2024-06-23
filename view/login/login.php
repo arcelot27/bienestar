@@ -17,7 +17,6 @@
                     <input type="submit" placeholder="Enviar">
                 </form>
                 <a href="?b=index"><i class="fa-solid fa-circle-arrow-left"></i><p>HOME</p></a>
-
             </div>
         </div>
     </div>
