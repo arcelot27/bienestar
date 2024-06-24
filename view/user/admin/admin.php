@@ -56,12 +56,14 @@
 <script src="assets/js/profile.js"></script>
 
 <!-- La ventana emergente -->
-<div id="logoutModal" class="modal">
+<div id="logoutModal" class="modal" style="display:none;">
     <div class="modal-content">
         <p>¿Estás seguro de que quieres cerrar sesión?</p>
         <form method="get" action="">
-            <a href="?b=admin&s=sessionexit"><button type="button btn-success" id="confirmButton">Aceptar</button></a>
-            <button type="button" id="cancelButton">Cancelar</button>
+            <input type="hidden" name="b" value="admin">
+            <input type="hidden" name="s" value="sessionexit">
+            <button type="submit" class="btn-success" id="confirmButton">Aceptar</button>
+            <button type="button" class="btn-cancel" id="cancelButton" onclick="closeModal()">Cancelar</button>
         </form>
     </div>
 </div>

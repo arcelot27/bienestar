@@ -1,27 +1,17 @@
- // JavaScript para manejar la ventana emergente
- var modal = document.getElementById("logoutModal");
- var btn = document.getElementById("logoutButton");
- var confirmBtn = document.getElementById("confirmButton");
- var cancelBtn = document.getElementById("cancelButton");
+function openModal() {
+    document.getElementById("logoutModal").style.display = "block";
+    window.addEventListener('click', outsideClickListener);
+}
 
- // Mostrar la ventana emergente al hacer clic en el botón "Cerrar Sesión"
- btn.onclick = function() {
-     modal.style.display = "block";
- }
+function closeModal() {
+    document.getElementById("logoutModal").style.display = "none";
+    window.removeEventListener('click', outsideClickListener);
+}
 
-  // Redirigir a la página index.php al hacer clic en "Aceptar"
-  confirmBtn.onclick = function() {
-     window.location.href = "/view/index-view";
- }
-
- // Ocultar la ventana emergente al hacer clic en el botón "Cancelar"
- cancelBtn.onclick = function() {
-     modal.style.display = "none";
- }
-
- // Ocultar la ventana emergente si el usuario hace clic fuera de la ventana
- window.onclick = function(event) {
-     if (event.target == modal) {
-         modal.style.display = "none";
-     }
- }
+function outsideClickListener(event) {
+    const modal = document.getElementById("logoutModal");
+    const modalContent = document.querySelector(".modal-content");
+    if (event.target === modal) {
+        closeModal();
+    }
+}
