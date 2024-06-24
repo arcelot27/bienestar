@@ -32,7 +32,9 @@ class TamizController
         require_once "view/boostrap/footer.php";
     }
     public function busenfe(){
-        require_once "view/tamiz/tami-busenfe.php";
+        require_once "view/tamiz/bus/tami-busenfe.php";
     }
+
+    
 
 }
