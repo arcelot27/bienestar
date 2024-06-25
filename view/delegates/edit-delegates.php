@@ -15,10 +15,10 @@ if (isset($user)) :
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         main {
-            font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             display: flex;
             justify-content: center;
@@ -41,7 +41,7 @@ if (isset($user)) :
             color: #333333;
         }
 
-        form {
+        .edit {
             display: flex;
             flex-direction: column;
             text-align: left;
@@ -63,7 +63,7 @@ if (isset($user)) :
             width: 100%;
         }
 
-        button {
+        .guardar {
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
@@ -74,8 +74,22 @@ if (isset($user)) :
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
+        .guardar:hover {
             background-color: #0056b3;
+        }
+
+        .btn-danger {
+            font-size: 12pt;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background-color: red;
         }
 
         .main_header {
@@ -91,6 +105,40 @@ if (isset($user)) :
 
         .main_header a:hover {
             color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .modal-body {
+            text-align: center;
         }
 
         /* Responsive Styles */
@@ -156,7 +204,7 @@ if (isset($user)) :
     <main>
         <div>
             <h2>Editar Usuario</h2>
-            <form id="editForm" action="?b=admin&s=updateUser" method="post">
+            <form class="edit" onsubmit="openeditModal(event)" method="post">
                 <input type="hidden" name="user_del" value="<?php echo htmlspecialchars($user['user_del']); ?>">
                 <label for="name_del">Nombres:</label>
                 <input type="text" id="name_del" name="name_del" value="<?php echo htmlspecialchars($user['name_del']); ?>" required>
@@ -173,10 +221,27 @@ if (isset($user)) :
                 <label for="email_inst_del">Email Institucional:</label>
                 <input type="email" id="email_inst_del" name="email_inst_del" value="<?php echo htmlspecialchars($user['email_inst_del']); ?>" required>
 
-                <button type="submit">Guardar</button>
+                <button class="guardar" type="submit">Guardar</button>
             </form>
         </div>
     </main>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Confirmar Actualización de Usuario</h5>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro que desea guardar los cambios?</p>
+                <form method="post" action="">
+                    <input type="hidden" name="b" value="admin">
+                    <input type="hidden" name="s" value="updateUser">
+                    <button type="submit" class="btn btn-success" id="confirmButton">Aceptar</button>
+                    <button type="button" class="btn btn-danger" onclick="closeeditModal()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/confi.js"></script>
 </body>

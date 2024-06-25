@@ -192,60 +192,6 @@ main .main_body {
     display: none;
 }
 
-.modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed; /* Fijar posición */
-    z-index: 1; /* Por encima de otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Desplazamiento si es necesario */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    display: flex; /* Usar Flexbox para centrar */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Ancho del contenido */
-    max-width: 500px; /* Ancho máximo */
-    text-align: center; /* Centrar texto */
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-around; /* Distribuir botones con espacio entre ellos */
-    margin-top: 20px;
-}
-
-.btn-success {
-    background-color: #54BC1D;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.btn-success:hover {
-    background-color: green;
-}
-
-#cancelButton {
-    background-color: #B01818;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-#cancelButton:hover {
-    background-color: darkred;
-}
-
 @media screen and (min-width: 376px) {
 
     main .main_header > a {

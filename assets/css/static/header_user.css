@@ -1,3 +1,76 @@
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.modal-header h5 {
+    font-size: 14pt;
+    margin: 0;
+}
+
+.modal-footer {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn-success, .btn-cancel {
+    font-size: 12pt;
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: green;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background-color: red;
+}
+
 @media (max-width: 375px) {
     /*header*/
     header {

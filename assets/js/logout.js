@@ -1,17 +1,16 @@
 function openModal() {
-    document.getElementById("logoutModal").style.display = "block";
-    window.addEventListener('click', outsideClickListener);
+    document.getElementById('logoutModal').style.display = 'flex';
+    document.body.classList.add('modal-open');
 }
 
 function closeModal() {
-    document.getElementById("logoutModal").style.display = "none";
-    window.removeEventListener('click', outsideClickListener);
+    document.getElementById('logoutModal').style.display = 'none';
+    document.body.classList.remove('modal-open');
 }
 
-function outsideClickListener(event) {
-    const modal = document.getElementById("logoutModal");
-    const modalContent = document.querySelector(".modal-content");
-    if (event.target === modal) {
+// Cerrar el modal al hacer clic fuera de la ventana modal
+window.onclick = function(event) {
+    if (event.target == document.getElementById('logoutModal')) {
         closeModal();
     }
 }

@@ -1,20 +1,20 @@
-function opendelModal() {
-    $('#deleteModal').modal('show');
+function openModal() {
+    $('#logoutModal').modal('show');
 }
 
 function closeModal() {
-    $('#deleteModal').modal('hide');
+    $('#logoutModal').modal('hide');
 }
 
 // Cerrar el modal al hacer clic fuera de la ventana modal
 $(document).ready(function(){
-    $('#deleteModal').on('hidden.bs.modal', function () {
+    $('#logoutModal').on('hidden.bs.modal', function () {
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
     });
 
-    $('#deleteModal').on('click', function (e) {
-        if ($(e.target).is('#deleteModal')) {
+    $('#logoutModal').on('click', function (e) {
+        if ($(e.target).is('#logoutModal')) {
             closeModal();
         }
     });

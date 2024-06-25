@@ -36,7 +36,7 @@
                                         <td><?php echo htmlspecialchars($user['email_del']); ?></td>
                                         <td><?php echo htmlspecialchars($user['email_inst_del']); ?></td>
                                         <td><a href="?b=admin&s=edit&id=<?php echo $user['user_del']; ?>" class="link-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        <td><a href="?b=admin&s=deleteUser&id=<?php echo $user['user_del']; ?>" class="link-danger delete-link"><i class="fa-solid fa-trash"></i></a></td>
+                                        <td><a href="#"onclick="opendelModal()=<?php echo $user['user_del']; ?>" class="link-danger delete-link"><i class="fa-solid fa-trash"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else : ?>
@@ -52,4 +52,24 @@
         </div>
     </div>
 </main>
+
+    <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminar Usuario</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p>¿Estás seguro de que quieres eliminar este usuario?</p>
+                    <form method="get" action="">
+                        <input type="hidden" name="b" value="admin">
+                        <input type="hidden" name="s" value="deleteUser">
+                        <button type="submit" class="btn btn-success" id="confirmButton">Aceptar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal()">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <script src="assets/js/delete.js"></script>

@@ -1,10 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const editForm = document.getElementById("editForm");
+function openeditModal(event) {
+    event.preventDefault();
+    document.getElementById('editModal').style.display = 'flex';
+}
 
-    editForm.addEventListener("submit", function(event) {
-        const confirmation = confirm("¿Está seguro de que desea guardar los cambios?");
-        if (!confirmation) {
-            event.preventDefault();
-        }
-    });
-});
+function closeeditModal() {
+    document.getElementById('editModal').style.display = 'none';
+}
+
+window.onclick = function (event) {
+    if (event.target == document.getElementById('editModal')) {
+        closeeditModal();
+    }
+}
