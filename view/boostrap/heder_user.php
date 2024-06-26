@@ -5,7 +5,7 @@
                 <img src="assets/img/logo-5remov.png" alt="Logo" class="img-fluid">
             </div>
             <div class="col-3 col-md-2 text-end position-absolute top-50 end-0 translate-middle-y">
-            <a href="#" onclick="openModal()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                <a href="#" onclick="openModal()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </div>
     </header>
@@ -22,7 +22,7 @@
                         <input type="hidden" name="b" value="admin">
                         <input type="hidden" name="s" value="sessionexit">
                         <button type="submit" class="btn btn-success" id="confirmButton">Aceptar</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal()">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </form>
                 </div>
             </div>

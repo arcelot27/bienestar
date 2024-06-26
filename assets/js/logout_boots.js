@@ -2,20 +2,16 @@ function openModal() {
     $('#logoutModal').modal('show');
 }
 
-function closeModal() {
-    $('#logoutModal').modal('hide');
-}
-
 // Cerrar el modal al hacer clic fuera de la ventana modal
-$(document).ready(function(){
-    $('#logoutModal').on('hidden.bs.modal', function () {
-        $('body').removeClass('modal-open');
-        $('.modal-backdrop').remove();
-    });
-
+$(document).ready(function() {
     $('#logoutModal').on('click', function (e) {
         if ($(e.target).is('#logoutModal')) {
-            closeModal();
+            $('#logoutModal').modal('hide');
         }
+    });
+
+    // Cerrar el modal al hacer clic en el botón "Cancelar"
+    $(document).on('click', '[data-dismiss="modal"]', function() {
+        $('#logoutModal').modal('hide');
     });
 });

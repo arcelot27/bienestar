@@ -6,3 +6,10 @@ main .btn-circle {
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (min-width: 992px) {
+    header > div > div:nth-child(2) > a > i {
+        margin-right: 30% !important;
+        font-size: 20pt;
+    }
+}
