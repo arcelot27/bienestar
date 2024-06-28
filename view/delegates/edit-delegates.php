@@ -108,29 +108,26 @@ if (isset($user)) :
         }
 
         /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
+    .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
+    .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
 
         .modal-header {
             display: flex;
@@ -226,24 +223,24 @@ if (isset($user)) :
         </div>
     </main>
 
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Confirmar Actualización de Usuario</h5>
-            </div>
-            <div class="modal-body">
-                <p>¿Estás seguro que desea guardar los cambios?</p>
-                <form method="post" action="">
-                    <input type="hidden" name="b" value="admin">
-                    <input type="hidden" name="s" value="updateUser">
-                    <button type="submit" class="btn btn-success" id="confirmButton">Aceptar</button>
-                    <button type="button" class="btn btn-danger" onclick="closeeditModal()">Cancelar</button>
-                </form>
-            </div>
+    <div id="editModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Confirmar Actualización de Usuario</h5>
+        </div>
+        <div class="modal-body">
+            <p>¿Estás seguro que desea guardar los cambios?</p>
+            <form method="post" action="">
+                <input type="hidden" name="b" value="admin">
+                <input type="hidden" name="s" value="updateUser"><br>
+                <button type="submit" class="btn btn-success" id="confirmButton">Aceptar</button>
+                <button type="button" class="btn btn-danger" onclick="closeeditModal()">Cancelar</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <script src="assets/js/confi.js"></script>
+<script src="assets/js/confi.js"></script>
 </body>
 
 </html>
