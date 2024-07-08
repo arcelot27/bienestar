@@ -28,7 +28,12 @@ class TamizController {
     }
 
     public function busenfe() {
+        $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
+        <link rel='stylesheet' href='assets/css/tamiz/tami-bus.css'>";
+        require_once "view/boostrap/head.php";
+        require_once "view/boostrap/heder_user.php";
         require_once "view/tamiz/bus/tami-busenfe.php";
+        require_once "view/boostrap/footer.php";
     }
 
     public function buscarPorIdentificacion() {
