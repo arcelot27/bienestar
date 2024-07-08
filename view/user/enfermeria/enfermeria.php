@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET['message'])) {
+    echo "<script type='text/javascript'>
+            alert('" . $_GET['message'] . "');
+          </script>";
+}
+?>
+
 <main>
     <div class="main_header">
         <a id="profileLink"><i class="fa-solid fa-user-nurse"></i></a>

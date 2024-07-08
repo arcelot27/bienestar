@@ -1,85 +1,74 @@
 <?php
 
-class Tamiz{
+class Tamiz {
 
-    private $consulta;
+    private $conexion;
 
-    public function __construct(){
-        try{
-            $this -> consulta = databaseConexion::conexion();
-        }catch(PDOException $e){
-            echo "Error de Conexion ". $e -> getMessage(); 
-        }
+    public function __construct() {
+        $this->conexion = databaseConexion::conexion();
     }
 
-    public function reviewTa($servername, $username, $password, $dbname){
-        // Crear la conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
+    public function buscarPorIdentificacion($identificacion) {
+        $query = "SELECT id_apre, name_apre, ape_apre, tipo_docu_apre, dni_apre, edad_apre FROM aprendiz WHERE dni_apre= ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param('s', $identificacion);
+        $stmt->execute();
+        $stmt->bind_result($idapre, $nombre, $apellidos, $tipo_documento, $numero_documento, $edad);
+        
+        $result = $stmt->fetch();
 
-        // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['name'];
-            $applicationDate = $_POST['applicationDate'];
-
-            // Validar el nombre y la fecha en la base de datos
-            $sql = "SELECT * FROM tu_tabla WHERE nombre = ? OR fecha_aplicacion = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ss", $name, $applicationDate);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                echo '<div class="alert alert-danger">El nombre o la fecha de aplicación ya existen en la base de datos.</div>';
-            } else {
-                echo '<div class="alert alert-success">El nombre y la fecha de aplicación son válidos.</div>';
-            }
-
-            $stmt->close();
-        }
-
-        $conn->close();
-    }
-    public function new($servername, $username, $password, $dbname){
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newTamizajeName = $_POST['newTamizajeName'];
-
-    // Validar si el nombre del tamizaje ya existe en la base de datos
-    $sql = "SELECT * FROM tamizajes WHERE nombre = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $newTamizajeName);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        echo '<div class="alert alert-danger">El nombre del tamizaje ya existe en la base de datos.</div>';
-    } else {
-        // Insertar el nuevo tamizaje en la base de datos
-        $sql = "INSERT INTO tamizajes (nombre) VALUES (?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $newTamizajeName);
-
-        if ($stmt->execute()) {
-            echo '<div class="alert alert-success">El tamizaje ha sido creado exitosamente.</div>';
+        if ($result) {
+            return [
+                'id_apre' => $idapre,
+                'nombre' => $nombre,
+                'apellidos' => $apellidos,
+                'tipo_documento' => $tipo_documento,
+                'numero_documento' => $numero_documento,
+                'edad' => $edad
+            ];
         } else {
-            echo '<div class="alert alert-danger">Hubo un error al crear el tamizaje. Inténtalo de nuevo.</div>';
+            return null;
         }
     }
+    public function actualizarDatosUsuario($id_apre, $nombre, $apellidos, $tipo_documento, $numero_documento, $edad) {
+        $query = "UPDATE aprendiz SET name_apre = ?, ape_apre = ?, tipo_docu_apre = ?, dni_apre = ?, edad_apre = ? WHERE id_apre = ?";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param('sssssi', $nombre, $apellidos, $tipo_documento, $numero_documento, $edad, $id_apre);
+        $result = $stmt->execute();
 
-    $stmt->close();
-}
-
-$conn->close();
+        return $result;
     }
 
+
+    public function Tamizenfe($data) {
+        $query = "INSERT INTO tamiz_salud (id_apre, name_taz, ult_examen_fisico_taz, cirugia_taz, cirugia_cual_taz, sintomas_inusuales_taz, sintomas_inusuales_cual_taz, convulsiones_taz, sustancias_psicoactivas_taz, sustancias_psicoactivas_cual_taz, bebidas_alcoholicas_taz, presion_arterial_taz, frecuencia_cardiaca_taz, frecuencia_respiratoria_taz, saturacion_taz, temperatura_taz, peso_taz, talla_taz, observaciones_taz) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bind_param('issssssssssssssssss', 
+            $data['id_apre'], 
+            $data['name_taz'], 
+            $data['ult_examen_fisico_taz'], 
+            $data['cirugia_taz'], 
+            $data['cirugia_cual_taz'], 
+            $data['sintomas_inusuales_taz'], 
+            $data['sintomas_inusuales_cual_taz'], 
+            $data['convulsiones_taz'], 
+            $data['sustancias_psicoactivas_taz'], 
+            $data['sustancias_psicoactivas_cual_taz'], 
+            $data['bebidas_alcoholicas_taz'], 
+            $data['presion_arterial_taz'], 
+            $data['frecuencia_cardiaca_taz'], 
+            $data['frecuencia_respiratoria_taz'], 
+            $data['saturacion_taz'], 
+            $data['temperatura_taz'], 
+            $data['peso_taz'], 
+            $data['talla_taz'], 
+            $data['observaciones_taz']
+        );
+
+        $result = $stmt->execute();
+
+        return $result;
+    
+    }
 }
+?>
