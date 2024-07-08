@@ -5,7 +5,7 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="#">
+            <a href="?b=tamiz&s=psico">
                 <div>
                     <i class="fa-solid fa-plus"></i>
                 </div>
