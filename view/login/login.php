@@ -13,8 +13,8 @@
                 <form action="?b=login&s=validaruser" method="post">
                     <input type="text" placeholder="User" name="user">
                     <input type="password" placeholder="Password" id="input" name="pasword">
-                    <a href=""><p>Recuperar contraseña</p></a>
                     <input type="submit" placeholder="Enviar">
+                    <a href=""><p>Recuperar contraseña</p></a>
                 </form>
                 <a href="?b=index"><i class="fa-solid fa-circle-arrow-left"></i><p>HOME</p></a>
             </div>
