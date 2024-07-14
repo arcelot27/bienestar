@@ -13,6 +13,8 @@ class AdminController
 
     public function Inicio()
     {
+        // Verificar la sesión antes de cargar cualquier controlador o acción
+verificarSesion();
         $usuario = $_SESSION['usuario'];
         $user = $this->object->selectUser($usuario);
 

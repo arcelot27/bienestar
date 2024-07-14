@@ -1,22 +1,29 @@
 <?php
-include_once "model/login.php"; 
+include_once "model/login.php";
 
-class LoginController{
+class LoginController
+{
     public $loginModel;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->loginModel = new Login();
     }
 
-    public function Inicio(){
+    public function Inicio()
+    {
+        // Verificar la sesión antes de cargar cualquier controlador o acción
+        verificarSesion();
+
         $style = "<link rel='stylesheet' href='assets/css/login/login.css'>
-                <link rel='stylesheet' href='assets/css/static/footer.css'>"; 
+                <link rel='stylesheet' href='assets/css/static/footer.css'>";
         require_once "view/login/login.php";
         require_once "view/head.php";
         require_once "view/footer.php";
     }
 
-    public function validarUser(){
+    public function validarUser()
+    {
 
         if (isset($_POST['user']) && isset($_POST['pasword'])) {
             $usuario = $_POST['user'];
@@ -70,7 +77,6 @@ class LoginController{
                 } else {
                     $mensaje = "Usuario y/o contraseña incorrectos, por favor verifique";
                     echo "<script>window.location.href = '?b=login&mensaje=" . urlencode($mensaje) . "';</script>";
-                    
                 }
             }
         } else {
@@ -79,4 +85,3 @@ class LoginController{
         }
     }
 }
-?>
