@@ -13,9 +13,6 @@ class AprenController
 
     public function Inicio()
     {
-        // Verificar la sesión antes de cargar cualquier controlador o acción
-verificarSesion();
-
         $apren_model = new Apren();
         $aprendices = $apren_model->obtenerAprendices();
 
@@ -26,6 +23,9 @@ verificarSesion();
         require_once "view/boostrap/heder_user.php";
         require_once "view/aprendiz/aprendiz.php";
         require_once "view/boostrap/footer.php";
+
+        // Verificar la sesión antes de cargar cualquier controlador o acción
+        verificarSesion();
     }
 
     public function sessionexit()

@@ -13,9 +13,6 @@ class PsicolController
 
     public function Inicio()
     {
-        // Verificar la sesión antes de cargar cualquier controlador o acción
-        verificarSesion();
-
         $usuario = $_SESSION['usuario'];
         $user = $this->object->selectUser($usuario);
 
@@ -28,6 +25,9 @@ class PsicolController
         require_once "view/heder_user.php";
         require_once "view/user/psicol/psicol.php";
         require_once "view/footer.php";
+
+        // Verificar la sesión antes de cargar cualquier controlador o acción
+        verificarSesion();
     }
 
     public function sessionexit()

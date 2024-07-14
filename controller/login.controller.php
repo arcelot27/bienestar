@@ -12,9 +12,6 @@ class LoginController
 
     public function Inicio()
     {
-        // Verificar la sesión antes de cargar cualquier controlador o acción
-        verificarSesion();
-
         $style = "<link rel='stylesheet' href='assets/css/login/login.css'>
                 <link rel='stylesheet' href='assets/css/static/footer.css'>";
         require_once "view/login/login.php";

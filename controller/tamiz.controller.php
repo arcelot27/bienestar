@@ -20,8 +20,7 @@ class TamizController
 
     public function inicio()
     {
-        // Verificar la sesión antes de cargar cualquier controlador o acción
-        verificarSesion();
+
 
         $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
         <link rel='stylesheet' href='assets/css/tamiz/tamices.css'>";
@@ -30,6 +29,9 @@ class TamizController
         require_once "view/boostrap/heder_user.php";
         require_once "view/tamiz/tamices.php";
         require_once "view/boostrap/footer.php";
+
+        // Verificar la sesión antes de cargar cualquier controlador o acción
+        verificarSesion();
     }
 
     public function enfe()

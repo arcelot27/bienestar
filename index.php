@@ -7,10 +7,11 @@ session_start();
 // Función para verificar si el usuario está autenticado
 function verificarSesion() {
     if (!isset($_SESSION['usuario_validado']) || $_SESSION['usuario_validado'] !== true) {
-        header('Location: ?b=index'); // Redirige a la página de inicio de sesión
+        header('Location: ?b=login'); // Redirige a la página de inicio de sesión
         exit();
     }
 }
+
 
 
 $controller = "index";
