@@ -70,5 +70,113 @@ class Tamiz {
         return $result;
     
     }
+
+    public function buscarPorIdconsulta($identificacion) {
+        // Consulta para obtener los datos del aprendiz
+        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE dni_apre = ?");
+        $stmt->bind_param("s", $identificacion);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $aprendiz = $result->fetch_assoc();
+    
+        // Si no se encuentra el aprendiz, devolver un mensaje de error
+        if (!$aprendiz) {
+            return ["error" => "No se encontraron datos para la identificación proporcionada en la tabla aprendiz."];
+        }
+    
+        // Realizar la consulta a la tabla tamiz_salud
+        $id_apre = $aprendiz['id_apre'];
+        $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
+        $stmt->bind_param("i", $id_apre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
+    
+        // Combinar los resultados
+        $aprendiz['tamiz_salud'] = $tamiz_salud;
+    
+        // Si no se encuentran datos en tamiz_salud, devolver un mensaje de error
+        if (empty($tamiz_salud)) {
+            return ["error" => "No se encontraron datos en la tabla tamiz_salud para el aprendiz con la identificación proporcionada."];
+        }
+    
+        return $aprendiz;
+    }
+    
+    public function buscarPorJornada($jornada) {
+        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre,numero_ficha_apre, jornada_apre FROM aprendiz WHERE jornada_apre = ?");
+        $stmt->bind_param("s", $jornada);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+    
+        // Si no se encuentran aprendices, devolver un mensaje de error
+        if (empty($aprendices)) {
+            return ["error" => "No se encontraron aprendices para la jornada proporcionada en la tabla aprendiz."];
+        }
+    
+        $encontradoEnTamiz = false;
+        foreach ($aprendices as &$aprendiz) {
+            $id_apre = $aprendiz['id_apre'];
+            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
+            $stmt->bind_param("i", $id_apre);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
+            $aprendiz['tamiz_salud'] = $tamiz_salud;
+    
+            if (!empty($tamiz_salud)) {
+                $encontradoEnTamiz = true;
+            }
+        }
+    
+        // Si no se encuentran datos en tamiz_salud, devolver un mensaje de error
+        if (!$encontradoEnTamiz) {
+            return ["error" => "No se encontraron datos en la tabla tamiz_salud para los aprendices con la jornada proporcionada."];
+        }
+    
+        return $aprendices;
+    }
+    
+    public function buscarPorFicha($numeroFicha) {
+        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE numero_ficha_apre = ?");
+        $stmt->bind_param("s", $numeroFicha);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+    
+        // Si no se encuentran aprendices, devolver un mensaje de error
+        if (empty($aprendices)) {
+            return ["error" => "No se encontraron aprendices para el número de ficha proporcionado en la tabla aprendiz."];
+        }
+    
+        $encontradoEnTamiz = false;
+        foreach ($aprendices as &$aprendiz) {
+            $id_apre = $aprendiz['id_apre'];
+            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
+            $stmt->bind_param("i", $id_apre);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
+            $aprendiz['tamiz_salud'] = $tamiz_salud;
+    
+            if (!empty($tamiz_salud)) {
+                $encontradoEnTamiz = true;
+            }
+        }
+    
+        // Si no se encuentran datos en tamiz_salud, devolver un mensaje de error
+        if (!$encontradoEnTamiz) {
+            return ["error" => "No se encontraron datos en la tabla tamiz_salud para los aprendices con el número de ficha proporcionado."];
+        }
+    
+        return $aprendices;
+    }
+    
+    
+    
+    
+  
+    
 }
 ?>
