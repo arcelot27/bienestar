@@ -5,17 +5,23 @@
     </div>
     <div class="main_body">
         <div>
-            <a href="#">
+            <a href="?b=tamiz&s=psico">
                 <div>
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <p>Realizar Tamizaje</p>
             </a>
-            <a href="#">
+            <a href="?b=tamiz&s=buspsico">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <p>Consultar Tamizaje</p>
+            </a>
+            <a href="?b=apren">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <p>Aprendices</p>
             </a>
         </div>
         <div>

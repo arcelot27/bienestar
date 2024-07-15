@@ -4,13 +4,6 @@ include_once 'lib/database/database.php';
 // Iniciar sesión
 session_start();
 
-// Función para verificar si el usuario está autenticado
-function verificarSesion() {
-    if (!isset($_SESSION['usuario_validado']) || $_SESSION['usuario_validado'] !== true) {
-        header('Location: ?b=login'); // Redirige a la página de inicio de sesión
-        exit();
-    }
-}
 
 
 
@@ -35,5 +28,6 @@ if (!isset($_REQUEST['b'])) {
     } else {
         echo "Error 404: Página no encontrada";
     }
+
 }
 ?>
