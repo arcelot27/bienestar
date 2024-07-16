@@ -458,9 +458,6 @@ class TamizController
         }
     }
 
-
-
-
     public function buscarPorIdentificacion()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['identificacion'])) {
@@ -563,8 +560,6 @@ class TamizController
             }
         }
     }
-
-
 
     public function actualizarDatosUsuario()
     {
