@@ -11,11 +11,11 @@
                 </div>
                 <p>Delegados</p>
             </a>
-            <a href="?b=enfermeria&s=tamiz">
+            <a href="?b=apren&s=Busapre">
                 <div>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <p>Consultar Tamizaje</p>
+                <p>Consultar Aprendices</p>
             </a>
         </div>
         <div>

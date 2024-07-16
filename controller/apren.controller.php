@@ -38,6 +38,19 @@ class AprenController
         verificarSesion();
     }
 
+    public function Busapre(){
+        $apren_model = new Apren();
+        $aprendices = $apren_model->obtenerAprendices();
+        
+        $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
+        <link rel='stylesheet' href='assets/css/aprendiz/aprendiz.css'>";
+        
+        require_once "view/boostrap/head.php";
+        require_once "view/boostrap/heder_user.php";
+        require_once "view/aprendiz/aprendiz_admin.php";
+        require_once "view/boostrap/footer.php";
+    }
+
     public function sessionexit()
     {
 
@@ -119,26 +132,22 @@ class AprenController
                 'numero_contacto_emergencia' => isset($_POST['numeroContactoEmergencia']) ? $_POST['numeroContactoEmergencia'] : ''
             );
 
-            // Insertar el aprendiz en la base de datos
-            $apren_model = new Apren(); // Instancia de la clase Apren
+            $apren_model = new Apren();
             try {
                 $resultado = $apren_model->insertarAprendiz($datos_aprendiz);
     
                 if ($resultado) {
-                    // Éxito en la inserción
                     echo "<script>
                             alert('Los datos del aprendiz fueron almacenados correctamente.');
                             window.location.href = '?b=apren';
                           </script>";
                 } else {
-                    // Error al insertar
                     echo "<script>
                             alert('Hubo un problema al almacenar los datos del aprendiz.');
                             window.location.href = '?b=apren&s=add';
                           </script>";
                 }
             } catch (Exception $e) {
-                // Captura de excepciones y manejo de errores
                 echo "<script>
                         alert('Error: " . $e->getMessage() . "');
                         window.location.href = '?b=apren&s=add';
