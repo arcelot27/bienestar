@@ -1,47 +1,39 @@
 <?php
 include_once 'lib/database/database.php'; 
-class Login{
+
+class Login {
     private $consulta; 
-    public function __construct(){
-        try{
-            $this -> consulta = databaseConexion::conexion();
-        }catch(PDOException $e){
-            echo "Error de Conexion ". $e -> getMessage(); 
-        }
-    }
-    public function validarUsuario($usuario)
-    {
-        if (empty($usuario)) {
-            return false;
-        }
-        $query = "(SELECT user_del FROM delegados WHERE user_del = '$usuario')";
 
-        $resultado = mysqli_query($this->consulta, $query);
-
-        if (mysqli_num_rows($resultado) > 0) {
-            return true;
-        } else {
-            return false;
+    public function __construct() {
+        try {
+            $this->consulta = databaseConexion::conexion();
+        } catch (Exception $e) {
+            echo "Error de Conexion " . $e->getMessage(); 
         }
     }
 
-    public function validarPassword($password){
-        if (empty($password)) {
+    public function validarCredenciales($usuario, $password) {
+        if (empty($usuario) || empty($password)) {
             return false;
         }
-        $query = "(SELECT pasw_del FROM delegados WHERE pasw_del = '$password')";
 
-        $resultado = mysqli_query($this->consulta, $query);
+        $query = "SELECT user_del, pasw_del FROM delegados WHERE user_del = ?";
+        $stmt = $this->consulta->prepare($query);
+        $stmt->bind_param('s', $usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if (mysqli_num_rows($resultado) > 0) {
-            return true;
-        } else {
-            return false;
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if ($password === $row['pasw_del']) {  // Suponiendo que las contraseñas no están encriptadas.
+                return true;
+            }
         }
+        return false;
     }
 
-    public function rollConseguir($usuario){
-        $query = "(SELECT roll_del FROM delegados WHERE user_del = ?)";
+    public function rollConseguir($usuario) {
+        $query = "SELECT roll_del FROM delegados WHERE user_del = ?";
         $stmt = $this->consulta->prepare($query);
         $stmt->bind_param('s', $usuario);
         $stmt->execute();
@@ -55,9 +47,5 @@ class Login{
             return false;
         }
     }
-
-
 }
-
-
 ?>

@@ -13,6 +13,11 @@ class AdminController
 
     public function Inicio()
     {
+        if (!isset($_SESSION['usuario'])) {
+            $mensaje = "Debe iniciar sesión para acceder a esta página";
+            header("Location: ?b=login&mensaje=" . urlencode($mensaje));
+            exit();
+        }
         $usuario = $_SESSION['usuario'];
         $user = $this->object->selectUser($usuario);
 

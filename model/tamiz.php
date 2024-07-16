@@ -7,6 +7,15 @@ class Tamiz {
     public function __construct() {
         $this->conexion = databaseConexion::conexion();
     }
+    public function selectUser($username) {
+        $sql = "SELECT * FROM delegados WHERE user_del = ?";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+        return $user;
+    }
 
     public function buscarPorIdentificacion($identificacion) {
         $query = "SELECT id_apre, name_apre, ape_apre, tipo_docu_apre, dni_apre, edad_apre FROM aprendiz WHERE dni_apre= ?";

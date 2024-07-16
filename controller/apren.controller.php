@@ -13,6 +13,16 @@ class AprenController
 
     public function Inicio()
     {
+        if (!isset($_SESSION['usuario'])) {
+            $mensaje = "Debe iniciar sesión para acceder a esta página";
+            header("Location: ?b=login&mensaje=" . urlencode($mensaje));
+            exit();
+        }
+        $usuario = $_SESSION['usuario'];
+        $user = $this->object->selectUser($usuario);
+
+        $_SESSION['name'] = $user['name_del'];
+        
         $apren_model = new Apren();
         $aprendices = $apren_model->obtenerAprendices();
 

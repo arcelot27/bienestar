@@ -1,11 +1,18 @@
 <?php
+session_start(); // Inicia la sesión
+
 include_once 'lib/database/database.php';
 
-// Iniciar sesión
-session_start();
+$controller = "index";
 
-
-
+// Función para verificar la sesión
+function verificarSesion() {
+    if (!isset($_SESSION['usuario'])) {
+        $mensaje = "Debe iniciar sesión para acceder a esta página";
+        header("Location: ?b=login&mensaje=" . urlencode($mensaje));
+        exit();
+    }
+}
 
 $controller = "index";
 

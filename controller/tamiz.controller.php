@@ -20,6 +20,16 @@ class TamizController
 
     public function inicio()
     {
+        if (!isset($_SESSION['usuario'])) {
+            $mensaje = "Debe iniciar sesión para acceder a esta página";
+            header("Location: ?b=login&mensaje=" . urlencode($mensaje));
+            exit();
+        }
+        
+        $usuario = $_SESSION['usuario'];
+        $user = $this->object->selectUser($usuario);
+
+        $_SESSION['name'] = $user['name_del'];
         $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
         <link rel='stylesheet' href='assets/css/tamiz/tamices.css'>";
         require_once "view/boostrap/head.php";

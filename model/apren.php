@@ -12,6 +12,15 @@ class Apren
             echo "Error de Conexion " . $e->getMessage();
         }
     }
+    public function selectUser($username) {
+        $sql = "SELECT * FROM delegados WHERE user_del = ?";
+        $stmt = $this->consulta->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+        return $user;
+    }
     public function obtenerAprendices()
     {
         $sql = "SELECT 
