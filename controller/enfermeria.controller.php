@@ -57,8 +57,8 @@ class EnfermeriaController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $response = ['success' => false, 'message' => ''];
-
-            $requiredFields = ['user', 'name', 'nameApe', 'tel', 'email'];
+    
+            $requiredFields = ['user', 'pasw', 'name', 'nameApe', 'tel', 'email'];
             foreach ($requiredFields as $field) {
                 if (empty($_POST[$field])) {
                     $response['message'] = 'Todos los campos son obligatorios.';
@@ -67,7 +67,7 @@ class EnfermeriaController
                     exit;
                 }
             }
-
+    
             $tel = $_POST['tel'];
             if (!preg_match('/^[0-9]{10}$/', $tel)) {
                 $response['message'] = 'Por favor, ingrese un número de teléfono válido.';
@@ -75,7 +75,7 @@ class EnfermeriaController
                 echo json_encode($response);
                 exit;
             }
-
+    
             $email = $_POST['email'];
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $response['message'] = 'Por favor, ingrese un correo electrónico válido.';
@@ -83,22 +83,24 @@ class EnfermeriaController
                 echo json_encode($response);
                 exit;
             }
-
+    
             try {
                 $user = $_POST['user'];
+                $pasw = $_POST['pasw'];
                 $name = $_POST['name'];
                 $nameApe = $_POST['nameApe'];
-
-                $this->object->updateUser($user, $name, $nameApe, $tel, $email);
+    
+                $this->object->updateUser($user, $pasw, $name, $nameApe, $tel, $email);
                 $response['success'] = true;
                 $response['message'] = 'Datos actualizados correctamente';
             } catch (PDOException $e) {
                 $response['message'] = 'Error al actualizar los datos: ' . $e->getMessage();
             }
-
+    
             header('Content-Type: application/json');
             echo json_encode($response);
             exit;
         }
     }
+    
 }
