@@ -102,7 +102,6 @@
                     </div>
                 </div>
                 <div class="col-11 pb-3">
-                    <button class="btn btn-primary" type="reset">Limpiar</button>
                     <button class="btn btn-primary" type="submit">Agregar</button>
                 </div>
             </form>
