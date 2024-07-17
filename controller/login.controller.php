@@ -44,7 +44,7 @@ class LoginController
                     switch ($rol) {
                         case 1:
                             $_SESSION['redirect_view'] = 'depo';
-                            header("Location: ?b=dep");
+                            header("Location: ?b=depo");
                             break;
                         case 2:
                             $_SESSION['redirect_view'] = 'psicol';

@@ -710,6 +710,33 @@ class TamizController
         require_once "view/boostrap/footer.php";
     }
 
+    public function busdepo()
+    {
+        $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
+        <link rel='stylesheet' href='assets/css/tamiz/tami-bus.css'>";
+        $datos = [];
+
+        if (isset($_POST['identificacion']) && !empty($_POST['identificacion'])) {
+            $identificacion = $_POST['identificacion'];
+            $datos[] = $this->object->buscarPorIdconsultaEnfe($identificacion);
+        } elseif (isset($_POST['jornada']) && !empty($_POST['jornada'])) {
+            $jornada = $_POST['jornada'];
+            $datos = $this->object->buscarPorJornadaEnfe($jornada);
+        } elseif (isset($_POST['ficha']) && !empty($_POST['ficha'])) {
+            $ficha = $_POST['ficha'];
+            $datos = $this->object->buscarPorFichaEnfe($ficha);
+        }
+
+        if (!is_array($datos)) {
+            $datos = [];
+        }
+
+        require_once "view/boostrap/head.php";
+        require_once "view/boostrap/heder_user.php";
+        require_once "view/tamiz/bus/tami-busdepo.php";
+        require_once "view/boostrap/footer.php";
+    }
+
 
     public function exportarDatosPsico()
     {
