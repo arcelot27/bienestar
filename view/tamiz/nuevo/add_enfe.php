@@ -93,6 +93,11 @@
         .modal-footer-fullscreen {
             text-align: center;
         }
+
+        .container > div > div > a > i {
+            font-size: 25pt;
+            color: #004085;
+        }
     </style>
 </head>
 
