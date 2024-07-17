@@ -38,6 +38,19 @@ class AprenController
         verificarSesion();
     }
 
+    public function devol()
+    {
+        session_start();
+        if (isset($_SESSION['redirect_view'])) {
+            header('Location: ?b=' . $_SESSION['redirect_view']);
+            exit();
+        } else {
+            // Si no hay sesión, redirige a la página de inicio de sesión
+            header('Location: ?b=login');
+            exit();
+        }
+    }
+
     public function Busapre(){
         $apren_model = new Apren();
         $aprendices = $apren_model->obtenerAprendices();

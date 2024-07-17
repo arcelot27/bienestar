@@ -25,7 +25,7 @@ class TamizController
             header("Location: ?b=login&mensaje=" . urlencode($mensaje));
             exit();
         }
-        
+
         $usuario = $_SESSION['usuario'];
         $user = $this->object->selectUser($usuario);
 
@@ -128,10 +128,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'A1:V' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table');
-                $sheet->addTable($table);
+            $tableRange = 'A1:V' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table');
+            $sheet->addTable($table);
 
             // Hoja secundaria 
             $sheet2 = $spreadsheet->createSheet();
@@ -153,10 +153,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table2');
-                $sheet2->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table2');
+            $sheet2->addTable($table);
 
             // Hoja secundaria 
             $sheet3 = $spreadsheet->createSheet();
@@ -178,10 +178,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table3');
-                $sheet3->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table3');
+            $sheet3->addTable($table);
 
             // Hoja secundaria 
             $sheet4 = $spreadsheet->createSheet();
@@ -203,10 +203,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table4');
-                $sheet4->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table4');
+            $sheet4->addTable($table);
             // Hoja secundaria 
             $sheet5 = $spreadsheet->createSheet();
             $sheet5->setTitle('Convulsiones');
@@ -226,10 +226,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table5');
-                $sheet5->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table5');
+            $sheet5->addTable($table);
             // Hoja secundaria 
             $sheet6 = $spreadsheet->createSheet();
             $sheet6->setTitle('Sustancias Psicoactivas');
@@ -252,10 +252,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:E' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table6');
-                $sheet6->addTable($table);
+            $tableRange = 'B1:E' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table6');
+            $sheet6->addTable($table);
             // Hoja secundaria 
             $sheet7 = $spreadsheet->createSheet();
             $sheet7->setTitle('Presión Arterial');
@@ -275,10 +275,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table7');
-                $sheet7->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table7');
+            $sheet7->addTable($table);
             // Hoja secundaria 
             $sheet8 = $spreadsheet->createSheet();
             $sheet8->setTitle('Frecuencia Cardíaca');
@@ -298,10 +298,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table8');
-                $sheet8->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table8');
+            $sheet8->addTable($table);
             // Hoja secundaria 
             $sheet9 = $spreadsheet->createSheet();
             $sheet9->setTitle('Frecuencia Respiratoria');
@@ -321,10 +321,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table9');
-                $sheet9->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table9');
+            $sheet9->addTable($table);
             // Hoja secundaria 
             $sheet10 = $spreadsheet->createSheet();
             $sheet10->setTitle('Saturación');
@@ -344,10 +344,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table10');
-                $sheet10->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table10');
+            $sheet10->addTable($table);
             // Hoja secundaria 
             $sheet11 = $spreadsheet->createSheet();
             $sheet11->setTitle('Temperatura');
@@ -367,10 +367,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table11');
-                $sheet11->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table11');
+            $sheet11->addTable($table);
             // Hoja secundaria 
             $sheet12 = $spreadsheet->createSheet();
             $sheet12->setTitle('Peso');
@@ -390,10 +390,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table12');
-                $sheet12->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table12');
+            $sheet12->addTable($table);
             // Hoja secundaria 
             $sheet13 = $spreadsheet->createSheet();
             $sheet13->setTitle('Talla');
@@ -413,10 +413,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table13');
-                $sheet13->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table13');
+            $sheet13->addTable($table);
             // Hoja secundaria 
             $sheet14 = $spreadsheet->createSheet();
             $sheet14->setTitle('MVC');
@@ -437,10 +437,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table14');
-                $sheet14->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table14');
+            $sheet14->addTable($table);
 
             $fechaActual = (new DateTime())->format('Y-m-d');
             $nombreArchivo = "Tamizaje_Salud_$fechaActual.xlsx";
@@ -458,7 +458,7 @@ class TamizController
         }
     }
 
-    public function buscarPorIdentificacion()
+    public function buscarPorIdentificacionenfe()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['identificacion'])) {
             $identificacion = $_POST['identificacion'];
@@ -503,6 +503,128 @@ class TamizController
             }
         }
     }
+
+
+    public function devol()
+    {
+        session_start();
+        if (isset($_SESSION['redirect_view'])) {
+            header('Location: ?b=' . $_SESSION['redirect_view']);
+            exit();
+        } else {
+            // Si no hay sesión, redirige a la página de inicio de sesión
+            header('Location: ?b=login');
+            exit();
+        }
+    }
+
+    public function actualizarDatosUsuario()
+    {
+        if (isset($_GET['identificacion'])) {
+            $id_apre = $_GET['identificacion'];
+            $usuario = $this->object->buscarPor($id_apre);
+
+            if ($usuario) {
+                $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
+                          <link rel='stylesheet' href='assets/css/aprendiz/add.css'>";
+                require_once "view/boostrap/head.php";
+                require_once "view/boostrap/heder_user.php";
+                require_once "view/aprendiz/actualizar_datos.php";
+                require_once "view/boostrap/footer.php";
+            } else {
+                echo "Usuario no encontrado";
+            }
+        } else {
+            echo "ID no proporcionado";
+        }
+    }
+
+
+    public function guardarDatosActualizados()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_apre'])) {
+            // Aseguramos que las claves esperadas estén definidas en $_POST antes de acceder a ellas
+            $id_apre = $_POST['id_apre'];
+            $name_apre = isset($_POST['name_apre']) ? htmlspecialchars($_POST['name_apre']) : '';
+            $ape_apre = isset($_POST['ape_apre']) ? htmlspecialchars($_POST['ape_apre']) : '';
+            $tipo_docu_apre = isset($_POST['tipo_docu_apre']) ? htmlspecialchars($_POST['tipo_docu_apre']) : '';
+            $dni_apre = isset($_POST['dni_apre']) ? htmlspecialchars($_POST['dni_apre']) : '';
+            $edad_apre = isset($_POST['edad_apre']) ? (int)$_POST['edad_apre'] : 0;
+            $esta_civil_apre = isset($_POST['esta_civil_apre']) ? htmlspecialchars($_POST['esta_civil_apre']) : '';
+            $sexo_apre = isset($_POST['sexo_apre']) ? htmlspecialchars($_POST['sexo_apre']) : '';
+            $iden_gene_apre = isset($_POST['iden_gene_apre']) ? htmlspecialchars($_POST['iden_gene_apre']) : '';
+            $grup_etn_apre = isset($_POST['grup_etn_apre']) ? htmlspecialchars($_POST['grup_etn_apre']) : '';
+            $grup_etn_cual_apre = isset($_POST['grup_etn_cual_apre']) ? htmlspecialchars($_POST['grup_etn_cual_apre']) : '';
+            $estr_apre = isset($_POST['estr_apre']) ? htmlspecialchars($_POST['estr_apre']) : '';
+            $zona_resi_apre = isset($_POST['zona_resi_apre']) ? htmlspecialchars($_POST['zona_resi_apre']) : '';
+            $lugar_resi_apre = isset($_POST['lugar_resi_apre']) ? htmlspecialchars($_POST['lugar_resi_apre']) : '';
+            $vivie_apre = isset($_POST['vivie_apre']) ? htmlspecialchars($_POST['vivie_apre']) : '';
+            $servicios_publicos_apre = isset($_POST['servicios_publicos_apre']) ? htmlspecialchars($_POST['servicios_publicos_apre']) : '';
+            $tiempo_libre_apre = isset($_POST['tiempo_libre_apre']) ? htmlspecialchars($_POST['tiempo_libre_apre']) : '';
+            $hijos_apre = isset($_POST['hijos_apre']) ? (int)$_POST['hijos_apre'] : 0;
+            $embarazo_apre = isset($_POST['embarazo_apre']) ? htmlspecialchars($_POST['embarazo_apre']) : '';
+            $control_prenatal_apre = isset($_POST['control_prenatal_apre']) ? htmlspecialchars($_POST['control_prenatal_apre']) : '';
+            $diag_medico_apre = isset($_POST['diag_medico_apre']) ? htmlspecialchars($_POST['diag_medico_apre']) : '';
+            $diag_medico_cual_apre = isset($_POST['diag_medico_cual_apre']) ? htmlspecialchars($_POST['diag_medico_cual_apre']) : '';
+            $medica_apre = isset($_POST['medica_apre']) ? htmlspecialchars($_POST['medica_apre']) : '';
+            $medica_cual_apre = isset($_POST['medica_cual_apre']) ? htmlspecialchars($_POST['medica_cual_apre']) : '';
+            $limitaciones_apre = isset($_POST['limitaciones_apre']) ? htmlspecialchars($_POST['limitaciones_apre']) : '';
+            $antecedentes_familiares_apre = isset($_POST['antecedentes_familiares_apre']) ? htmlspecialchars($_POST['antecedentes_familiares_apre']) : '';
+            $antecedentes_familiares_otro_apre = isset($_POST['antecedentes_familiares_otro_apre']) ? htmlspecialchars($_POST['antecedentes_familiares_otro_apre']) : '';
+            $numero_celular_apre = isset($_POST['numero_celular_apre']) ? htmlspecialchars($_POST['numero_celular_apre']) : '';
+            $correo_apre = isset($_POST['correo_apre']) ? htmlspecialchars($_POST['correo_apre']) : '';
+            $numero_ficha_apre = isset($_POST['numero_ficha_apre']) ? htmlspecialchars($_POST['numero_ficha_apre']) : '';
+            $jornada_apre = isset($_POST['jornada_apre']) ? htmlspecialchars($_POST['jornada_apre']) : '';
+            $contac_emergen_apre = isset($_POST['contac_emergen_apre']) ? htmlspecialchars($_POST['contac_emergen_apre']) : '';
+            $numero_contac_emergen_apre = isset($_POST['numero_contac_emergen_apre']) ? htmlspecialchars($_POST['numero_contac_emergen_apre']) : '';
+
+            // Llamar al método del modelo para actualizar los datos del usuario
+            $success = $this->object->actualizarDatosUsuario(
+                $id_apre,
+                $name_apre,
+                $ape_apre,
+                $tipo_docu_apre,
+                $dni_apre,
+                $edad_apre,
+                $esta_civil_apre,
+                $sexo_apre,
+                $iden_gene_apre,
+                $grup_etn_apre,
+                $grup_etn_cual_apre,
+                $estr_apre,
+                $zona_resi_apre,
+                $lugar_resi_apre,
+                $vivie_apre,
+                $servicios_publicos_apre,
+                $tiempo_libre_apre,
+                $hijos_apre,
+                $embarazo_apre,
+                $control_prenatal_apre,
+                $diag_medico_apre,
+                $diag_medico_cual_apre,
+                $medica_apre,
+                $medica_cual_apre,
+                $limitaciones_apre,
+                $antecedentes_familiares_apre,
+                $antecedentes_familiares_otro_apre,
+                $numero_celular_apre,
+                $correo_apre,
+                $numero_ficha_apre,
+                $jornada_apre,
+                $contac_emergen_apre,
+                $numero_contac_emergen_apre
+            );
+
+            // Verificar el resultado de la operación y redirigir según corresponda
+            if ($success) {
+                header('Location: ?b=tamiz&s=devol');
+                exit();
+            } else {
+                echo "Error al actualizar los datos.";
+            }
+        }
+    }
+
 
     public function buscarPorIdentificacioPsico()
     {
@@ -561,25 +683,6 @@ class TamizController
         }
     }
 
-    public function actualizarDatosUsuario()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_apre']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['tipo_documento']) && isset($_POST['numero_documento']) && isset($_POST['edad'])) {
-            $id_apre = $_POST['id_apre'];
-            $nombre = $_POST['nombre'];
-            $apellidos = $_POST['apellidos'];
-            $tipo_documento = $_POST['tipo_documento'];
-            $numero_documento = $_POST['numero_documento'];
-            $edad = $_POST['edad'];
-
-            $success = $this->object->actualizarDatosUsuario($id_apre, $nombre, $apellidos, $tipo_documento, $numero_documento, $edad);
-
-            if ($success) {
-                echo "Datos actualizados correctamente.";
-            } else {
-                echo "Error al actualizar los datos.";
-            }
-        }
-    }
     public function buspsico()
     {
         $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
@@ -664,10 +767,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'A1:AE' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table1');
-                $sheet->addTable($table);
+            $tableRange = 'A1:AE' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table1');
+            $sheet->addTable($table);
 
             // Hoja secundaria 
             $sheet2 = $spreadsheet->createSheet();
@@ -690,10 +793,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table2');
-                $sheet2->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table2');
+            $sheet2->addTable($table);
 
             // Hoja secundaria 
             $sheet3 = $spreadsheet->createSheet();
@@ -714,10 +817,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table3');
-                $sheet3->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table3');
+            $sheet3->addTable($table);
 
             // Hoja secundaria 
             $sheet4 = $spreadsheet->createSheet();
@@ -738,10 +841,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table4');
-                $sheet4->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table4');
+            $sheet4->addTable($table);
 
             // Hoja secundaria 
             $sheet5 = $spreadsheet->createSheet();
@@ -763,10 +866,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table5');
-                $sheet5->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table5');
+            $sheet5->addTable($table);
             // Hoja secundaria 
             $sheet6 = $spreadsheet->createSheet();
             $sheet6->setTitle('Sustancias Psicoactivas');
@@ -786,10 +889,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table6');
-                $sheet6->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table6');
+            $sheet6->addTable($table);
             // Hoja secundaria 
             $sheet7 = $spreadsheet->createSheet();
             $sheet7->setTitle('Relación con Personas');
@@ -809,10 +912,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table7');
-                $sheet7->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table7');
+            $sheet7->addTable($table);
             // Hoja secundaria 
             $sheet8 = $spreadsheet->createSheet();
             $sheet8->setTitle('Medio de Transporte');
@@ -833,10 +936,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table8');
-                $sheet8->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table8');
+            $sheet8->addTable($table);
             // Hoja secundaria 
             $sheet9 = $spreadsheet->createSheet();
             $sheet9->setTitle('Origen de Ingresos');
@@ -857,10 +960,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table9');
-                $sheet9->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table9');
+            $sheet9->addTable($table);
             // Hoja secundaria 
             $sheet10 = $spreadsheet->createSheet();
             $sheet10->setTitle('Apoyo Familiar');
@@ -881,10 +984,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table10');
-                $sheet10->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table10');
+            $sheet10->addTable($table);
             // Hoja secundaria 
             $sheet11 = $spreadsheet->createSheet();
             $sheet11->setTitle('Dificultad Último Mes');
@@ -905,10 +1008,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table11');
-                $sheet11->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table11');
+            $sheet11->addTable($table);
             // Hoja secundaria 
             $sheet12 = $spreadsheet->createSheet();
             $sheet12->setTitle('Ayuda en Problema');
@@ -929,10 +1032,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table12');
-                $sheet12->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table12');
+            $sheet12->addTable($table);
             // Hoja secundaria 
             $sheet13 = $spreadsheet->createSheet();
             $sheet13->setTitle('Aprobación de Padres');
@@ -952,10 +1055,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table13');
-                $sheet13->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table13');
+            $sheet13->addTable($table);
             // Hoja secundaria 
             $sheet14 = $spreadsheet->createSheet();
             $sheet14->setTitle('Satisfacción con Titulación');
@@ -976,10 +1079,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:D' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table14');
-                $sheet14->addTable($table);
+            $tableRange = 'B1:D' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table14');
+            $sheet14->addTable($table);
             // Hoja secundaria 
             $sheet15 = $spreadsheet->createSheet();
             $sheet15->setTitle('Dificultad de Adaptación');
@@ -999,10 +1102,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table15');
-                $sheet15->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table15');
+            $sheet15->addTable($table);
             // Hoja secundaria 
             $sheet16 = $spreadsheet->createSheet();
             $sheet16->setTitle('Relación con Instructores');
@@ -1022,10 +1125,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table16');
-                $sheet16->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table16');
+            $sheet16->addTable($table);
             // Hoja secundaria 
             $sheet17 = $spreadsheet->createSheet();
             $sheet17->setTitle('Relación con Compañeros');
@@ -1045,10 +1148,10 @@ class TamizController
                     $rowIndex++;
                 }
             }
-                $tableRange = 'B1:C' . ($rowIndex - 1);
-                $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
-                $table->setName('Table17');
-                $sheet17->addTable($table);
+            $tableRange = 'B1:C' . ($rowIndex - 1);
+            $table = new \PhpOffice\PhpSpreadsheet\Worksheet\Table($tableRange);
+            $table->setName('Table17');
+            $sheet17->addTable($table);
 
 
             $fechaActual = (new DateTime())->format('Y-m-d');
