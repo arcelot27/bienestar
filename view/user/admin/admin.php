@@ -36,8 +36,11 @@
                 <label>Nombre de usuario*</label>
                 <input type="text" class="user" name="user" value="<?php echo isset($user['user_del']) ? $user['user_del'] : ''; ?>" readonly>
                 <label>Contraseña</label>
-                <input type="text" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>">
-
+                <div>
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="password" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>" disabled>
+                    <span class="input-group-text" style="cursor: pointer;"><i class="far fa-eye-slash" id="togglePassword"></i></span>
+                </div>
                 <label>Nombres*</label>
                 <input type="text" class="name" name="name" value="<?php echo isset($user['name_del']) ? $user['name_del'] : ''; ?>">
                 <label>Apellidos*</label>
@@ -52,5 +55,7 @@
         </div>
     </div>  
 </div>
+
+
 
 <script src="assets/js/profile.js"></script>
