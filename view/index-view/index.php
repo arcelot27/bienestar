@@ -1,20 +1,20 @@
 <main>
       <div class="one_main">
         <div>
-            <img src="assets/img/img_queEs.jpeg" alt="">
+            <img src="assets/img/quees1.JPG" alt="">
         </div>
         <div>
             <h3>¿Qué es SIFT?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p>Es un software diseñado para la identificación y el seguimiento regular, enfocado en la salud física y psicoemocional de los aprendices de nuestro centro de formación.  </p>
         </div>
       </div>
         <div class="two_main">
             <div>
-                <h3>¿Qué es SIFT?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <h3>¿Para qué sirve SIFT?</h3>
+                <p>Este software sirve para llevar un análisis y automatizar la búsqueda y gestión de la información de los aprendices que hacen parte de nuestro centro de formación.  </p>
             </div>
             <div>
-                <img id="img_queEs" src="assets/img/img_queEs.jpeg" alt="">
+                <img id="img_queEs" src="assets/img/quees.JPG" alt="">
             </div>
         </div>  
     </main>
