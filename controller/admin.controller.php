@@ -111,8 +111,9 @@ class AdminController
 
     public function guardarDelegado() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST['name'], $_POST['nombres'], $_POST['apellidos'], $_POST['telefono'], $_POST['tipoDocumento'], $_POST['numeroDocumento'], $_POST['email'], $_POST['rol'])) {
+            if (isset($_POST['name'], $_POST['pasword'], $_POST['nombres'], $_POST['apellidos'], $_POST['telefono'], $_POST['tipoDocumento'], $_POST['numeroDocumento'], $_POST['email'], $_POST['rol'])) {
                 $user_del = trim($_POST['name']);
+                $pasw_del = trim($_POST['pasword']);
                 $name_del = trim($_POST['nombres']);
                 $apelli_del = trim($_POST['apellidos']);
                 $tel_del = trim($_POST['telefono']);
@@ -121,72 +122,75 @@ class AdminController
                 $email_del = trim($_POST['email']);
                 $email_inst_del = isset($_POST['emailInstitucional']) ? trim($_POST['emailInstitucional']) : null;
                 $roll_del = (int)$_POST['rol'];
-
+    
                 $errors = [];
-
-
+    
                 if (empty($user_del)) {
                     $errors[] = "El nombre del usuario es obligatorio.";
                 }
-
-
+    
+                if (empty($pasw_del)) {
+                    $errors[] = "La contraseña es obligatoria.";
+                }
+    
                 if (empty($apelli_del)) {
                     $errors[] = "Los apellidos son obligatorios.";
                 }
-
+    
                 if (empty($tel_del)) {
                     $errors[] = "El teléfono es obligatorio.";
                 } elseif (!preg_match('/^\d{10}$/', $tel_del)) {
                     $errors[] = "El teléfono debe tener exactamente 10 dígitos.";
                 }
-
+    
                 if (empty($tipo_documen_del)) {
                     $errors[] = "El tipo de documento es obligatorio.";
                 }
-
+    
                 if (empty($dni_del)) {
                     $errors[] = "El número de documento es obligatorio.";
                 }
-
+    
                 if (empty($email_del)) {
                     $errors[] = "El email es obligatorio.";
                 } elseif (!filter_var($email_del, FILTER_VALIDATE_EMAIL)) {
                     $errors[] = "El email no es válido.";
                 }
-
+    
                 if (!empty($email_inst_del) && !filter_var($email_inst_del, FILTER_VALIDATE_EMAIL)) {
                     $errors[] = "El email institucional no es válido.";
                 }
-
+    
                 if (empty($roll_del)) {
                     $errors[] = "El rol es obligatorio.";
                 }
-
+    
                 if (!empty($errors)) {
                     $_SESSION['errors'] = $errors;
                     header("Location: ?b=Admin&s=add");
                     exit();
                 }
-
+    
                 if ($this->object->userExists($user_del)) {
                     $_SESSION['errors'] = ["El usuario ya existe en la base de datos."];
                     header("Location: ?b=Admin&s=add");
                     exit();
                 } else {
-                    if ($this->object->insertarDelegado($user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del)) {
-                        header("Location: ?b=Admin&s=delegatesÑ");
+                    if ($this->object->insertarDelegado($user_del, $pasw_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del)) {
+                        header("Location: ?b=Admin&s=add");
                         exit();
                     }
                 }
             } else {
-                $_SESSION['errors'] = ["El campo 'name' no está presente en la solicitud."];
+                $_SESSION['errors'] = ["No se proporcionaron todos los campos necesarios."];
                 header("Location: ?b=Admin&s=add");
                 exit();
             }
         } else {
-            echo "No se proporcionaron todos los campos necesarios.";
+            echo "Método de solicitud no válido.";
         }
     }
+    
 
     public function deleteUser()
     {

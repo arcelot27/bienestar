@@ -2,7 +2,7 @@
     <div class="container mt-5">    
         <div class="row mb-4">
             <div class="col-6">
-                <a href="?b=enfermeria" class="btn btn-secondary">
+                <a href="?b=apren&s=devol" class="btn btn-secondary">
                     <i class="fas fa-chevron-left"></i> Retroceder
                 </a>
             </div>

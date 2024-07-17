@@ -43,18 +43,23 @@ class LoginController
     
                     switch ($rol) {
                         case 1:
+                            $_SESSION['redirect_view'] = 'depo';
                             header("Location: ?b=dep");
                             break;
                         case 2:
+                            $_SESSION['redirect_view'] = 'psicol';
                             header("Location: ?b=psicol");
                             break;
                         case 4:
+                            $_SESSION['redirect_view'] = 'enfermeria';
                             header("Location: ?b=Enfermeria");
                             break;
                         case 8:
+                            $_SESSION['redirect_view'] = 'admin';
                             header("Location: ?b=Admin");
                             break;
                         case 16:
+                            $_SESSION['redirect_view'] = 'superdmin';
                             header("Location: ?b=supadmin");
                             break;
                         default:
@@ -75,6 +80,7 @@ class LoginController
             exit();
         }
     }
+    
     
     
 }

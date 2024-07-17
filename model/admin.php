@@ -20,20 +20,20 @@ class Admin{
         $user = $result->fetch_assoc(); 
         return $user;
     }
-    
-    public function insertarDelegado($user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del) {
-        $sql = "INSERT INTO delegados (user_del, roll_del, name_del, apelli_del, tipo_documen_del, dni_del, tel_del, email_del, email_inst_del) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public function insertarDelegado($user_del, $pasw_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del) {
+        $sql = "INSERT INTO delegados (user_del, pasw_del, roll_del, name_del, apelli_del, tipo_documen_del, dni_del, tel_del, email_del, email_inst_del) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->consulta->prepare($sql);
         if (!$stmt) {
             die("Error en la preparación de la consulta: " . $this->consulta->error);
         }
-        // 'sissssssss' indica que estás pasando 1 string, 1 entero y 7 strings
-        $stmt->bind_param('sisssssss', $user_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del);
+        // 'ssssssssss' indica que estás pasando 10 strings
+        $stmt->bind_param('ssssssssss', $user_del, $pasw_del, $roll_del, $name_del, $apelli_del, $tipo_documen_del, $dni_del, $tel_del, $email_del, $email_inst_del);
         if (!$stmt->execute()) {
             die("Error en la ejecución de la consulta: " . $stmt->error);
         }
         $stmt->close();
     }
+    
 
     public function userExists($username) {
         $sql = "SELECT COUNT(*) AS count FROM delegados WHERE user_del = ?";

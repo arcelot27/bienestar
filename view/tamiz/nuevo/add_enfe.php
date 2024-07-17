@@ -109,7 +109,7 @@
             </div>
         </div>
         <h1 class="text-center">Formulario de Tamizaje de salud</h1>
-        <form method="POST" action="?b=tamiz&s=buscarPorIdentificacion">
+        <form method="POST" action="?b=tamiz&s=buscarPorIdentificacionenfe">
             <div class="form-group">
                 <label for="buscar">Buscar aprendiz por número de identificación:</label>
                 <div class="input-group">
@@ -277,14 +277,14 @@
     <script>
         $(document).ready(function() {
             $('#actualizarBtn').click(function() {
-                window.location.href = "?b=tamiz&s=actualizarDatosUsuario&identificacion=" + $('#buscar').val();
+                const id_apre = "<?php echo $usuario['id_apre']; ?>";
+                window.location.href = "?b=tamiz&s=actualizarDatosUsuario&identificacion=" + id_apre;
             });
 
             $('#siguienteBtn').click(function() {
                 $('#fullscreenModal').show();
             });
         });
-
 
         function validateTemperature(input) {
             const value = input.value;
@@ -297,6 +297,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

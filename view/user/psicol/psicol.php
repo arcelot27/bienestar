@@ -42,7 +42,7 @@
                 <label>Nombre de usuario*</label>
                 <input type="text" class="user" name="user" value="<?php echo isset($user['user_del']) ? $user['user_del'] : ''; ?>" readonly>
                 <label>Contraseña</label>
-                <input type="text" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>" disabled>
+                <input type="text" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>">
 
                 <label>Nombres*</label>
                 <input type="text" class="name" name="name" value="<?php echo isset($user['name_del']) ? $user['name_del'] : ''; ?>">
@@ -51,7 +51,7 @@
                 <label>Teléfono*</label>
                 <input type="number" class="tel" name="tel" value="<?php echo isset($user['tel_del']) ? $user['tel_del'] : ''; ?>">
                 <label>Email Institucional*</label>
-                <input type="email" class="email" name="email" value="<?php echo isset($user['email_']) ? $user['email_'] : ''; ?>">
+                <input type="email" class="email" name="email" value="<?php echo isset($user['email_inst_del']) ? $user['email_inst_del'] : ''; ?>">
 
                 <button type="submit">Guardar</button>
             </form>

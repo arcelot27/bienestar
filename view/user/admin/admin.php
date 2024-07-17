@@ -48,7 +48,7 @@
                 <label>Teléfono*</label>
                 <input type="number" class="tel" name="tel" value="<?php echo isset($user['tel_del']) ? $user['tel_del'] : ''; ?>">
                 <label>Email Institucional*</label>
-                <input type="email" class="email" name="email" value="<?php echo isset($user['email_']) ? $user['email_'] : ''; ?>">
+                <input type="email" class="email" name="email" value="<?php echo isset($user['email_inst_del']) ? $user['email_inst_del'] : ''; ?>">
 
                 <button type="submit">Guardar</button>
             </form>
