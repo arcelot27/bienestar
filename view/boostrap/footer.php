@@ -14,9 +14,7 @@
             <div>
                 <div class="contend_footer">
                     <div class="border-bottom text-center">
-                        <p class="mt-2 mb-2"><b>SIFT - Sistema Identificación y Seguimiento de Aprendices</b></p>
-                        <p><b>Misión:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                        <p><b>Visión:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <p class="mt-2 mb-2"><b>SIFT - Sistema de Identificación y Seguimiento de Aprendices</b></p>
                     </div>
                     <div class="border-bottom text-center">
                         <p class="mt-2"><b>Menú:</b></p>
@@ -36,7 +34,7 @@
     </div>
     <div class="container text-center">
         <div class="copy_footer container rounded-pill">
-            <p class="pt-1 pb-1">Copyright 2024 - <strong>SIFT - Sistema Identificación y Seguimiento de Aprendices</strong> © by ********* and **********</p>
+            <p class="pt-1 pb-1">Copyright 2024 - <strong>SIFT - Sistema de Identificación y Seguimiento de Aprendices</strong> © by Arturo and Esteban</p>
         </div>
     </div>
 </footer>
