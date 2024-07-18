@@ -49,31 +49,41 @@ class TamizController
     }
 
     public function busenfe()
-    {
-        $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
-        <link rel='stylesheet' href='assets/css/tamiz/tami-bus.css'>";
-        $datos = [];
+{
+    $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
+    <link rel='stylesheet' href='assets/css/tamiz/tami-bus.css'>";
+    $datos = [];
 
-        if (isset($_POST['identificacion']) && !empty($_POST['identificacion'])) {
-            $identificacion = $_POST['identificacion'];
-            $datos[] = $this->object->buscarPorIdconsultaEnfe($identificacion);
-        } elseif (isset($_POST['jornada']) && !empty($_POST['jornada'])) {
-            $jornada = $_POST['jornada'];
-            $datos = $this->object->buscarPorJornadaEnfe($jornada);
-        } elseif (isset($_POST['ficha']) && !empty($_POST['ficha'])) {
-            $ficha = $_POST['ficha'];
-            $datos = $this->object->buscarPorFichaEnfe($ficha);
+    if (isset($_POST['identificacion']) && !empty($_POST['identificacion'])) {
+        $identificacion = $_POST['identificacion'];
+        $result = $this->object->buscarPorIdconsultaEnfe($identificacion);
+        if (is_array($result) && !isset($result['error'])) {
+            $datos[] = $result;
         }
-
-        if (!is_array($datos)) {
-            $datos = [];
+    } elseif (isset($_POST['jornada']) && !empty($_POST['jornada'])) {
+        $jornada = $_POST['jornada'];
+        $result = $this->object->buscarPorJornadaEnfe($jornada);
+        if (is_array($result) && !isset($result['error'])) {
+            $datos[] = $result;
         }
-
-        require_once "view/boostrap/head.php";
-        require_once "view/boostrap/heder_user.php";
-        require_once "view/tamiz/bus/tami-busenfe.php";
-        require_once "view/boostrap/footer.php";
+    } elseif (isset($_POST['ficha']) && !empty($_POST['ficha'])) {
+        $ficha = $_POST['ficha'];
+        $result = $this->object->buscarPorFichaEnfe($ficha);
+        if (is_array($result) && !isset($result['error'])) {
+            $datos[] = $result;
+        }
     }
+
+    if (!is_array($datos)) {
+        $datos = [];
+    }
+
+    require_once "view/boostrap/head.php";
+    require_once "view/boostrap/heder_user.php";
+    require_once "view/tamiz/bus/tami-busenfe.php";
+    require_once "view/boostrap/footer.php";
+}
+
 
     public function exportarDatos()
     {
@@ -688,28 +698,37 @@ class TamizController
         $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>
         <link rel='stylesheet' href='assets/css/tamiz/tami-bus.css'>";
         $datos = [];
-
+    
         if (isset($_POST['identificacion']) && !empty($_POST['identificacion'])) {
             $identificacion = $_POST['identificacion'];
-            $datos[] = $this->object->buscarPorIdconsultaPsico($identificacion);
+            $result = $this->object->buscarPorIdconsultaPsico($identificacion);
+            if (is_array($result) && !isset($result['error'])) {
+                $datos[] = $result;
+            }
         } elseif (isset($_POST['jornada']) && !empty($_POST['jornada'])) {
             $jornada = $_POST['jornada'];
-            $datos = $this->object->buscarPorJornadaPsico($jornada);
+            $result = $this->object->buscarPorJornadaPsico($jornada);
+            if (is_array($result) && !isset($result['error'])) {
+                $datos = $result;
+            }
         } elseif (isset($_POST['ficha']) && !empty($_POST['ficha'])) {
             $ficha = $_POST['ficha'];
-            $datos = $this->object->buscarPorFichaPsico($ficha);
+            $result = $this->object->buscarPorFichaPsico($ficha);
+            if (is_array($result) && !isset($result['error'])) {
+                $datos = $result;
+            }
         }
-
+    
         if (!is_array($datos)) {
             $datos = [];
         }
-
+    
         require_once "view/boostrap/head.php";
         require_once "view/boostrap/heder_user.php";
         require_once "view/tamiz/bus/tami-buspsico.php";
         require_once "view/boostrap/footer.php";
     }
-
+    
     public function busdepo()
     {
         $style = "<link rel='stylesheet' href='assets/css/static/boostrap/header_footer.css'>

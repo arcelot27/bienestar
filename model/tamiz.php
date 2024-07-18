@@ -43,19 +43,52 @@ class Tamiz
             return null;
         }
     }
-                            // update de apre
+    // update de apre
     public function buscarPor($id_apre)
     {
         $query = "SELECT id_apre, name_apre, ape_apre, tipo_docu_apre, dni_apre, edad_apre, esta_civil_apre, sexo_apre, iden_gene_apre, grup_etn_apre, grup_etn_cual_apre, estr_apre, zona_resi_apre, lugar_resi_apre, vivie_apre, servicios_publicos_apre, tiempo_libre_apre, hijos_apre, embarazo_apre, control_prenatal_apre, diag_medico_apre, diag_medico_cual_apre, medica_apre, medica_cual_apre, limitaciones_apre, antecedentes_familiares_apre, antecedentes_familiares_otro_apre, numero_celular_apre, correo_apre, numero_ficha_apre, jornada_apre, contac_emergen_apre, numero_contac_emergen_apre FROM aprendiz                    WHERE id_apre = ?";
-        
+
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param('i', $id_apre);
         $stmt->execute();
-        $stmt->bind_result($id_apre,$name_apre,$ape_apre,$tipo_docu_apre,$dni_apre,$edad_apre,$esta_civil_apre,$sexo_apre,$iden_gene_apre,$grup_etn_apre,$grup_etn_cual_apre,$estr_apre,$zona_resi_apre,$lugar_resi_apre,$vivie_apre,$servicios_publicos_apre,$tiempo_libre_apre,$hijos_apre,$embarazo_apre,$control_prenatal_apre,$diag_medico_apre,$diag_medico_cual_apre,$medica_apre,$medica_cual_apre,$limitaciones_apre,$antecedentes_familiares_apre,$antecedentes_familiares_otro_apre,$numero_celular_apre,$correo_apre,$numero_ficha_apre,$jornada_apre,$contac_emergen_apre,$numero_contac_emergen_apre
+        $stmt->bind_result(
+            $id_apre,
+            $name_apre,
+            $ape_apre,
+            $tipo_docu_apre,
+            $dni_apre,
+            $edad_apre,
+            $esta_civil_apre,
+            $sexo_apre,
+            $iden_gene_apre,
+            $grup_etn_apre,
+            $grup_etn_cual_apre,
+            $estr_apre,
+            $zona_resi_apre,
+            $lugar_resi_apre,
+            $vivie_apre,
+            $servicios_publicos_apre,
+            $tiempo_libre_apre,
+            $hijos_apre,
+            $embarazo_apre,
+            $control_prenatal_apre,
+            $diag_medico_apre,
+            $diag_medico_cual_apre,
+            $medica_apre,
+            $medica_cual_apre,
+            $limitaciones_apre,
+            $antecedentes_familiares_apre,
+            $antecedentes_familiares_otro_apre,
+            $numero_celular_apre,
+            $correo_apre,
+            $numero_ficha_apre,
+            $jornada_apre,
+            $contac_emergen_apre,
+            $numero_contac_emergen_apre
         );
-    
+
         $result = $stmt->fetch();
-    
+
         if ($result) {
             return [
                 'id_apre' => $id_apre,
@@ -96,11 +129,11 @@ class Tamiz
             return null;
         }
     }
-                            
-    
+
+
     public function actualizarDatosUsuario($id_apre, $name_apre, $ape_apre, $tipo_docu_apre, $dni_apre, $edad_apre, $esta_civil_apre, $sexo_apre, $iden_gene_apre, $grup_etn_apre, $grup_etn_cual_apre, $estr_apre, $zona_resi_apre, $lugar_resi_apre, $vivie_apre, $servicios_publicos_apre, $tiempo_libre_apre, $hijos_apre, $embarazo_apre, $control_prenatal_apre, $diag_medico_apre, $diag_medico_cual_apre, $medica_apre, $medica_cual_apre, $limitaciones_apre, $antecedentes_familiares_apre, $antecedentes_familiares_otro_apre, $numero_celular_apre, $correo_apre, $numero_ficha_apre, $jornada_apre, $contac_emergen_apre, $numero_contac_emergen_apre)
-{
-    $query = "UPDATE aprendiz SET 
+    {
+        $query = "UPDATE aprendiz SET 
                 name_apre = ?,
                 ape_apre = ?,
                 tipo_docu_apre = ?,
@@ -135,29 +168,56 @@ class Tamiz
                 numero_contac_emergen_apre = ?
               WHERE id_apre = ?";
 
-    $stmt = $this->conexion->prepare($query);
-    if (!$stmt) {
-        die('Error en la preparación de la consulta: ' . $this->conexion->error);
+        $stmt = $this->conexion->prepare($query);
+        if (!$stmt) {
+            die('Error en la preparación de la consulta: ' . $this->conexion->error);
+        }
+
+        $stmt->bind_param(
+            'ssssissssssssssssssssssssssssssss',
+            $name_apre,
+            $ape_apre,
+            $tipo_docu_apre,
+            $dni_apre,
+            $edad_apre,
+            $esta_civil_apre,
+            $sexo_apre,
+            $iden_gene_apre,
+            $grup_etn_apre,
+            $grup_etn_cual_apre,
+            $estr_apre,
+            $zona_resi_apre,
+            $lugar_resi_apre,
+            $vivie_apre,
+            $servicios_publicos_apre,
+            $tiempo_libre_apre,
+            $hijos_apre,
+            $embarazo_apre,
+            $control_prenatal_apre,
+            $diag_medico_apre,
+            $diag_medico_cual_apre,
+            $medica_apre,
+            $medica_cual_apre,
+            $limitaciones_apre,
+            $antecedentes_familiares_apre,
+            $antecedentes_familiares_otro_apre,
+            $numero_celular_apre,
+            $correo_apre,
+            $numero_ficha_apre,
+            $jornada_apre,
+            $contac_emergen_apre,
+            $numero_contac_emergen_apre,
+            $id_apre
+        );
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            die('Error en la ejecución de la consulta: ' . $stmt->error);
+        }
+
+        $stmt->close();
     }
-
-    $stmt->bind_param(
-        'ssssissssssssssssssssssssssssssss',
-        $name_apre, $ape_apre, $tipo_docu_apre, $dni_apre, $edad_apre, $esta_civil_apre, $sexo_apre,
-        $iden_gene_apre, $grup_etn_apre, $grup_etn_cual_apre, $estr_apre, $zona_resi_apre, $lugar_resi_apre,
-        $vivie_apre, $servicios_publicos_apre, $tiempo_libre_apre, $hijos_apre, $embarazo_apre, $control_prenatal_apre,
-        $diag_medico_apre, $diag_medico_cual_apre, $medica_apre, $medica_cual_apre, $limitaciones_apre, $antecedentes_familiares_apre,
-        $antecedentes_familiares_otro_apre, $numero_celular_apre, $correo_apre, $numero_ficha_apre, $jornada_apre,
-        $contac_emergen_apre, $numero_contac_emergen_apre, $id_apre
-    );
-
-    if ($stmt->execute()) {
-        return true;
-    } else {
-        die('Error en la ejecución de la consulta: ' . $stmt->error);
-    }
-
-    $stmt->close();
-}
 
 
 
@@ -264,74 +324,60 @@ class Tamiz
 
     public function buscarPorJornadaEnfe($jornada)
     {
-        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre,numero_ficha_apre, jornada_apre FROM aprendiz WHERE jornada_apre = ?");
+        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE jornada_apre = ?");
         $stmt->bind_param("s", $jornada);
         $stmt->execute();
         $result = $stmt->get_result();
-        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+        $aprendiz = $result->fetch_assoc();
 
-        // Si no se encuentran aprendices, devolver un mensaje de error
-        if (empty($aprendices)) {
-            return ["error" => "No se encontraron aprendices para la jornada proporcionada en la tabla aprendiz."];
+        if (!$aprendiz) {
+            return ["error" => "No se encontraron datos para la identificación proporcionada en la tabla aprendiz."];
         }
 
-        $encontradoEnTamiz = false;
-        foreach ($aprendices as &$aprendiz) {
-            $id_apre = $aprendiz['id_apre'];
-            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
-            $stmt->bind_param("i", $id_apre);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
-            $aprendiz['tamiz_salud'] = $tamiz_salud;
-
-            if (!empty($tamiz_salud)) {
-                $encontradoEnTamiz = true;
-            }
-        }
-
-        // Si no se encuentran datos en tamiz_salud, devolver un mensaje de error
-        if (!$encontradoEnTamiz) {
-            return ["error" => "No se encontraron datos en la tabla tamiz_salud para los aprendices con la jornada proporcionada."];
-        }
-
-        return $aprendices;
-    }
-
-    public function buscarPorFichaEnfe($numeroFicha)
-    {
-        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE numero_ficha_apre = ?");
-        $stmt->bind_param("s", $numeroFicha);
+        $id_apre = $aprendiz['id_apre'];
+        $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
+        $stmt->bind_param("i", $id_apre);
         $stmt->execute();
         $result = $stmt->get_result();
-        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+        $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
 
-        // Si no se encuentran aprendices, devolver un mensaje de error
-        if (empty($aprendices)) {
-            return ["error" => "No se encontraron aprendices para el número de ficha proporcionado en la tabla aprendiz."];
+        $aprendiz['tamiz_salud'] = $tamiz_salud;
+
+        if (empty($tamiz_salud)) {
+            return ["error" => "No se encontraron datos en la tabla tamiz_salud para el aprendiz con la identificación proporcionada."];
         }
 
-        $encontradoEnTamiz = false;
-        foreach ($aprendices as &$aprendiz) {
-            $id_apre = $aprendiz['id_apre'];
-            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
-            $stmt->bind_param("i", $id_apre);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
-            $aprendiz['tamiz_salud'] = $tamiz_salud;
-
-            if (!empty($tamiz_salud)) {
-                $encontradoEnTamiz = true;
-            }
-        }
-
-        if (!$encontradoEnTamiz) {
-            return ["error" => "No se encontraron datos en la tabla tamiz_salud para los aprendices con el número de ficha proporcionado."];
-        }
-
-        return $aprendices;
+        return $aprendiz;
     }
+
+    public function buscarPorFichaEnfe($ficha)
+    {
+        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE numero_ficha_apre = ?");
+        $stmt->bind_param("s", $ficha);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $aprendiz = $result->fetch_assoc();
+
+        if (!$aprendiz) {
+            return ["error" => "No se encontraron datos para la identificación proporcionada en la tabla aprendiz."];
+        }
+
+        $id_apre = $aprendiz['id_apre'];
+        $stmt = $this->conexion->prepare("SELECT * FROM tamiz_salud WHERE id_apre = ?");
+        $stmt->bind_param("i", $id_apre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $tamiz_salud = $result->fetch_all(MYSQLI_ASSOC);
+
+        $aprendiz['tamiz_salud'] = $tamiz_salud;
+
+        if (empty($tamiz_salud)) {
+            return ["error" => "No se encontraron datos en la tabla tamiz_salud para el aprendiz con la identificación proporcionada."];
+        }
+
+        return $aprendiz;
+    }
+
 
     public function buscarPorIdconsultaPsico($identificacion)
     {
@@ -360,75 +406,72 @@ class Tamiz
 
         return $aprendiz;
     }
-
     public function buscarPorJornadaPsico($jornada)
-    {
-        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre,numero_ficha_apre, jornada_apre FROM aprendiz WHERE jornada_apre = ?");
-        $stmt->bind_param("s", $jornada);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+{
+    $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE jornada_apre = ?");
+    $stmt->bind_param("s", $jornada);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $aprendices = $result->fetch_all(MYSQLI_ASSOC);
 
-        // Si no se encuentran aprendices, devolver un mensaje de error
-        if (empty($aprendices)) {
-            return ["error" => "No se encontraron aprendices para la jornada proporcionada en la tabla aprendiz."];
-        }
-
-        $encontradoEnTamiz = false;
-        foreach ($aprendices as &$aprendiz) {
-            $id_apre = $aprendiz['id_apre'];
-            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_psico WHERE id_apre = ?");
-            $stmt->bind_param("i", $id_apre);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $tamiz_psico = $result->fetch_all(MYSQLI_ASSOC);
-            $aprendiz['tamiz_psico'] = $tamiz_psico;
-
-            if (!empty($tamiz_psico)) {
-                $encontradoEnTamiz = true;
-            }
-        }
-
-        if (!$encontradoEnTamiz) {
-            return ["error" => "No se encontraron datos en la tabla tamiz_psico para los aprendices con la jornada proporcionada."];
-        }
-
-        return $aprendices;
+    if (empty($aprendices)) {
+        return ["error" => "No se encontraron aprendices para la jornada proporcionada en la tabla aprendiz."];
     }
 
-    public function buscarPorFichaPsico($numeroFicha)
-    {
-        $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE numero_ficha_apre = ?");
-        $stmt->bind_param("s", $numeroFicha);
+    $encontradoEnTamiz = false;
+    foreach ($aprendices as &$aprendiz) {
+        $id_apre = $aprendiz['id_apre'];
+        $stmt = $this->conexion->prepare("SELECT * FROM tamiz_psico WHERE id_apre = ?");
+        $stmt->bind_param("i", $id_apre);
         $stmt->execute();
         $result = $stmt->get_result();
-        $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+        $tamiz_psico = $result->fetch_all(MYSQLI_ASSOC);
+        $aprendiz['tamiz_psico'] = $tamiz_psico;
 
-        // Si no se encuentran aprendices, devolver un mensaje de error
-        if (empty($aprendices)) {
-            return ["error" => "No se encontraron aprendices para el número de ficha proporcionado en la tabla aprendiz."];
+        if (!empty($tamiz_psico)) {
+            $encontradoEnTamiz = true;
         }
-
-        $encontradoEnTamiz = false;
-        foreach ($aprendices as &$aprendiz) {
-            $id_apre = $aprendiz['id_apre'];
-            $stmt = $this->conexion->prepare("SELECT * FROM tamiz_psico WHERE id_apre = ?");
-            $stmt->bind_param("i", $id_apre);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $tamiz_psico = $result->fetch_all(MYSQLI_ASSOC);
-            $aprendiz['tamiz_psico'] = $tamiz_psico;
-
-            if (!empty($tamiz_psico)) {
-                $encontradoEnTamiz = true;
-            }
-        }
-
-        // Si no se encuentran datos en tamiz_psico, devolver un mensaje de error
-        if (!$encontradoEnTamiz) {
-            return ["error" => "No se encontraron datos en la tabla tamiz_psico para los aprendices con el número de ficha proporcionado."];
-        }
-
-        return $aprendices;
     }
+
+    if (!$encontradoEnTamiz) {
+        return ["error" => "No se encontraron datos en la tabla tamiz_psico para los aprendices con la jornada proporcionada."];
+    }
+
+    return $aprendices;
+}
+
+public function buscarPorFichaPsico($numeroFicha)
+{
+    $stmt = $this->conexion->prepare("SELECT id_apre, name_apre, dni_apre, numero_ficha_apre, jornada_apre FROM aprendiz WHERE numero_ficha_apre = ?");
+    $stmt->bind_param("s", $numeroFicha);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $aprendices = $result->fetch_all(MYSQLI_ASSOC);
+
+    if (empty($aprendices)) {
+        return ["error" => "No se encontraron aprendices para el número de ficha proporcionado en la tabla aprendiz."];
+    }
+
+    $encontradoEnTamiz = false;
+    foreach ($aprendices as &$aprendiz) {
+        $id_apre = $aprendiz['id_apre'];
+        $stmt = $this->conexion->prepare("SELECT * FROM tamiz_psico WHERE id_apre = ?");
+        $stmt->bind_param("i", $id_apre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $tamiz_psico = $result->fetch_all(MYSQLI_ASSOC);
+        $aprendiz['tamiz_psico'] = $tamiz_psico;
+
+        if (!empty($tamiz_psico)) {
+            $encontradoEnTamiz = true;
+        }
+    }
+
+    if (!$encontradoEnTamiz) {
+        return ["error" => "No se encontraron datos en la tabla tamiz_psico para los aprendices con el número de ficha proporcionado."];
+    }
+
+    return $aprendices;
+}
+
 }
