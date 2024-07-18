@@ -38,9 +38,23 @@
                 <label>Contraseña</label>
                 <div>
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" id="password" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>" disabled>
+                    <input type="password" id="password" class="pasw" name="pasw" value="<?php echo isset($user['pasw_del']) ? $user['pasw_del'] : ''; ?>">
                     <span class="input-group-text" style="cursor: pointer;"><i class="far fa-eye-slash" id="togglePassword"></i></span>
                 </div>
+                <script>
+                    const togglePassword = document.querySelector("#togglePassword");
+                    const password = document.querySelector("#password");
+
+                    togglePassword.addEventListener("click", function () {
+                    
+                    // toggle the type attribute
+                    const type = password.getAttribute("type") === "password" ? "text" : "password";
+                    password.setAttribute("type", type);
+
+                    // toggle the eye icon
+                    this.classList.toggle('fa-eye');
+                    });
+                </script>
                 <label>Nombres*</label>
                 <input type="text" class="name" name="name" value="<?php echo isset($user['name_del']) ? $user['name_del'] : ''; ?>">
                 <label>Apellidos*</label>
