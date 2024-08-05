@@ -1,10 +1,10 @@
 <main class="container mb-3">
     <div class="main_header mt-3 position-relative">
         <div class="row align-items-center">
-            <div class="col-md-2  text-center ">
+            <div class="col-md-2 text-center">
                 <a href="?b=enfermeria" style="font-size: 24pt"><i class="fas fa-circle-chevron-left"></i></a>
             </div>
-            <div class="col-md-2 col-7 col-md-4 text-center " style="margin-left: 12rem">
+            <div class="col-md-2 col-7 col-md-4 text-center" style="margin-left: 12rem">
                 <h3 class="mt-2">Buscar Tamizaje</h3>
             </div>
         </div>
@@ -41,7 +41,6 @@
                 </div>
             </div>
             <div class="row mt-3">
-
                 <div class="col-md-6">
                     <form class="row g-3 needs-validation" method="POST" action="?b=tamiz&s=busenfe" novalidate>
                         <div class="col-12">
@@ -55,7 +54,6 @@
                         </div>
                     </form>
                 </div>
-
                 <div class="col-md-6 text-center">
                     <form action="?b=Tamiz&s=exportarDatos" method="post">
                         <input type="hidden" name="datos_exportar" value="<?= htmlspecialchars(json_encode($datos)) ?>">
@@ -63,54 +61,89 @@
                     </form>
                 </div>
             </div>
-        </div> <br>
-        <!-- Mostrar resultados en una tabla -->
-        <?php if (!empty($datos)) : ?>
-    <?php foreach ($datos as $aprendiz) : ?>
-        <?php
-        if (empty($aprendiz['tamiz_psico'])) {
-            $aprendiz['tamiz_psico'] = [array_fill_keys([
-                'id_taz', 'name_taz', 'ult_examen_fisico_taz', 'cirugia_taz', 'cirugia_cual_taz',
-                'sintomas_inusuales_taz', 'sintomas_inusuales_cual_taz', 'convulsiones_taz',
-                'sustancias_psicoactivas_taz', 'sustancias_psicoactivas_cual_taz', 'bebidas_alcoholicas_taz',
-                'presion_arterial_taz', 'frecuencia_cardiaca_taz', 'frecuencia_respiratoria_taz',
-                'saturacion_taz', 'temperatura_taz', 'peso_taz', 'talla_taz', 'observaciones_taz'
-            ], '')];
-        }
-        ?>
+        </div>
+        <br>
 
-        <?php foreach ($aprendiz['tamiz_psico'] as $tamiz) : ?>
-            <tr>
-                <td><?= isset($aprendiz['name_apre']) ? $aprendiz['name_apre'] : ''; ?></td>
-                <td><?= isset($aprendiz['dni_apre']) ? $aprendiz['dni_apre'] : ''; ?></td>
-                <td><?= isset($aprendiz['numero_ficha_apre']) ? $aprendiz['numero_ficha_apre'] : ''; ?></td>
-                <td><?= isset($aprendiz['jornada_apre']) ? $aprendiz['jornada_apre'] : ''; ?></td>
-                <td><?= isset($tamiz['id_taz']) ? $tamiz['id_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['name_taz']) ? $tamiz['name_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['ult_examen_fisico_taz']) ? $tamiz['ult_examen_fisico_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['cirugia_taz']) ? $tamiz['cirugia_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['cirugia_cual_taz']) ? $tamiz['cirugia_cual_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['sintomas_inusuales_taz']) ? $tamiz['sintomas_inusuales_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['sintomas_inusuales_cual_taz']) ? $tamiz['sintomas_inusuales_cual_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['convulsiones_taz']) ? $tamiz['convulsiones_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['sustancias_psicoactivas_taz']) ? $tamiz['sustancias_psicoactivas_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['sustancias_psicoactivas_cual_taz']) ? $tamiz['sustancias_psicoactivas_cual_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['bebidas_alcoholicas_taz']) ? $tamiz['bebidas_alcoholicas_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['presion_arterial_taz']) ? $tamiz['presion_arterial_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['frecuencia_cardiaca_taz']) ? $tamiz['frecuencia_cardiaca_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['frecuencia_respiratoria_taz']) ? $tamiz['frecuencia_respiratoria_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['saturacion_taz']) ? $tamiz['saturacion_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['temperatura_taz']) ? $tamiz['temperatura_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['peso_taz']) ? $tamiz['peso_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['talla_taz']) ? $tamiz['talla_taz'] : ''; ?></td>
-                <td><?= isset($tamiz['observaciones_taz']) ? $tamiz['observaciones_taz'] : ''; ?></td>
-            </tr>
-        <?php endforeach; ?>
-    <?php endforeach; ?>
-<?php else : ?>
-    <tr>
-        <td colspan="24">No hay datos disponibles</td>
-    </tr>
-<?php endif; ?>
+        <!-- Mostrar resultados en una tabla -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre Aprendiz</th>
+                        <th>Documento</th>
+                        <th>Número de Ficha</th>
+                        <th>Jornada</th>
+                        <th>ID Tamiz</th>
+                        <th>Nombre Tamiz</th>
+                        <th>Último Examen Físico</th>
+                        <th>Cirugía</th>
+                        <th>Detalle Cirugía</th>
+                        <th>Síntomas Inusuales</th>
+                        <th>Detalle Síntomas</th>
+                        <th>Convulsiones</th>
+                        <th>Sustancias Psicoactivas</th>
+                        <th>Detalle Sustancias</th>
+                        <th>Bebidas Alcohólicas</th>
+                        <th>Presión Arterial</th>
+                        <th>Frecuencia Cardíaca</th>
+                        <th>Frecuencia Respiratoria</th>
+                        <th>Saturación</th>
+                        <th>Temperatura</th>
+                        <th>Peso</th>
+                        <th>Talla</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($datos)) : ?>
+                        <?php foreach ($datos as $aprendiz) : ?>
+                            <?php
+                            if (empty($aprendiz['tamiz_salud'])) {
+                                $aprendiz['tamiz_salud'] = [array_fill_keys([
+                                    'id_taz', 'name_taz', 'ult_examen_fisico_taz', 'cirugia_taz', 'cirugia_cual_taz',
+                                    'sintomas_inusuales_taz', 'sintomas_inusuales_cual_taz', 'convulsiones_taz',
+                                    'sustancias_psicoactivas_taz', 'sustancias_psicoactivas_cual_taz', 'bebidas_alcoholicas_taz',
+                                    'presion_arterial_taz', 'frecuencia_cardiaca_taz', 'frecuencia_respiratoria_taz',
+                                    'saturacion_taz', 'temperatura_taz', 'peso_taz', 'talla_taz', 'observaciones_taz'
+                                ], '')];
+                            }
+                            ?>
+
+                            <?php foreach ($aprendiz['tamiz_salud'] as $tamiz) : ?>
+                                <tr>
+                                    <td><?= isset($aprendiz['name_apre']) ? $aprendiz['name_apre'] : ''; ?></td>
+                                    <td><?= isset($aprendiz['dni_apre']) ? $aprendiz['dni_apre'] : ''; ?></td>
+                                    <td><?= isset($aprendiz['numero_ficha_apre']) ? $aprendiz['numero_ficha_apre'] : ''; ?></td>
+                                    <td><?= isset($aprendiz['jornada_apre']) ? $aprendiz['jornada_apre'] : ''; ?></td>
+                                    <td><?= isset($tamiz['id_taz']) ? $tamiz['id_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['name_taz']) ? $tamiz['name_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['ult_examen_fisico_taz']) ? $tamiz['ult_examen_fisico_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['cirugia_taz']) ? $tamiz['cirugia_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['cirugia_cual_taz']) ? $tamiz['cirugia_cual_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['sintomas_inusuales_taz']) ? $tamiz['sintomas_inusuales_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['sintomas_inusuales_cual_taz']) ? $tamiz['sintomas_inusuales_cual_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['convulsiones_taz']) ? $tamiz['convulsiones_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['sustancias_psicoactivas_taz']) ? $tamiz['sustancias_psicoactivas_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['sustancias_psicoactivas_cual_taz']) ? $tamiz['sustancias_psicoactivas_cual_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['bebidas_alcoholicas_taz']) ? $tamiz['bebidas_alcoholicas_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['presion_arterial_taz']) ? $tamiz['presion_arterial_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['frecuencia_cardiaca_taz']) ? $tamiz['frecuencia_cardiaca_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['frecuencia_respiratoria_taz']) ? $tamiz['frecuencia_respiratoria_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['saturacion_taz']) ? $tamiz['saturacion_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['temperatura_taz']) ? $tamiz['temperatura_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['peso_taz']) ? $tamiz['peso_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['talla_taz']) ? $tamiz['talla_taz'] : ''; ?></td>
+                                    <td><?= isset($tamiz['observaciones_taz']) ? $tamiz['observaciones_taz'] : ''; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <tr>
+                            <td colspan="24">No hay datos disponibles</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </main>
